@@ -47,31 +47,46 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0D0D0D]">
-      {/* Hero */}
+    <div className="min-h-screen bg-white">
+      {/* Hero - DARK */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' as const }}
-        className="py-20 px-6 text-center"
+        className="bg-[#0A0F1C] text-white py-20 px-6 text-center"
       >
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#111111] dark:text-[#ECECEC]">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-6xl font-bold mb-6"
+            style={{
+              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
             About CTekk Solutions
-          </h1>
-          <p className="text-xl text-[#6B7280] dark:text-[#ECECEC]/70">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-white/70"
+          >
             Transforming enterprises through AI, cloud innovation, and world-class talent since 2010
-          </p>
+          </motion.p>
         </div>
       </motion.section>
 
-      {/* Story */}
+      {/* Story - LIGHT */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-3xl mx-auto py-20 px-6"
+        className="bg-white max-w-3xl mx-auto py-20 px-6"
       >
         <SectionHeading title="Our Story" centered />
         <motion.div
@@ -79,7 +94,7 @@ export default function AboutPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-8 text-[#6B7280] dark:text-[#ECECEC]/70 space-y-4"
+          className="mt-8 text-[#6B7280] space-y-4"
         >
           <p>
             Founded in 2010 in Dallas, Texas, CTekk Solutions began as a specialized staffing company connecting enterprises with top technical talent. Over 15 years, we've evolved into a comprehensive technology consulting firm.
@@ -90,27 +105,37 @@ export default function AboutPage() {
         </motion.div>
       </motion.section>
 
-      {/* Mission & Vision */}
+      {/* Mission & Vision - DARK bg, glass-cards */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
       >
-        <SectionHeading title="Mission & Vision" centered />
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
+        <motion.div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center"
+            style={{
+              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Mission & Vision
+          </h2>
+        </motion.div>
+        <div className="grid md:grid-cols-2 gap-6">
           <motion.div
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#0D0D0D]"
+            className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-8"
           >
-            <h3 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC] mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               Our Mission
             </h3>
-            <p className="text-[#6B7280] dark:text-[#ECECEC]/70">
+            <p className="text-white/70">
               To empower enterprises with cutting-edge AI solutions and world-class talent.
             </p>
           </motion.div>
@@ -120,27 +145,27 @@ export default function AboutPage() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#0D0D0D]"
+            className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-8"
           >
-            <h3 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC] mb-4">
+            <h3 className="text-xl font-semibold text-white mb-4">
               Our Vision
             </h3>
-            <p className="text-[#6B7280] dark:text-[#ECECEC]/70">
+            <p className="text-white/70">
               To be the global leader in technology consulting for digital transformation.
             </p>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* Stats */}
+      {/* Stats - DARK bg with AnimatedCounters */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
       >
-        <div className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-12 bg-[#F9FAFB] dark:bg-[#0D0D0D]">
+        <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
               <motion.div
@@ -151,10 +176,10 @@ export default function AboutPage() {
                 transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl font-semibold text-[#10A37F] mb-2">
+                <div className="text-4xl font-semibold text-white mb-2">
                   <AnimatedCounter end={stat.value} suffix={stat.suffix} label="" />
                 </div>
-                <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]/70">
+                <p className="text-sm text-white/70">
                   {stat.label}
                 </p>
               </motion.div>
@@ -163,13 +188,13 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Values */}
+      {/* Values - LIGHT bg */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-6xl mx-auto py-20 px-6"
       >
         <SectionHeading title="Core Values" centered />
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -182,13 +207,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-6 bg-white dark:bg-[#0D0D0D]"
+                className="border border-[#E5E7EB] rounded-xl p-6 bg-white"
               >
                 <Icon size={24} className="text-[#10A37F] mb-3" />
-                <h3 className="font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                <h3 className="font-semibold text-[#111111] mb-2">
                   {value.title}
                 </h3>
-                <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]/70">
+                <p className="text-sm text-[#6B7280]">
                   {value.description}
                 </p>
               </motion.div>
@@ -197,35 +222,45 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Global Delivery */}
+      {/* Global Delivery - DARK bg, glass-cards */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
       >
-        <SectionHeading title="Global Delivery" centered />
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
+        <motion.div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center"
+            style={{
+              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Global Delivery
+          </h2>
+        </motion.div>
+        <div className="grid md:grid-cols-2 gap-6">
           <motion.div
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#0D0D0D]"
+            className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-8"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-lg bg-[#10A37F] flex items-center justify-center">
                 <MapPin size={24} className="text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC]">
+              <h3 className="text-xl font-semibold text-white">
                 Dallas HQ
               </h3>
             </div>
-            <p className="text-[#6B7280] dark:text-[#ECECEC]/70 text-sm space-y-2">
+            <p className="text-white/70 text-sm space-y-2">
               <span className="block">Strategic leadership and client-facing services</span>
-              <span className="block font-medium text-[#111111] dark:text-[#ECECEC]">14800 Quorum Drive, Suite 285, Dallas, TX 75254</span>
-              <span className="block font-medium text-[#111111] dark:text-[#ECECEC]">408-471-7753</span>
+              <span className="block font-medium text-white">14800 Quorum Drive, Suite 285, Dallas, TX 75254</span>
+              <span className="block font-medium text-white">408-471-7753</span>
             </p>
           </motion.div>
           <motion.div
@@ -234,32 +269,32 @@ export default function AboutPage() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#0D0D0D]"
+            className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-8"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-lg bg-[#10A37F] flex items-center justify-center">
                 <MapPin size={24} className="text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC]">
+              <h3 className="text-xl font-semibold text-white">
                 Mysuru, India
               </h3>
             </div>
-            <p className="text-[#6B7280] dark:text-[#ECECEC]/70 text-sm space-y-2">
+            <p className="text-white/70 text-sm space-y-2">
               <span className="block">24/7 technical expertise and development excellence</span>
-              <span className="block font-medium text-[#111111] dark:text-[#ECECEC]">2nd Floor, 442, Jayachamarajendra Rd, Vijayanagar 1st Stage, Mysuru, Karnataka 570017, India</span>
-              <span className="block font-medium text-[#111111] dark:text-[#ECECEC]">+91 76766 66844</span>
+              <span className="block font-medium text-white">2nd Floor, 442, Jayachamarajendra Rd, Vijayanagar 1st Stage, Mysuru, Karnataka 570017, India</span>
+              <span className="block font-medium text-white">+91 76766 66844</span>
             </p>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* CTA */}
+      {/* CTA - LIGHT bg */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-6xl mx-auto py-20 px-6"
       >
         <CTASection
           title="Ready to Transform Your Business?"

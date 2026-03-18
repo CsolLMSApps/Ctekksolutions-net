@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250" fill="none">
+  <rect width="300" height="250" fill="#E5E7EB"/>
+  <!-- Roads grid -->
+  <line x1="0" y1="80" x2="300" y2="80" stroke="#D1D5DB" stroke-width="2"/>
+  <line x1="0" y1="140" x2="300" y2="140" stroke="#D1D5DB" stroke-width="2"/>
+  <line x1="0" y1="200" x2="300" y2="200" stroke="#D1D5DB" stroke-width="1.5"/>
+  <line x1="100" y1="0" x2="100" y2="250" stroke="#D1D5DB" stroke-width="2"/>
+  <line x1="200" y1="0" x2="200" y2="250" stroke="#D1D5DB" stroke-width="2"/>
+  <line x1="50" y1="0" x2="50" y2="250" stroke="#D1D5DB" stroke-width="1"/>
+  <line x1="150" y1="0" x2="150" y2="250" stroke="#D1D5DB" stroke-width="1"/>
+  <line x1="250" y1="0" x2="250" y2="250" stroke="#D1D5DB" stroke-width="1"/>
+  <!-- Highway -->
+  <path d="M0 50 Q75 70 150 60 Q225 50 300 80" stroke="#9CA3AF" stroke-width="3" fill="none"/>
+  <!-- Quorum Drive -->
+  <line x1="120" y1="0" x2="120" y2="250" stroke="#B0B8C4" stroke-width="3"/>
+  <text x="125" y="172" font-family="Inter, sans-serif" font-size="7" fill="#6B7280" transform="rotate(-90 125 172)">Quorum Dr</text>
+  <!-- Blocks -->
+  <rect x="55" y="90" width="40" height="35" rx="2" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="130" y="90" width="55" height="35" rx="2" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="210" y="90" width="45" height="35" rx="2" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="55" y="148" width="40" height="40" rx="2" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="210" y="148" width="45" height="40" rx="2" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="0.5"/>
+  <!-- Pin -->
+  <circle cx="150" cy="155" r="12" fill="#10A37F" opacity="0.2"/>
+  <circle cx="150" cy="155" r="6" fill="#10A37F"/>
+  <circle cx="150" cy="155" r="3" fill="white"/>
+  <!-- Label -->
+  <rect x="108" y="130" width="84" height="16" rx="3" fill="#10A37F"/>
+  <text x="150" y="141" font-family="Inter, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="600">CTekk Solutions</text>
+  <!-- Dallas label -->
+  <text x="150" y="232" font-family="Inter, sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">14800 Quorum Dr, Suite 285 · Dallas, TX</text>
+</svg>

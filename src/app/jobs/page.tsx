@@ -137,48 +137,53 @@ const itemVariants = {
 export default function JobsPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+      {/* Hero Section - DARK */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' as const }}
-        className="py-20 px-6 text-center"
+        className="bg-[#0A0F1C] text-white py-20 px-6 text-center"
       >
         <div className="max-w-4xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 as const }}
-            className="text-5xl md:text-6xl font-bold mb-6 text-[#111111]"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-6xl font-bold mb-6"
+            style={{
+              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
           >
             Careers at CTekk Solutions
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 as const }}
-            className="text-xl text-[#6B7280] mb-4"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-white/70 mb-4"
           >
             Join a team that's shaping the future of AI talent, training, and technology. We're always looking for exceptional people.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 as const }}
-            className="text-lg text-[#6B7280]"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-lg text-white/60"
           >
             At CTekk, we help professionals advance their careers through innovative platforms and cutting-edge solutions.
           </motion.p>
         </div>
       </motion.section>
 
-      {/* Job Categories */}
+      {/* Job Categories - DARK bg, glass-cards */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {jobCategories.map((cat, idx) => {
@@ -190,10 +195,10 @@ export default function JobsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                className="border border-[#E5E7EB] rounded-xl p-5 bg-white hover:border-[#10A37F] transition-colors"
+                className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 hover:border-white/[0.12] transition-colors"
               >
-                <Icon size={24} className="text-[#10A37F] mb-3" />
-                <h3 className="font-semibold text-[#111111]">
+                <Icon size={24} className="text-[#06B6D4] mb-3" />
+                <h3 className="font-semibold text-white">
                   {cat.label}
                 </h3>
               </motion.div>
@@ -202,13 +207,13 @@ export default function JobsPage() {
         </div>
       </motion.section>
 
-      {/* Open Positions */}
+      {/* Open Positions - LIGHT bg, standard cards */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-6xl mx-auto py-20 px-6"
       >
         <SectionHeading title="Open Positions" centered />
         <motion.div className="mt-12 space-y-4">
@@ -267,16 +272,26 @@ export default function JobsPage() {
         </motion.div>
       </motion.section>
 
-      {/* Benefits */}
+      {/* Benefits - DARK bg, glass-cards */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
       >
-        <SectionHeading title="Why Join CTekk?" centered />
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4"
+            style={{
+              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Why Join CTekk?
+          </h2>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, idx) => {
             const Icon = benefit.icon;
             return (
@@ -286,13 +301,13 @@ export default function JobsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                className="border border-[#E5E7EB] rounded-xl p-6 bg-white"
+                className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6"
               >
-                <Icon size={24} className="text-[#10A37F] mb-3" />
-                <h3 className="font-semibold text-[#111111] mb-2">
+                <Icon size={24} className="text-[#06B6D4] mb-3" />
+                <h3 className="font-semibold text-white mb-2">
                   {benefit.label}
                 </h3>
-                <p className="text-sm text-[#6B7280]">
+                <p className="text-sm text-white/60">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -301,13 +316,13 @@ export default function JobsPage() {
         </div>
       </motion.section>
 
-      {/* Note */}
+      {/* Note - LIGHT bg */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-6xl mx-auto py-20 px-6"
       >
         <div className="border border-[#E5E7EB] rounded-xl p-8 bg-[#F9FAFB] text-center">
           <p className="text-[#6B7280]">
@@ -324,13 +339,13 @@ export default function JobsPage() {
         </div>
       </motion.section>
 
-      {/* CTA */}
+      {/* CTA - LIGHT bg */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-6xl mx-auto py-20 px-6"
       >
         <CTASection
           title="Interested? Let's Talk"

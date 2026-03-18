@@ -118,79 +118,105 @@ const steps = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-white dark:bg-[#0D0D0D]">
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto py-20 px-6 text-center">
-        <motion.div {...fadeIn}>
-          <h1 className="text-4xl font-semibold text-[#111111] dark:text-[#ECECEC] mb-4">
-            Our Services
-          </h1>
-          <p className="text-lg text-[#6B7280] dark:text-[#A3A3A3] max-w-2xl mx-auto">
-            End-to-end technology consulting, training, and talent solutions to transform your business. From AI strategy to execution and workforce development, we deliver results.
-          </p>
-        </motion.div>
+    <main className="bg-white">
+      {/* Hero Section - DARK */}
+      <section className="bg-[#0A0F1C] text-white py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.div {...fadeIn}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#3B82F6] to-[#EC4899] bg-clip-text text-transparent">
+              Our Services
+            </h1>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              End-to-end technology consulting, training, and talent solutions to transform your business. From AI strategy to execution and workforce development, we deliver results.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="max-w-6xl mx-auto py-20 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
+      {/* Services Grid - LIGHT */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={index}
+                  {...fadeIn}
+                  className="group relative rounded-xl overflow-hidden border-2 border-[#E5E7EB] bg-white hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
+                >
+                  {/* Colored top accent bar */}
+                  <div
+                    className="h-1 w-full"
+                    style={{ backgroundColor: service.color }}
+                  />
+                  <div className="p-8">
+                    <div className="mb-6 flex items-center gap-3">
+                      <div
+                        className="p-3 rounded-lg"
+                        style={{ backgroundColor: `${service.color}15` }}
+                      >
+                        <Icon size={28} color={service.color} />
+                      </div>
+                      <h3 className="text-xl font-semibold text-[#111111]">
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="text-[#6B7280] mb-6">{service.description}</p>
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <CheckCircle2 size={20} className="text-[#10A37F] flex-shrink-0 mt-0.5" />
+                          <span className="text-[#111111] text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center gap-2 text-[#10A37F] hover:text-[#0D8B6B] font-semibold transition-colors"
+                    >
+                      {service.cta}
+                      <ArrowRight size={18} />
+                    </a>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section - DARK */}
+      <section className="bg-[#0A0F1C] text-white py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div {...fadeIn} className="text-center mb-16">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#3B82F6] bg-clip-text text-transparent mb-4">
+              Our Process
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {steps.map((step, index) => (
               <motion.div
                 key={index}
                 {...fadeIn}
-                className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#1A1A1A] hover:border-[#10A37F] dark:hover:border-[#10A37F] transition-colors"
+                className="relative group rounded-xl p-8 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300"
               >
-                <div className="mb-6 flex items-center gap-3">
-                  <Icon size={28} color={service.color} />
-                  <h3 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC]">
-                    {service.title}
-                  </h3>
+                {/* Gradient accent top bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#10A37F] via-[#3B82F6] to-transparent rounded-t-xl" />
+                <div className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#3B82F6] bg-clip-text text-transparent mb-4">
+                  {step.number}
                 </div>
-                <p className="text-[#6B7280] dark:text-[#A3A3A3] mb-6">{service.description}</p>
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 size={20} className="text-[#10A37F] flex-shrink-0 mt-0.5" />
-                      <span className="text-[#111111] dark:text-[#ECECEC]">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-[#10A37F] hover:text-[#0D8B6B] dark:hover:text-[#10A37F] font-medium transition-colors"
-                >
-                  {service.cta}
-                  <ArrowRight size={18} />
-                </a>
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-gray-300">{step.description}</p>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="max-w-6xl mx-auto py-20 px-6">
-        <SectionHeading title="Our Process" />
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              {...fadeIn}
-              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-6 bg-[#F9FAFB] dark:bg-[#1A1A1A]"
-            >
-              <div className="text-3xl font-bold text-[#10A37F] mb-4">{step.number}</div>
-              <h3 className="text-lg font-semibold text-[#111111] dark:text-[#ECECEC] mb-3">
-                {step.title}
-              </h3>
-              <p className="text-[#6B7280] dark:text-[#A3A3A3]">{step.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
+      {/* CTA Section - LIGHT */}
       <CTASection
         title="Ready to Get Started?"
         subtitle="Let's discuss how our services can accelerate your business transformation."

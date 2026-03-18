@@ -121,90 +121,114 @@ const benefits = [
 
 export default function PlatformsPage() {
   return (
-    <main className="bg-white dark:bg-[#0D0D0D]">
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto py-20 px-6 text-center">
-        <motion.div {...fadeIn}>
-          <h1 className="text-4xl font-semibold text-[#111111] dark:text-[#ECECEC] mb-4">
-            Our Platforms
-          </h1>
-          <p className="text-lg text-[#6B7280] dark:text-[#A3A3A3] max-w-2xl mx-auto">
-            Innovative technology platforms designed to empower careers, education, and business growth.
-          </p>
-        </motion.div>
+    <main className="bg-white">
+      {/* Hero Section - DARK */}
+      <section className="bg-[#0A0F1C] text-white py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.div {...fadeIn}>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent">
+              Our Platforms
+            </h1>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Innovative technology platforms designed to empower careers, education, and business growth.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
-      {/* Platforms Grid */}
-      <section className="max-w-6xl mx-auto py-20 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {platforms.map((platform, index) => {
-            const Icon = platform.icon;
-            return (
-              <motion.div
-                key={index}
-                {...fadeIn}
-                className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#1A1A1A] hover:border-[#10A37F] dark:hover:border-[#10A37F] transition-colors"
-              >
-                <div className="mb-6 flex items-center gap-3">
-                  <Icon size={28} color={platform.color} />
-                  <h3 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC]">
-                    {platform.title}
-                  </h3>
-                </div>
-                <p className="text-[#6B7280] dark:text-[#A3A3A3] mb-6 text-sm">
-                  {platform.url}
-                </p>
-                <p className="text-[#111111] dark:text-[#ECECEC] mb-6">{platform.description}</p>
-                <ul className="space-y-3 mb-8">
-                  {platform.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <div
-                        className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2"
-                        style={{ backgroundColor: platform.color }}
-                      />
-                      <span className="text-[#111111] dark:text-[#ECECEC] text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={`https://${platform.url}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#10A37F] hover:text-[#0D8B6B] dark:hover:text-[#10A37F] font-medium transition-colors"
+      {/* Platforms Grid - DARK with Glass Cards */}
+      <section className="bg-[#0A0F1C] text-white py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {platforms.map((platform, index) => {
+              const Icon = platform.icon;
+              return (
+                <motion.div
+                  key={index}
+                  {...fadeIn}
+                  className="group relative rounded-xl overflow-hidden bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl p-8 hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300"
                 >
-                  Visit Platform
-                  <ExternalLink size={18} />
-                </a>
-              </motion.div>
-            );
-          })}
+                  {/* Gradient accent top bar */}
+                  <div
+                    className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r"
+                    style={{
+                      backgroundImage: `linear-gradient(to right, ${platform.color}, transparent)`,
+                    }}
+                  />
+                  <div className="mb-6 flex items-center gap-3">
+                    <div
+                      className="p-3 rounded-lg"
+                      style={{ backgroundColor: `${platform.color}20` }}
+                    >
+                      <Icon size={28} color={platform.color} />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white">
+                      {platform.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-400 mb-4 text-sm">
+                    {platform.url}
+                  </p>
+                  <p className="text-gray-200 mb-6">{platform.description}</p>
+                  <ul className="space-y-3 mb-8">
+                    {platform.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <div
+                          className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2"
+                          style={{ backgroundColor: platform.color }}
+                        />
+                        <span className="text-gray-300 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={`https://${platform.url}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#10A37F] hover:text-[#13C992] font-semibold transition-colors"
+                  >
+                    Visit Platform
+                    <ExternalLink size={18} />
+                  </a>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="max-w-6xl mx-auto py-20 px-6">
-        <SectionHeading title="Why Our Platforms" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <motion.div
-                key={index}
-                {...fadeIn}
-                className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-6 bg-[#F9FAFB] dark:bg-[#1A1A1A]"
-              >
-                <Icon size={24} className="text-[#10A37F] mb-4" />
-                <h3 className="text-lg font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-[#6B7280] dark:text-[#A3A3A3]">{benefit.description}</p>
-              </motion.div>
-            );
-          })}
+      {/* Benefits Section - LIGHT */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div {...fadeIn} className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#111111] mb-4">
+              Why Our Platforms
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
+              return (
+                <motion.div
+                  key={index}
+                  {...fadeIn}
+                  className="group rounded-xl border-2 border-[#E5E7EB] bg-white p-8 hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="p-3 rounded-lg bg-gradient-to-br from-[#10A37F]/10 to-[#3B82F6]/10 inline-block mb-4">
+                    <Icon size={24} className="text-[#10A37F]" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#111111] mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-[#6B7280]">{benefit.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - LIGHT */}
       <CTASection
         title="Ready to Explore Our Platforms?"
         subtitle="Get started with CTekk Solutions today and unlock the power of integrated career, education, and learning solutions."

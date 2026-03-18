@@ -72,63 +72,88 @@ const itemVariants = {
 
 export default function InsightsPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0D0D0D]">
-      {/* Hero */}
+    <div className="min-h-screen bg-white">
+      {/* Hero - DARK */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' as const }}
-        className="py-20 px-6 text-center"
+        className="bg-[#0A0F1C] text-white py-20 px-6 text-center"
       >
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#111111] dark:text-[#ECECEC]">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-5xl md:text-6xl font-bold mb-6"
+            style={{
+              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
             Insights & Resources
-          </h1>
-          <p className="text-xl text-[#6B7280] dark:text-[#ECECEC]/70">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-white/70"
+          >
             Latest articles on AI, cloud computing, and technology
-          </p>
+          </motion.p>
         </div>
       </motion.section>
 
-      {/* Featured Article */}
+      {/* Featured Article - DARK bg, glass-card */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
       >
-        <SectionHeading title="Featured Article" centered={false} />
+        <motion.div className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold"
+            style={{
+              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Featured Article
+          </h2>
+        </motion.div>
         <motion.div
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-8 border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#0D0D0D] hover:border-[#10A37F] transition-colors"
+          className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-8 hover:border-white/[0.12] transition-colors"
         >
           <div className="flex flex-col lg:flex-row gap-8">
-            <div className="lg:w-1/3 h-48 rounded-lg bg-gradient-to-br from-[#10A37F]/10 to-[#10A37F]/5" />
+            <div className="lg:w-1/3 h-48 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#06B6D4]/20" />
             <div className="lg:w-2/3 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-medium text-[#10A37F] bg-[#F0FDF9] dark:bg-[#10A37F]/10 px-3 py-1 rounded-full inline-block mb-4">
+                <span className="text-xs font-medium text-[#06B6D4] bg-[#06B6D4]/10 px-3 py-1 rounded-full inline-block mb-4">
                   {featuredArticle.category}
                 </span>
-                <h3 className="text-2xl font-semibold text-[#111111] dark:text-[#ECECEC] mb-3">
+                <h3 className="text-2xl font-semibold text-white mb-3">
                   {featuredArticle.title}
                 </h3>
-                <p className="text-[#6B7280] dark:text-[#ECECEC]/70 mb-4">
+                <p className="text-white/70 mb-4">
                   {featuredArticle.excerpt}
                 </p>
               </div>
               <div className="flex items-center justify-between">
-                <div className="flex gap-4 text-sm text-[#6B7280] dark:text-[#ECECEC]/70">
+                <div className="flex gap-4 text-sm text-white/60">
                   <span>{featuredArticle.date}</span>
                   <span className="flex items-center gap-1">
                     <Clock size={16} />
                     {featuredArticle.readTime}
                   </span>
                 </div>
-                <div className="flex items-center gap-1 text-[#10A37F] font-medium">
+                <div className="flex items-center gap-1 text-[#06B6D4] font-medium">
                   Read <ArrowRight size={18} />
                 </div>
               </div>
@@ -137,13 +162,13 @@ export default function InsightsPage() {
         </motion.div>
       </motion.section>
 
-      {/* Category Filter */}
+      {/* Category Filter + Articles Grid - LIGHT bg */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-8 px-6"
+        className="bg-white max-w-6xl mx-auto py-8 px-6"
       >
         <div className="flex flex-wrap gap-2 justify-center">
           {categories.map((cat, idx) => (
@@ -156,7 +181,7 @@ export default function InsightsPage() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 idx === 0
                   ? 'bg-[#10A37F] text-white'
-                  : 'bg-[#F9FAFB] dark:bg-[#2D2D2D] text-[#6B7280] dark:text-[#ECECEC]/70 hover:border-[#10A37F] border border-[#E5E7EB] dark:border-[#2D2D2D]'
+                  : 'bg-[#F9FAFB] text-[#6B7280] hover:border-[#10A37F] border border-[#E5E7EB]'
               }`}
             >
               {cat}
@@ -165,13 +190,13 @@ export default function InsightsPage() {
         </div>
       </motion.section>
 
-      {/* Articles Grid */}
+      {/* Articles Grid - LIGHT bg */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-6xl mx-auto py-20 px-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((article, idx) => (
@@ -182,20 +207,20 @@ export default function InsightsPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl overflow-hidden bg-white dark:bg-[#0D0D0D] hover:border-[#10A37F] transition-colors group"
+              className="border border-[#E5E7EB] rounded-xl overflow-hidden bg-white hover:border-[#10A37F] transition-colors group"
             >
-              <div className="h-40 bg-gradient-to-br from-[#10A37F]/10 to-[#10A37F]/5" />
+              <div className="h-40 bg-gradient-to-br from-[#10A37F]/10 to-[#06B6D4]/10" />
               <div className="p-6">
-                <span className="text-xs font-medium text-[#10A37F] bg-[#F0FDF9] dark:bg-[#10A37F]/10 px-2 py-1 rounded-full inline-block mb-3">
+                <span className="text-xs font-medium text-[#10A37F] bg-[#F0FDF9] px-2 py-1 rounded-full inline-block mb-3">
                   {article.category}
                 </span>
-                <h3 className="font-semibold text-[#111111] dark:text-[#ECECEC] mb-2 line-clamp-2 text-sm">
+                <h3 className="font-semibold text-[#111111] mb-2 line-clamp-2 text-sm">
                   {article.title}
                 </h3>
-                <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]/70 mb-4 line-clamp-2">
+                <p className="text-sm text-[#6B7280] mb-4 line-clamp-2">
                   {article.excerpt}
                 </p>
-                <div className="flex items-center justify-between pt-4 border-t border-[#E5E7EB] dark:border-[#2D2D2D] text-xs text-[#6B7280] dark:text-[#ECECEC]/70">
+                <div className="flex items-center justify-between pt-4 border-t border-[#E5E7EB] text-xs text-[#6B7280]">
                   <div className="flex gap-2">
                     <span>{article.date}</span>
                     <span className="flex items-center gap-1">
@@ -211,13 +236,13 @@ export default function InsightsPage() {
         </div>
       </motion.section>
 
-      {/* CTA */}
+      {/* CTA - LIGHT bg */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-6xl mx-auto py-20 px-6"
       >
         <CTASection
           title="Ready to Learn More?"

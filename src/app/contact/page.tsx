@@ -141,28 +141,83 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[250px_1fr_250px] gap-8">
           {/* LEFT COLUMN */}
           <div className="space-y-6">
-            {/* Ad Box 1 — Employers */}
-            <motion.a
-              href="https://www.dfwitjobs.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Ad Card 1 — AI Job Board */}
+            <motion.div
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="w-full aspect-square max-w-[250px] rounded-xl overflow-hidden bg-gradient-to-br from-[#0A0F1C] to-[#111827] p-5 text-white hover:shadow-lg transition-shadow"
+              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
-              <div className="flex flex-col h-full">
-                <Briefcase size={32} className="text-[#10A37F] mb-3" />
-                <h3 className="font-semibold text-sm mb-2">Post Jobs on DFWITJOBS</h3>
-                <p className="text-xs text-gray-400 flex-grow">
-                  Reach qualified STEM and AI talent in the DFW area and beyond.
-                </p>
-                <button className="bg-[#10A37F] text-white text-xs px-3 py-1.5 rounded-md hover:bg-[#0D8A6A] transition-colors inline-flex items-center gap-1 mt-3">
-                  Post a Job <ArrowRight size={12} />
-                </button>
+              {/* Gradient top bar */}
+              <div className="h-1 bg-gradient-to-r from-[#10A37F] to-[#06B6D4]" />
+              <div className="p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
+                </div>
+                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">AI JOB BOARD</p>
+                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">The AI-Only Job Board</h3>
+                <p className="text-xs text-[#6B7280] mb-3">AI Jobs. Real Opportunities.</p>
+                <ul className="space-y-1.5 mb-4">
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Machine Learning &amp; LLM roles
+                  </li>
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> GenAI, MLOps &amp; AI Engineer jobs
+                  </li>
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Every role verified — no AI-washed listings
+                  </li>
+                </ul>
+                <a
+                  href="https://www.dfwitjobs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 bg-[#10A37F] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#0D8A6A] transition-colors"
+                >
+                  Learn More <ArrowRight size={12} />
+                </a>
               </div>
-            </motion.a>
+            </motion.div>
+
+            {/* Ad Card 2 — Advertise / Employers */}
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+            >
+              <div className="h-1 bg-gradient-to-r from-[#F59E0B] to-[#EF4444]" />
+              <div className="p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
+                </div>
+                <p className="text-[10px] font-semibold text-[#F59E0B] uppercase tracking-wider mb-1">ADVERTISE HERE</p>
+                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Reach DFW IT Talent</h3>
+                <p className="text-xs text-[#6B7280] mb-3">Your brand in front of thousands of active IT professionals.</p>
+                <ul className="space-y-1.5 mb-4">
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Highly targeted tech audience
+                  </li>
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Affordable sponsored placements
+                  </li>
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Contact us to get started
+                  </li>
+                </ul>
+                <a
+                  href="https://www.dfwitjobs.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 bg-[#10A37F] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#0D8A6A] transition-colors"
+                >
+                  Learn More <ArrowRight size={12} />
+                </a>
+              </div>
+            </motion.div>
 
             {/* Company Contact Info */}
             <motion.div
@@ -170,55 +225,20 @@ export default function ContactPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-5 bg-white dark:bg-[#111827]"
+              transition={{ delay: 0.15 }}
+              className="rounded-xl p-5 bg-[#F9FAFB] dark:bg-[#0A0F1C] border border-[#E5E7EB] dark:border-[#2D2D2D]"
             >
-              <div className="space-y-4">
-                {/* Dallas */}
+              <p className="text-[10px] font-semibold text-[#6B7280] uppercase tracking-wider mb-3">OUR OFFICE</p>
+              <div className="space-y-3">
                 <div>
-                  <p className="text-xs font-semibold text-[#10A37F] mb-1">Dallas, TX — HQ</p>
-                  <div className="space-y-2">
-                    <div className="flex gap-2">
-                      <MapPin size={16} className="text-[#6B7280] flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]">
-                        14800 Quorum Drive, Suite 285, Dallas, TX 75254
-                      </p>
-                    </div>
-                    <div className="flex gap-2">
-                      <Phone size={16} className="text-[#6B7280] flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]">408-471-7753</p>
-                    </div>
-                  </div>
+                  <p className="font-semibold text-[#111] dark:text-white text-sm">C Tekk Solutions Inc.</p>
+                  <p className="text-xs text-[#6B7280] mt-1">14800 Quorum Drive, Suite 285</p>
+                  <p className="text-xs text-[#6B7280]">Dallas, TX 75254</p>
+                  <a href="tel:408-471-7753" className="text-xs text-[#10A37F] hover:underline mt-1 block">408-471-7753</a>
+                  <a href="mailto:info@ctekksolutions.net" className="text-xs text-[#10A37F] hover:underline block">info@ctekksolutions.net</a>
                 </div>
-
-                {/* Divider */}
-                <div className="border-t border-[#E5E7EB] dark:border-[#2D2D2D]"></div>
-
-                {/* Mysuru */}
-                <div>
-                  <p className="text-xs font-semibold text-[#10A37F] mb-1">Mysuru, India</p>
-                  <div className="space-y-2">
-                    <div className="flex gap-2">
-                      <MapPin size={16} className="text-[#6B7280] flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]">
-                        2nd Floor, 442, Jayachamarajendra Rd, Vijayanagar, Mysuru, Karnataka 570017
-                      </p>
-                    </div>
-                    <div className="flex gap-2">
-                      <Phone size={16} className="text-[#6B7280] flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]">+91 76766 66844</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Email */}
-                <div>
-                  <div className="flex gap-2">
-                    <Mail size={16} className="text-[#6B7280] flex-shrink-0 mt-0.5" />
-                    <a href="mailto:info@ctekksolutions.net" className="text-sm text-[#10A37F] hover:underline">
-                      info@ctekksolutions.net
-                    </a>
-                  </div>
+                <div className="border-t border-[#E5E7EB] dark:border-[#2D2D2D] pt-3">
+                  <p className="text-[10px] text-[#6B7280]">Mon–Fri, 9 AM – 6 PM CST</p>
                 </div>
               </div>
             </motion.div>
@@ -343,53 +363,133 @@ export default function ContactPage() {
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
+
+            {/* Quick Action Icons — below form */}
+            <p className="text-xs text-center text-[#6B7280] mt-4">For urgent employer support, email <a href="mailto:info@ctekksolutions.net" className="text-[#10A37F] hover:underline">info@ctekksolutions.net</a></p>
+            <div className="grid grid-cols-3 gap-3 mt-4">
+              <a href="/services" className="flex flex-col items-center gap-1 p-3 rounded-lg border border-[#E5E7EB] dark:border-[#2D2D2D] hover:border-[#10A37F] transition-colors text-center">
+                <Briefcase size={20} className="text-[#10A37F]" />
+                <span className="text-[10px] text-[#6B7280] dark:text-[#9CA3AF]">Hire Talent</span>
+              </a>
+              <a href="/education" className="flex flex-col items-center gap-1 p-3 rounded-lg border border-[#E5E7EB] dark:border-[#2D2D2D] hover:border-[#10A37F] transition-colors text-center">
+                <BookOpen size={20} className="text-[#10A37F]" />
+                <span className="text-[10px] text-[#6B7280] dark:text-[#9CA3AF]">AI Training</span>
+              </a>
+              <a href="/platforms" className="flex flex-col items-center gap-1 p-3 rounded-lg border border-[#E5E7EB] dark:border-[#2D2D2D] hover:border-[#10A37F] transition-colors text-center">
+                <ArrowRight size={20} className="text-[#10A37F]" />
+                <span className="text-[10px] text-[#6B7280] dark:text-[#9CA3AF]">Platforms</span>
+              </a>
+            </div>
           </motion.div>
 
           {/* RIGHT COLUMN */}
           <div className="space-y-6">
-            {/* Ad Box 2 — AI Training */}
-            <motion.a
-              href="https://www.ailearnhub.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="w-full aspect-square max-w-[250px] rounded-xl overflow-hidden bg-gradient-to-br from-[#10A37F]/10 to-[#06B6D4]/10 border border-[#10A37F]/20 p-5 text-[#111111] dark:text-[#ECECEC] hover:shadow-lg transition-shadow"
-            >
-              <div className="flex flex-col h-full">
-                <BookOpen size={32} className="text-[#10A37F] mb-3" />
-                <h3 className="font-semibold text-sm mb-2">Upskill with AI Learn Hub</h3>
-                <p className="text-xs text-[#6B7280] flex-grow">
-                  From fundamentals to advanced AI — live training for professionals and enterprises.
-                </p>
-                <button className="bg-[#10A37F] text-white text-xs px-3 py-1.5 rounded-md hover:bg-[#0D8A6A] transition-colors inline-flex items-center gap-1 mt-3">
-                  Explore Courses <ArrowRight size={12} />
-                </button>
-              </div>
-            </motion.a>
-
-            {/* Static Map */}
+            {/* Ad Card 3 — AI Learning Platform */}
             <motion.div
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl overflow-hidden"
+              transition={{ delay: 0.2 }}
+              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
-              <div className="w-full h-[200px] bg-gradient-to-br from-[#F9FAFB] to-[#E5E7EB] dark:from-[#111827] dark:to-[#0A0F1C] flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin size={40} className="text-[#10A37F] mx-auto mb-2" />
-                  <p className="text-xs text-[#6B7280] dark:text-[#ECECEC]/70">Map coming soon</p>
+              <div className="h-1 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6]" />
+              <div className="p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
                 </div>
+                <p className="text-[10px] font-semibold text-[#EC4899] uppercase tracking-wider mb-1">AI LEARNING PLATFORM</p>
+                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">#1 AI Platform for Professionals</h3>
+                <p className="text-xs text-[#6B7280] mb-3">Master AI. Less theory. More real-life AI.</p>
+                <ul className="space-y-1.5 mb-4">
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Apply AI to everyday decisions
+                  </li>
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> LLM, GenAI &amp; workflow automation
+                  </li>
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Clarity over complexity
+                  </li>
+                </ul>
+                <a
+                  href="https://www.ailearnhub.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 bg-[#EC4899] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#DB2777] transition-colors"
+                >
+                  Learn More <ArrowRight size={12} />
+                </a>
               </div>
-              <div className="p-3 bg-white dark:bg-[#111827]">
-                <p className="text-xs text-[#6B7280] dark:text-[#ECECEC]/70 text-center">
-                  14800 Quorum Dr, Suite 285, Dallas, TX
-                </p>
+            </motion.div>
+
+            {/* Ad Card 4 — Sponsor This Space */}
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+            >
+              <div className="h-1 bg-gradient-to-r from-[#F97316] to-[#EF4444]" />
+              <div className="p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
+                </div>
+                <p className="text-[10px] font-semibold text-[#F97316] uppercase tracking-wider mb-1">ADVERTISE HERE</p>
+                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Sponsor This Space</h3>
+                <p className="text-xs text-[#6B7280] mb-3">Reach thousands of DFW tech professionals every month.</p>
+                <ul className="space-y-1.5 mb-4">
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> IT job seekers &amp; employers
+                  </li>
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Flexible ad formats
+                  </li>
+                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
+                    <span className="text-[#6B7280] mt-0.5">›</span> Contact us to get started
+                  </li>
+                </ul>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-1 bg-[#F97316] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#EA580C] transition-colors"
+                >
+                  Learn More <ArrowRight size={12} />
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Find Us — Map */}
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.35 }}
+              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+            >
+              <div className="p-4 border-b border-[#E5E7EB] dark:border-[#2D2D2D] flex items-center gap-2">
+                <MapPin size={16} className="text-[#10A37F]" />
+                <span className="text-sm font-semibold text-[#111] dark:text-white">Find Us</span>
+              </div>
+              <Image
+                src="/map-dallas.svg"
+                alt="CTekk Solutions Dallas Office Map"
+                width={280}
+                height={220}
+                className="w-full h-auto"
+              />
+              <div className="p-3 flex items-center justify-between">
+                <p className="text-[10px] text-[#6B7280]">14800 Quorum Dr, Suite 285, Dallas, TX</p>
+                <a
+                  href="https://maps.google.com/?q=14800+Quorum+Dr+Suite+285+Dallas+TX+75254"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] text-[#10A37F] hover:underline"
+                >
+                  Open in Maps ↗
+                </a>
               </div>
             </motion.div>
           </div>

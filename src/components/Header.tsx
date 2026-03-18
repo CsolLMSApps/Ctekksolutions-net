@@ -35,9 +35,9 @@ const Header = () => {
               <Image
                 src="/logo.svg"
                 alt="CSOL - C.Tekk Solutions Inc"
-                width={120}
-                height={48}
-                className="h-8 w-auto invert"
+                width={180}
+                height={56}
+                className="h-11 w-auto invert"
                 priority
               />
             </Link>

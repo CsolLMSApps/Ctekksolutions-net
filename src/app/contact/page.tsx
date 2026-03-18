@@ -121,7 +121,7 @@ export default function ContactPage() {
         className="bg-[#0A0F1C] text-white py-16 px-6 text-center"
       >
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#06B6D4] to-[#3B82F6] bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
             Get in Touch
           </h1>
           <p className="text-xl text-gray-400">
@@ -150,7 +150,7 @@ export default function ContactPage() {
               className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
               {/* Gradient top bar */}
-              <div className="h-1 bg-gradient-to-r from-[#10A37F] to-[#06B6D4]" />
+              <div className="h-1 bg-gradient-to-r from-[#10A37F] to-[#34D399]" />
               <div className="p-5">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
@@ -189,12 +189,12 @@ export default function ContactPage() {
               transition={{ delay: 0.1 }}
               className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
-              <div className="h-1 bg-gradient-to-r from-[#F59E0B] to-[#EF4444]" />
+              <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
               <div className="p-5">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
                 </div>
-                <p className="text-[10px] font-semibold text-[#F59E0B] uppercase tracking-wider mb-1">ADVERTISE HERE</p>
+                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">ADVERTISE HERE</p>
                 <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Reach DFW IT Talent</h3>
                 <p className="text-xs text-[#6B7280] mb-3">Your brand in front of thousands of active IT professionals.</p>
                 <ul className="space-y-1.5 mb-4">
@@ -393,12 +393,12 @@ export default function ContactPage() {
               transition={{ delay: 0.2 }}
               className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
-              <div className="h-1 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6]" />
+              <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
               <div className="p-5">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
                 </div>
-                <p className="text-[10px] font-semibold text-[#EC4899] uppercase tracking-wider mb-1">AI LEARNING PLATFORM</p>
+                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">AI LEARNING PLATFORM</p>
                 <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">#1 AI Platform for Professionals</h3>
                 <p className="text-xs text-[#6B7280] mb-3">Master AI. Less theory. More real-life AI.</p>
                 <ul className="space-y-1.5 mb-4">
@@ -416,7 +416,7 @@ export default function ContactPage() {
                   href="https://www.ailearnhub.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 bg-[#EC4899] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#DB2777] transition-colors"
+                  className="inline-flex items-center gap-1 bg-[#10A37F] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#059669] transition-colors"
                 >
                   Learn More <ArrowRight size={12} />
                 </a>
@@ -432,12 +432,12 @@ export default function ContactPage() {
               transition={{ delay: 0.3 }}
               className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
-              <div className="h-1 bg-gradient-to-r from-[#F97316] to-[#EF4444]" />
+              <div className="h-1 bg-gradient-to-r from-[#0D8A6A] to-[#10A37F]" />
               <div className="p-5">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
                 </div>
-                <p className="text-[10px] font-semibold text-[#F97316] uppercase tracking-wider mb-1">ADVERTISE HERE</p>
+                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">ADVERTISE HERE</p>
                 <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Sponsor This Space</h3>
                 <p className="text-xs text-[#6B7280] mb-3">Reach thousands of DFW tech professionals every month.</p>
                 <ul className="space-y-1.5 mb-4">
@@ -453,7 +453,7 @@ export default function ContactPage() {
                 </ul>
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-1 bg-[#F97316] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#EA580C] transition-colors"
+                  className="inline-flex items-center gap-1 bg-[#10A37F] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#059669] transition-colors"
                 >
                   Learn More <ArrowRight size={12} />
                 </a>

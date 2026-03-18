@@ -142,7 +142,7 @@ export default function JobsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' as const }}
-        className="bg-[#0A0F1C] text-white py-20 px-6 text-center"
+        className="bg-[#0A0F1C] text-white py-16 px-6 text-center"
       >
         <div className="max-w-4xl mx-auto">
           <motion.h1
@@ -151,7 +151,7 @@ export default function JobsPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl font-bold mb-6"
             style={{
-              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              background: 'linear-gradient(135deg, #10A37F, #34D399, #6EE7B7)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}
@@ -177,33 +177,35 @@ export default function JobsPage() {
         </div>
       </motion.section>
 
-      {/* Job Categories - DARK bg, glass-cards */}
+      {/* Job Categories - LIGHT bg */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#F9FAFB] py-16 px-6"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {jobCategories.map((cat, idx) => {
-            const Icon = cat.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-5 hover:border-white/[0.12] transition-colors"
-              >
-                <Icon size={24} className="text-[#06B6D4] mb-3" />
-                <h3 className="font-semibold text-white">
-                  {cat.label}
-                </h3>
-              </motion.div>
-            );
-          })}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {jobCategories.map((cat, idx) => {
+              const Icon = cat.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
+                  className="bg-white border border-[#E5E7EB] rounded-xl p-6 hover:border-[#10A37F] transition-colors"
+                >
+                  <Icon size={28} className="text-[#10A37F] mb-3" />
+                  <h3 className="font-semibold text-[#111827]">
+                    {cat.label}
+                  </h3>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </motion.section>
 
@@ -213,63 +215,65 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white max-w-6xl mx-auto py-20 px-6"
+        className="bg-white py-16 px-6"
       >
-        <SectionHeading title="Open Positions" centered />
-        <motion.div className="mt-12 space-y-4">
-          {jobs.map((job, idx) => (
-            <motion.div
-              key={idx}
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              className="border border-[#E5E7EB] rounded-xl p-6 bg-white hover:border-[#10A37F] transition-all"
-            >
-              <div className="mb-4">
-                <h3 className="font-semibold text-[#111111] text-lg mb-3">
-                  {job.title}
-                </h3>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="text-xs bg-[#F9FAFB] text-[#6B7280] px-3 py-1 rounded-full">
-                    {job.department}
-                  </span>
-                  <span className="text-xs bg-[#F9FAFB] text-[#6B7280] px-3 py-1 rounded-full">
-                    {job.location}
-                  </span>
-                  <span className="text-xs bg-[#F9FAFB] text-[#6B7280] px-3 py-1 rounded-full">
-                    {job.type}
-                  </span>
-                  <span className="text-xs bg-[#F9FAFB] text-[#6B7280] px-3 py-1 rounded-full">
-                    Posted: {job.posted}
-                  </span>
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="font-semibold text-[#111111] text-sm mb-2">Duties</h4>
-                <p className="text-sm text-[#6B7280] leading-relaxed">
-                  {job.duties}
-                </p>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="font-semibold text-[#111111] text-sm mb-2">Requirements</h4>
-                <p className="text-sm text-[#6B7280] leading-relaxed">
-                  {job.requirements}
-                </p>
-              </div>
-
-              <Link
-                href="/contact"
-                className="inline-block px-6 py-2 bg-[#10A37F] text-white rounded-lg font-medium hover:bg-[#0D8A6A] transition-colors"
+        <div className="max-w-6xl mx-auto">
+          <SectionHeading title="Open Positions" centered />
+          <motion.div className="mt-12 space-y-4">
+            {jobs.map((job, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="border border-[#E5E7EB] rounded-xl p-6 bg-white hover:border-[#10A37F] transition-all"
               >
-                Apply Now
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
+                <div className="mb-4">
+                  <h3 className="font-semibold text-[#111827] text-lg mb-3">
+                    {job.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs text-[#10A37F] font-medium">
+                      {job.department}
+                    </span>
+                    <span className="text-xs text-[#6B7280]">
+                      {job.location}
+                    </span>
+                    <span className="text-xs text-[#6B7280]">
+                      {job.type}
+                    </span>
+                    <span className="text-xs text-[#6B7280]">
+                      Posted: {job.posted}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <h4 className="font-semibold text-[#111827] text-sm mb-2">Duties</h4>
+                  <p className="text-sm text-[#6B7280] leading-relaxed">
+                    {job.duties}
+                  </p>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="font-semibold text-[#111827] text-sm mb-2">Requirements</h4>
+                  <p className="text-sm text-[#6B7280] leading-relaxed">
+                    {job.requirements}
+                  </p>
+                </div>
+
+                <Link
+                  href="/contact"
+                  className="inline-block text-sm bg-[#10A37F] text-white px-4 py-1.5 rounded-md hover:bg-[#059669] transition-colors"
+                >
+                  Apply
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </motion.section>
 
       {/* Benefits - DARK bg, glass-cards */}
@@ -278,41 +282,43 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#111827] py-16 px-6"
       >
-        <motion.div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4"
-            style={{
-              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
-            Why Join CTekk?
-          </h2>
-        </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benefits.map((benefit, idx) => {
-            const Icon = benefit.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6"
-              >
-                <Icon size={24} className="text-[#06B6D4] mb-3" />
-                <h3 className="font-semibold text-white mb-2">
-                  {benefit.label}
-                </h3>
-                <p className="text-sm text-white/60">
-                  {benefit.description}
-                </p>
-              </motion.div>
-            );
-          })}
+        <div className="max-w-6xl mx-auto">
+          <motion.div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4"
+              style={{
+                background: 'linear-gradient(135deg, #10A37F, #34D399, #6EE7B7)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Why Join CTekk?
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit, idx) => {
+              const Icon = benefit.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
+                  className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6"
+                >
+                  <Icon size={24} className="text-[#10A37F] mb-3" />
+                  <h3 className="font-semibold text-white mb-2">
+                    {benefit.label}
+                  </h3>
+                  <p className="text-sm text-white/60">
+                    {benefit.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </motion.section>
 
@@ -322,20 +328,22 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#F9FAFB] py-8 px-6"
       >
-        <div className="border border-[#E5E7EB] rounded-xl p-8 bg-[#F9FAFB] text-center">
-          <p className="text-[#6B7280]">
-            These positions are internal to CTekk Solutions. For external staffing and contract opportunities, visit{' '}
-            <a href="https://dfwitjobs.com" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
-              DFWITJOBS
-            </a>
-            {' '}or{' '}
-            <a href="https://optplanet.tech" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
-              OPTPlanet.tech
-            </a>
-            .
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="border border-[#E5E7EB] rounded-xl p-8 bg-white text-center">
+            <p className="text-[#6B7280]">
+              These positions are internal to CTekk Solutions. For external staffing and contract opportunities, visit{' '}
+              <a href="https://dfwitjobs.com" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
+                DFWITJOBS
+              </a>
+              {' '}or{' '}
+              <a href="https://optplanet.tech" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
+                OPTPlanet.tech
+              </a>
+              .
+            </p>
+          </div>
         </div>
       </motion.section>
 
@@ -345,12 +353,14 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white max-w-6xl mx-auto py-20 px-6"
+        className="bg-white py-8 px-6"
       >
-        <CTASection
-          title="Interested? Let's Talk"
-          primaryCTA={{ text: 'Get in Touch', href: '/contact' }}
-        />
+        <div className="max-w-6xl mx-auto">
+          <CTASection
+            title="Interested? Let's Talk"
+            primaryCTA={{ text: 'Get in Touch', href: '/contact' }}
+          />
+        </div>
       </motion.section>
     </div>
   );

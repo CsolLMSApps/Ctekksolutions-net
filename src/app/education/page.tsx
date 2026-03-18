@@ -53,31 +53,31 @@ const courses = [
     icon: Zap,
     title: 'Deep Learning',
     description: 'Explore neural networks, backpropagation, and modern deep learning frameworks.',
-    color: '#3B82F6',
+    color: '#059669',
   },
   {
     icon: MessageSquare,
     title: 'NLP',
     description: 'Learn text processing, language models, and transformer architectures.',
-    color: '#8B5CF6',
+    color: '#34D399',
   },
   {
     icon: Eye,
     title: 'Computer Vision',
     description: 'Master image processing, object detection, and visual recognition systems.',
-    color: '#F59E0B',
+    color: '#6EE7B7',
   },
   {
     icon: Briefcase,
     title: 'AI for Business',
     description: 'Strategic insights on implementing AI in enterprises and measuring ROI.',
-    color: '#EC4899',
+    color: '#0D8A6A',
   },
   {
     icon: Database,
     title: 'Data Engineering & MLOps',
     description: 'Build scalable data pipelines and deploy models in production.',
-    color: '#06B6D4',
+    color: '#10A37F',
   },
 ];
 
@@ -86,7 +86,7 @@ const platforms = [
     name: 'AI Learn Hub',
     url: 'www.ailearnhub.io',
     description: 'Comprehensive online learning platform',
-    color: '#F59E0B',
+    color: '#34D399',
     features: [
       'Interactive courses with hands-on projects',
       'Expert-led workshops and seminars',
@@ -98,7 +98,7 @@ const platforms = [
     name: 'Benzaiten LMS',
     url: 'benzaitenlms.com',
     description: 'Enterprise learning management system',
-    color: '#EC4899',
+    color: '#6EE7B7',
     features: [
       'Custom curriculum development',
       'Progress tracking and analytics',
@@ -134,7 +134,7 @@ export default function EducationPage() {
       <section className="bg-[#0A0F1C] text-white py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div {...fadeIn}>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#3B82F6] to-[#8B5CF6] bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
               AI Education & Training
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -156,7 +156,7 @@ export default function EducationPage() {
                   {...fadeIn}
                   className="group rounded-xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl p-8 hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300 text-center"
                 >
-                  <div className="p-3 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#3B82F6]/20 inline-block mb-4">
+                  <div className="p-3 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#34D399]/20 inline-block mb-4">
                     <Icon size={32} className="text-[#10A37F]" />
                   </div>
                   <h3 className="font-semibold text-white mb-2">
@@ -215,7 +215,7 @@ export default function EducationPage() {
       <section className="bg-[#0A0F1C] text-white py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#3B82F6] bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#34D399] bg-clip-text text-transparent mb-4">
               Learning Platforms
             </h2>
           </motion.div>
@@ -269,7 +269,7 @@ export default function EducationPage() {
             className="relative rounded-xl overflow-hidden border-2 border-[#10A37F] p-8 bg-gradient-to-br from-[#F0FDF9] to-white hover:shadow-lg transition-all duration-300"
           >
             {/* Accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#10A37F] via-[#3B82F6] to-[#8B5CF6]" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7]" />
             <div className="flex items-start gap-4">
               <div className="p-3 rounded-lg bg-[#10A37F]/10 flex-shrink-0">
                 <Rocket size={32} className="text-[#10A37F]" />

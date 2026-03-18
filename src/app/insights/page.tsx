@@ -87,7 +87,7 @@ export default function InsightsPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl font-bold mb-6"
             style={{
-              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              background: 'linear-gradient(135deg, #10A37F, #34D399, #6EE7B7)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}
@@ -116,7 +116,7 @@ export default function InsightsPage() {
         <motion.div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold"
             style={{
-              background: 'linear-gradient(135deg, #10A37F, #06B6D4, #3B82F6)',
+              background: 'linear-gradient(135deg, #10A37F, #34D399, #6EE7B7)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}
@@ -132,10 +132,10 @@ export default function InsightsPage() {
           className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-8 hover:border-white/[0.12] transition-colors"
         >
           <div className="flex flex-col lg:flex-row gap-8">
-            <div className="lg:w-1/3 h-48 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#06B6D4]/20" />
+            <div className="lg:w-1/3 h-48 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#34D399]/20" />
             <div className="lg:w-2/3 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-medium text-[#06B6D4] bg-[#06B6D4]/10 px-3 py-1 rounded-full inline-block mb-4">
+                <span className="text-xs font-medium text-[#10A37F] bg-[#10A37F]/10 px-3 py-1 rounded-full inline-block mb-4">
                   {featuredArticle.category}
                 </span>
                 <h3 className="text-2xl font-semibold text-white mb-3">
@@ -153,7 +153,7 @@ export default function InsightsPage() {
                     {featuredArticle.readTime}
                   </span>
                 </div>
-                <div className="flex items-center gap-1 text-[#06B6D4] font-medium">
+                <div className="flex items-center gap-1 text-[#10A37F] font-medium">
                   Read <ArrowRight size={18} />
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default function InsightsPage() {
               transition={{ delay: idx * 0.05 }}
               className="border border-[#E5E7EB] rounded-xl overflow-hidden bg-white hover:border-[#10A37F] transition-colors group"
             >
-              <div className="h-40 bg-gradient-to-br from-[#10A37F]/10 to-[#06B6D4]/10" />
+              <div className="h-40 bg-gradient-to-br from-[#10A37F]/10 to-[#34D399]/10" />
               <div className="p-6">
                 <span className="text-xs font-medium text-[#10A37F] bg-[#F0FDF9] px-2 py-1 rounded-full inline-block mb-3">
                   {article.category}

@@ -29,26 +29,32 @@ export default function Home() {
   const easeInOutCubic = [0.42, 0, 0.58, 1] as const;
   const easeOutQuart = [0.25, 1, 0.25, 1] as const;
 
+  const tickerItems = [
+    '🟢 Now Hiring: Senior AI/ML Engineer — Dallas, TX',
+    '📊 New Insight: AI Workforce Trends 2026',
+    '🚀 OPTPlanet.tech: 200+ Global AI Jobs Listed',
+    '📚 Benzaiten LMS: New Corporate Training Modules',
+    '🟢 Now Hiring: Cloud Solutions Architect — Remote',
+    '💡 AI Learn Hub: Advanced NLP Course Now Live',
+    '🟢 Now Hiring: Data Scientist — Remote US',
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* ===== ANIMATED TICKER BAR ===== */}
       <div className="bg-[#0A0F1C] border-b border-white/5 overflow-hidden">
-        <motion.div
-          className="flex gap-8 whitespace-nowrap py-2 px-6"
-          animate={{ x: [0, -1000] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' as const }}
-        >
-          {['AI Talent', 'Cloud Consulting', 'Offshore Teams', 'AI Training', 'DFWITJOBS', 'OPTPlanet', 'AI Learn Hub', 'Benzaiten LMS'].map((item, i) => (
-            <span key={i} className="text-xs text-gray-500">
+        <div className="flex gap-8 whitespace-nowrap py-2 px-6 animate-ticker">
+          {tickerItems.map((item, i) => (
+            <span key={i} className="text-xs text-gray-500 flex-shrink-0">
               {item} ·
             </span>
           ))}
-          {['AI Talent', 'Cloud Consulting', 'Offshore Teams', 'AI Training', 'DFWITJOBS', 'OPTPlanet', 'AI Learn Hub', 'Benzaiten LMS'].map((item, i) => (
-            <span key={`repeat-${i}`} className="text-xs text-gray-500">
+          {tickerItems.map((item, i) => (
+            <span key={`repeat-${i}`} className="text-xs text-gray-500 flex-shrink-0">
               {item} ·
             </span>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* ===== HERO SECTION — DARK ===== */}
@@ -77,7 +83,7 @@ export default function Home() {
           >
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
               <span>Empowering Enterprises with </span>
-              <span className="bg-gradient-to-r from-[#10A37F] via-[#06B6D4] to-[#3B82F6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
                 AI-Driven Solutions.
               </span>
             </h1>
@@ -124,7 +130,7 @@ export default function Home() {
               href="/platforms"
               whileHover={{ scale: 1.05, x: 8 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 text-[#06B6D4] font-medium hover:text-[#10A37F] transition-colors"
+              className="inline-flex items-center gap-2 text-[#34D399] font-medium hover:text-[#6EE7B7] transition-colors"
             >
               View Platforms
               <ArrowRight size={16} />
@@ -159,7 +165,7 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES — LIGHT ===== */}
-      <section className="bg-white py-20 px-6">
+      <section className="bg-white py-20 px-6 md:py-24">
         <div className="max-w-6xl mx-auto">
           <SectionHeading
             title="What We Do"
@@ -250,8 +256,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PLATFORMS — DARK ===== */}
-      <section className="bg-[#0A0F1C] text-white py-20 px-6">
+      {/* ===== PLATFORMS — LIGHT ===== */}
+      <section className="bg-[#F9FAFB] py-20 px-6 md:py-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -260,8 +266,8 @@ export default function Home() {
             transition={{ duration: 0.6, ease: easeInOutCubic }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Platform Ecosystem</h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Platform Ecosystem</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Purpose-built platforms powering workforce, careers, and education.
             </p>
           </motion.div>
@@ -273,14 +279,14 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: easeInOutCubic }}
-              className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 hover:border-white/[0.12] transition-colors group"
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#10A37F]/30 hover:shadow-lg transition-all group"
             >
               <div className="h-1 w-12 bg-[#10A37F] rounded-full mb-6" />
               <div className="mb-4 text-[#10A37F]">
                 <Briefcase size={32} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">DFWITJOBS</h3>
-              <p className="text-gray-400 text-sm mb-6">
+              <h3 className="text-gray-900 font-bold text-lg mb-2">DFWITJOBS</h3>
+              <p className="text-gray-600 text-sm mb-6">
                 Premier job marketplace connecting top tech talent with leading companies in the Dallas-Fort Worth metroplex.
               </p>
               <motion.a
@@ -298,20 +304,20 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1, ease: easeInOutCubic }}
-              className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 hover:border-white/[0.12] transition-colors group"
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#059669]/30 hover:shadow-lg transition-all group"
             >
-              <div className="h-1 w-12 bg-[#6366F1] rounded-full mb-6" />
-              <div className="mb-4 text-[#6366F1]">
+              <div className="h-1 w-12 bg-[#059669] rounded-full mb-6" />
+              <div className="mb-4 text-[#059669]">
                 <GraduationCap size={32} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">OPTPlanet</h3>
-              <p className="text-gray-400 text-sm mb-6">
+              <h3 className="text-gray-900 font-bold text-lg mb-2">OPTPlanet</h3>
+              <p className="text-gray-600 text-sm mb-6">
                 Comprehensive educational platform for professional development and certification in emerging technologies.
               </p>
               <motion.a
                 href="https://www.optplanet.net"
                 whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#6366F1] font-medium text-sm hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-[#059669] font-medium text-sm hover:gap-3 transition-all"
               >
                 Visit <ArrowRight size={14} />
               </motion.a>
@@ -323,20 +329,20 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2, ease: easeInOutCubic }}
-              className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 hover:border-white/[0.12] transition-colors group"
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#0D8A6A]/30 hover:shadow-lg transition-all group"
             >
-              <div className="h-1 w-12 bg-[#8B5CF6] rounded-full mb-6" />
-              <div className="mb-4 text-[#8B5CF6]">
+              <div className="h-1 w-12 bg-[#0D8A6A] rounded-full mb-6" />
+              <div className="mb-4 text-[#0D8A6A]">
                 <Rocket size={32} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">OPTPlanet.tech</h3>
-              <p className="text-gray-400 text-sm mb-6">
+              <h3 className="text-gray-900 font-bold text-lg mb-2">OPTPlanet.tech</h3>
+              <p className="text-gray-600 text-sm mb-6">
                 Global AI job board connecting startups with STEM talent for remote AI jobs and prompt engineering roles.
               </p>
               <motion.a
                 href="https://optplanet.tech"
                 whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#8B5CF6] font-medium text-sm hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-[#0D8A6A] font-medium text-sm hover:gap-3 transition-all"
               >
                 Visit <ArrowRight size={14} />
               </motion.a>
@@ -348,20 +354,20 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3, ease: easeInOutCubic }}
-              className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 hover:border-white/[0.12] transition-colors group"
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#34D399]/30 hover:shadow-lg transition-all group"
             >
-              <div className="h-1 w-12 bg-[#F59E0B] rounded-full mb-6" />
-              <div className="mb-4 text-[#F59E0B]">
+              <div className="h-1 w-12 bg-[#34D399] rounded-full mb-6" />
+              <div className="mb-4 text-[#34D399]">
                 <BookOpen size={32} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">AI Learn Hub</h3>
-              <p className="text-gray-400 text-sm mb-6">
+              <h3 className="text-gray-900 font-bold text-lg mb-2">AI Learn Hub</h3>
+              <p className="text-gray-600 text-sm mb-6">
                 Curated learning center for AI, machine learning, and data science education with industry-expert instructors.
               </p>
               <motion.a
                 href="https://www.ailearnhub.io"
                 whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#F59E0B] font-medium text-sm hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-[#34D399] font-medium text-sm hover:gap-3 transition-all"
               >
                 Visit <ArrowRight size={14} />
               </motion.a>
@@ -373,20 +379,20 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4, ease: easeInOutCubic }}
-              className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 hover:border-white/[0.12] transition-colors group"
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#10A37F]/30 hover:shadow-lg transition-all group"
             >
-              <div className="h-1 w-12 bg-[#EC4899] rounded-full mb-6" />
-              <div className="mb-4 text-[#EC4899]">
+              <div className="h-1 w-12 bg-[#10A37F] rounded-full mb-6" />
+              <div className="mb-4 text-[#10A37F]">
                 <Monitor size={32} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">Benzaiten LMS</h3>
-              <p className="text-gray-400 text-sm mb-6">
+              <h3 className="text-gray-900 font-bold text-lg mb-2">Benzaiten LMS</h3>
+              <p className="text-gray-600 text-sm mb-6">
                 Powerful learning management system designed for modern training delivery and employee development programs.
               </p>
               <motion.a
                 href="https://benzaitenlms.com"
                 whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#EC4899] font-medium text-sm hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 text-[#10A37F] font-medium text-sm hover:gap-3 transition-all"
               >
                 Visit <ArrowRight size={14} />
               </motion.a>
@@ -395,19 +401,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== INDUSTRIES — LIGHT ===== */}
-      <section className="bg-white py-20 px-6">
+      {/* ===== INDUSTRIES — DARK ===== */}
+      <section className="bg-[#111827] text-white py-20 px-6 md:py-24">
         <div className="max-w-6xl mx-auto">
-          <SectionHeading title="Industries We Serve" centered />
+          <SectionHeading
+            title="Industries We Serve"
+            subtitle="Trusted by enterprises across sectors"
+            centered
+          />
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
             {[
-              { icon: Heart, label: 'Healthcare', color: '#EF4444' },
-              { icon: Building2, label: 'Finance', color: '#3B82F6' },
-              { icon: ShoppingCart, label: 'Retail', color: '#F59E0B' },
-              { icon: GraduationCap, label: 'Education', color: '#8B5CF6' },
-              { icon: Factory, label: 'Manufacturing', color: '#10B981' },
-              { icon: Landmark, label: 'Government', color: '#6366F1' },
+              { icon: Heart, label: 'Healthcare', color: '#10A37F' },
+              { icon: Building2, label: 'Finance', color: '#34D399' },
+              { icon: ShoppingCart, label: 'Retail', color: '#059669' },
+              { icon: GraduationCap, label: 'Education', color: '#10A37F' },
+              { icon: Factory, label: 'Manufacturing', color: '#34D399' },
+              { icon: Landmark, label: 'Government', color: '#6EE7B7' },
             ].map((industry, index) => {
               const IconComponent = industry.icon;
               return (
@@ -417,12 +427,12 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05, ease: easeInOutCubic }}
-                  className="border border-gray-200 rounded-xl p-5 flex items-center gap-4 hover:border-gray-300 hover:bg-gray-50 transition-colors"
+                  className="border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:border-white/20 hover:bg-white/5 transition-colors group"
                 >
-                  <div style={{ color: industry.color }} className="flex-shrink-0">
+                  <div style={{ color: industry.color }} className="flex-shrink-0 group-hover:scale-110 transition-transform">
                     <IconComponent size={24} />
                   </div>
-                  <span className="text-gray-900 font-medium">{industry.label}</span>
+                  <span className="text-white font-medium">{industry.label}</span>
                 </motion.div>
               );
             })}
@@ -430,8 +440,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== YOUR AI JOURNEY — GRADIENT ===== */}
-      <section className="bg-gradient-to-br from-[#0A0F1C] to-[#111827] text-white py-20 px-6">
+      {/* ===== YOUR AI JOURNEY — LIGHT ===== */}
+      <section className="bg-[#F3F4F6] py-20 px-6 md:py-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -440,8 +450,8 @@ export default function Home() {
             transition={{ duration: 0.6, ease: easeInOutCubic }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#06B6D4] via-[#10A37F] to-[#8B5CF6] bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              <span className="bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
                 Your AI Journey Starts Here
               </span>
             </h2>
@@ -454,18 +464,18 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, ease: easeInOutCubic }}
-              className="bg-white/[0.05] border border-white/[0.08] rounded-xl p-8 text-center hover:bg-white/[0.08] transition-colors"
+              className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:border-[#10A37F]/30 hover:shadow-lg transition-all"
             >
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 className="flex justify-center mb-6"
               >
-                <div className="text-[#06B6D4]">
+                <div className="text-[#10A37F]">
                   <GraduationCap size={40} />
                 </div>
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Upskill</h3>
-              <p className="text-gray-400">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Upskill</h3>
+              <p className="text-gray-600">
                 Find the right training programs to master emerging technologies and advance your expertise.
               </p>
             </motion.div>
@@ -476,18 +486,18 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1, ease: easeInOutCubic }}
-              className="bg-white/[0.05] border border-white/[0.08] rounded-xl p-8 text-center hover:bg-white/[0.08] transition-colors"
+              className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:border-[#34D399]/30 hover:shadow-lg transition-all"
             >
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 className="flex justify-center mb-6"
               >
-                <div className="text-[#3B82F6]">
+                <div className="text-[#34D399]">
                   <Users size={40} />
                 </div>
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Connect</h3>
-              <p className="text-gray-400">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Connect</h3>
+              <p className="text-gray-600">
                 Match with opportunities that fit your expertise and career goals across our platform ecosystem.
               </p>
             </motion.div>
@@ -498,18 +508,18 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2, ease: easeInOutCubic }}
-              className="bg-white/[0.05] border border-white/[0.08] rounded-xl p-8 text-center hover:bg-white/[0.08] transition-colors"
+              className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:border-[#059669]/30 hover:shadow-lg transition-all"
             >
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 className="flex justify-center mb-6"
               >
-                <div className="text-[#8B5CF6]">
+                <div className="text-[#059669]">
                   <Rocket size={40} />
                 </div>
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Grow</h3>
-              <p className="text-gray-400">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Grow</h3>
+              <p className="text-gray-600">
                 Advance your career with global platforms connecting you to leading opportunities worldwide.
               </p>
             </motion.div>
@@ -517,8 +527,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== CTA SECTION — LIGHT ===== */}
-      <section className="bg-white py-8 px-6">
+      {/* ===== CTA SECTION — WHITE ===== */}
+      <section className="bg-white py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <CTASection
             title="Ready to Get Started?"

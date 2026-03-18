@@ -42,7 +42,7 @@ const platforms = [
     title: 'OPTPlanet',
     url: 'www.optplanet.net',
     icon: GraduationCap,
-    color: '#6366F1',
+    color: '#059669',
     description:
       'Comprehensive platform for OPT/CPT students and H1B professionals seeking opportunities',
     features: [
@@ -56,7 +56,7 @@ const platforms = [
     title: 'AI Learn Hub',
     url: 'www.ailearnhub.io',
     icon: BookOpen,
-    color: '#F59E0B',
+    color: '#34D399',
     description:
       'Cutting-edge AI education platform with hands-on courses and certifications',
     features: [
@@ -70,7 +70,7 @@ const platforms = [
     title: 'Benzaiten LMS',
     url: 'benzaitenlms.com',
     icon: Monitor,
-    color: '#EC4899',
+    color: '#6EE7B7',
     description:
       'Enterprise learning management system for corporate training and skill development',
     features: [
@@ -84,7 +84,7 @@ const platforms = [
     title: 'OPTPlanet.tech',
     url: 'optplanet.tech',
     icon: Rocket,
-    color: '#8B5CF6',
+    color: '#0D8A6A',
     description:
       'Global AI job board connecting startups with STEM resources. Find remote AI jobs, prompt engineering roles, and automation contract opportunities worldwide.',
     features: [
@@ -126,7 +126,7 @@ export default function PlatformsPage() {
       <section className="bg-[#0A0F1C] text-white py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div {...fadeIn}>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
               Our Platforms
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -214,7 +214,7 @@ export default function PlatformsPage() {
                   {...fadeIn}
                   className="group rounded-xl border-2 border-[#E5E7EB] bg-white p-8 hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="p-3 rounded-lg bg-gradient-to-br from-[#10A37F]/10 to-[#3B82F6]/10 inline-block mb-4">
+                  <div className="p-3 rounded-lg bg-gradient-to-br from-[#10A37F]/10 to-[#34D399]/10 inline-block mb-4">
                     <Icon size={24} className="text-[#10A37F]" />
                   </div>
                   <h3 className="text-lg font-semibold text-[#111111] mb-2">

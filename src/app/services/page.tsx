@@ -40,7 +40,7 @@ const services = [
     description:
       'Build scalable infrastructure and streamline your deployment pipeline.',
     icon: Cloud,
-    color: '#3B82F6',
+    color: '#059669',
     features: [
       'Cloud architecture design',
       'Infrastructure automation',
@@ -54,7 +54,7 @@ const services = [
     description:
       'Scale your engineering capacity with dedicated, skilled development teams.',
     icon: Users,
-    color: '#8B5CF6',
+    color: '#34D399',
     features: [
       'Dedicated team models',
       'Full-stack development',
@@ -68,7 +68,7 @@ const services = [
     description:
       'Find the right talent for your organization with precision placement.',
     icon: Briefcase,
-    color: '#F59E0B',
+    color: '#6EE7B7',
     features: [
       'Candidate sourcing',
       'Technical screening',
@@ -82,7 +82,7 @@ const services = [
     description:
       'Upskill your workforce and advance your career with live instructor-led AI training programs designed for professionals and enterprises.',
     icon: GraduationCap,
-    color: '#EC4899',
+    color: '#0D8A6A',
     features: [
       'Live instructor-led training',
       'Corporate upskilling programs',
@@ -123,7 +123,7 @@ export default function ServicesPage() {
       <section className="bg-[#0A0F1C] text-white py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div {...fadeIn}>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#3B82F6] to-[#EC4899] bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
               Our Services
             </h1>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -190,7 +190,7 @@ export default function ServicesPage() {
       <section className="bg-[#0A0F1C] text-white py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#3B82F6] bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#34D399] bg-clip-text text-transparent mb-4">
               Our Process
             </h2>
           </motion.div>
@@ -202,8 +202,8 @@ export default function ServicesPage() {
                 className="relative group rounded-xl p-8 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300"
               >
                 {/* Gradient accent top bar */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#10A37F] via-[#3B82F6] to-transparent rounded-t-xl" />
-                <div className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#3B82F6] bg-clip-text text-transparent mb-4">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-transparent rounded-t-xl" />
+                <div className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#34D399] bg-clip-text text-transparent mb-4">
                   {step.number}
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-3">

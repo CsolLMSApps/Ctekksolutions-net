@@ -29,7 +29,7 @@ export default function Footer() {
   return (
     <>
       {/* Gradient top border */}
-      <div className="h-px bg-gradient-to-r from-[#10A37F] via-[#06B6D4] to-[#3B82F6]" />
+      <div className="h-px bg-gradient-to-r from-[#059669] via-[#10A37F] to-[#34D399]" />
 
       <footer className="bg-[#0A0F1C] text-gray-400">
         <motion.div

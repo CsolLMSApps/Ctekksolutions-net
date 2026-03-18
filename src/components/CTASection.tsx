@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 
 interface CTAProps {
   text: string;
@@ -22,106 +21,45 @@ export function CTASection({
   primaryCTA,
   secondaryCTA,
 }: CTASectionProps) {
-  const containerVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut' as const,
-        staggerChildren: 0.1,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' as const },
-    },
-  };
-
-  const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
-    },
-    tap: {
-      scale: 0.98,
-    },
-  };
-
   return (
     <motion.section
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      className="relative py-20 px-6 sm:px-10 rounded-2xl overflow-hidden"
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className="bg-[#F9FAFB] dark:bg-[#0D0D0D] rounded-2xl py-16 px-8"
     >
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 -z-10" />
-      <div className="absolute inset-0 bg-black/40 -z-10" />
-
-      {/* Content */}
       <div className="max-w-3xl mx-auto text-center">
-        <motion.h2
-          variants={itemVariants}
-          className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight"
-        >
+        <h2 className="text-3xl font-semibold text-[#111111] dark:text-[#ECECEC]">
           {title}
-        </motion.h2>
+        </h2>
 
         {subtitle && (
-          <motion.p
-            variants={itemVariants}
-            className="text-xl text-gray-100 mb-8"
-          >
+          <p className="text-lg text-[#6B7280] dark:text-[#ECECEC]/70 mt-3">
             {subtitle}
-          </motion.p>
+          </p>
         )}
 
         {/* CTA Buttons */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-        >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
           {/* Primary CTA */}
-          <motion.div
-            whileHover="hover"
-            whileTap="tap"
-            variants={buttonVariants}
+          <Link
+            href={primaryCTA.href}
+            className="px-6 py-3 bg-[#10A37F] text-white rounded-lg font-medium hover:bg-[#0D8A6A] transition-colors duration-150"
           >
-            <Link
-              href={primaryCTA.href}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-colors duration-300 shadow-lg hover:shadow-xl"
-            >
-              {primaryCTA.text}
-              <ArrowRight size={20} />
-            </Link>
-          </motion.div>
+            {primaryCTA.text}
+          </Link>
 
           {/* Secondary CTA */}
           {secondaryCTA && (
-            <motion.div
-              whileHover="hover"
-              whileTap="tap"
-              variants={buttonVariants}
+            <Link
+              href={secondaryCTA.href}
+              className="px-6 py-3 border border-[#E5E7EB] dark:border-[#2D2D2D] text-[#111111] dark:text-[#ECECEC] rounded-lg font-medium hover:bg-[#F9FAFB] dark:hover:bg-[#1A1A1A] transition-colors duration-150"
             >
-              <Link
-                href={secondaryCTA.href}
-                className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors duration-300"
-              >
-                {secondaryCTA.text}
-                <ArrowRight size={20} />
-              </Link>
-            </motion.div>
+              {secondaryCTA.text}
+            </Link>
           )}
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );

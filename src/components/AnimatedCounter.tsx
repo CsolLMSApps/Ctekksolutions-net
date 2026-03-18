@@ -41,33 +41,20 @@ export function AnimatedCounter({
     return () => clearInterval(timer);
   }, [isInView, end]);
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: 'easeOut' as const,
-        delay,
-      },
-    },
-  };
-
   return (
     <motion.div
       ref={ref}
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5, ease: 'easeOut', delay }}
       className="text-center"
     >
-      <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+      <div className="text-4xl font-semibold text-[#111111] dark:text-[#ECECEC]">
         {count}
-        <span className="text-4xl md:text-5xl">{suffix}</span>
+        <span>{suffix}</span>
       </div>
-      <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">
+      <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]/70 mt-1">
         {label}
       </p>
     </motion.div>

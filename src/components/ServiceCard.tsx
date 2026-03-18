@@ -2,7 +2,6 @@
 
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 interface ServiceCardProps {
@@ -20,60 +19,32 @@ export function ServiceCard({
   href,
   delay = 0,
 }: ServiceCardProps) {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: 'easeOut' as const,
-        delay,
-      },
-    },
-  };
-
-  const hoverVariants = {
-    hover: {
-      y: -8,
-      transition: {
-        duration: 0.3,
-        ease: 'easeOut' as const,
-      },
-    },
-  };
-
   return (
     <motion.div
-      variants={{
-        ...cardVariants,
-        ...hoverVariants,
-      }}
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
-      whileHover="hover"
-      className="group h-full"
+      transition={{ duration: 0.5, ease: 'easeOut', delay }}
+      className="h-full"
     >
       <Link href={href}>
-        <div className="h-full p-8 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 transition-all duration-300 hover:border-transparent hover:shadow-xl hover:shadow-blue-500/10 hover:bg-gradient-to-br hover:from-blue-50 dark:hover:from-blue-950/20 hover:to-purple-50 dark:hover:to-purple-950/20 cursor-pointer">
+        <div className="h-full p-6 rounded-xl border border-[#E5E7EB] bg-white dark:bg-[#0D0D0D] dark:border-[#2D2D2D] cursor-pointer hover:border-[#D1D5DB] dark:hover:border-[#3D3D3D] transition-colors duration-150">
           {/* Icon */}
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+          <div className="w-10 h-10 rounded-lg bg-[#F0FDF9] dark:bg-[#10A37F]/20 text-[#10A37F] flex items-center justify-center">
             {icon}
           </div>
 
           {/* Content */}
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+          <h3 className="text-lg font-semibold text-[#111111] dark:text-[#ECECEC] mt-4">
             {title}
           </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]/70 mt-2 leading-relaxed">
             {description}
           </p>
 
           {/* CTA */}
-          <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:gap-3 gap-2 transition-all duration-300">
-            Learn more
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          <div className="text-[#10A37F] text-sm font-medium mt-4">
+            Learn more →
           </div>
         </div>
       </Link>

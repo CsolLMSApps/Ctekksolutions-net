@@ -8,14 +8,13 @@ import {
   Users,
   Briefcase,
   BookOpen,
-  Award,
-  Stethoscope,
-  CreditCard,
+  Heart,
+  Building2,
   ShoppingCart,
-  BookMarked,
-  Shield,
-  ArrowRight,
   GraduationCap,
+  Factory,
+  Landmark,
+  Monitor,
 } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServiceCard } from '@/components/ServiceCard';
@@ -25,297 +24,304 @@ import { CTASection } from '@/components/CTASection';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
 
 export default function Home() {
-  // Industry cards data
-  const industries = [
-    {
-      icon: Stethoscope,
-      name: 'Healthcare',
-      description: 'Delivering AI solutions for patient care and operational efficiency',
-    },
-    {
-      icon: CreditCard,
-      name: 'Finance',
-      description: 'Enabling secure, compliant AI-driven financial intelligence',
-    },
-    {
-      icon: ShoppingCart,
-      name: 'Retail',
-      description: 'Transforming customer experiences with AI personalization',
-    },
-    {
-      icon: BookMarked,
-      name: 'Education',
-      description: 'Empowering learners with intelligent educational platforms',
-    },
-    {
-      icon: Shield,
-      name: 'Manufacturing',
-      description: 'Optimizing production with predictive AI analytics',
-    },
-    {
-      icon: Globe,
-      name: 'Government',
-      description: 'Supporting public services with advanced AI capabilities',
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
+    <div className="min-h-screen bg-white dark:bg-[#0D0D0D]">
       {/* ===== HERO SECTION ===== */}
-      <section className="relative w-full overflow-hidden hero-gradient min-h-screen flex items-center justify-center">
-        {/* Animated Background Orbs */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Top-left orb */}
-          <motion.div
-            animate={{ x: [0, 20, 0], y: [0, 20, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' as const }}
-            className="absolute -top-40 -left-40 w-80 h-80 rounded-full blur-3xl opacity-20 bg-gradient-to-br from-blue-500 to-purple-500"
-          />
+      <section className="w-full py-24 md:py-32 px-6 flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          {/* Badge */}
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#F0FDF9] text-[#10A37F] text-xs font-medium mb-6">
+            AI-Powered Consulting Since 2010
+          </div>
 
-          {/* Top-right orb */}
-          <motion.div
-            animate={{ x: [0, -20, 0], y: [0, 20, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' as const }}
-            className="absolute -top-20 -right-40 w-96 h-96 rounded-full blur-3xl opacity-15 bg-gradient-to-br from-cyan-400 to-blue-500"
-          />
+          {/* Headline */}
+          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-[#111111] dark:text-[#ECECEC] leading-tight mb-6">
+            Empowering Enterprises with AI-Driven Solutions
+          </h1>
 
-          {/* Bottom-right orb */}
-          <motion.div
-            animate={{ x: [0, -20, 0], y: [0, -20, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' as const }}
-            className="absolute -bottom-40 -right-20 w-80 h-80 rounded-full blur-3xl opacity-20 bg-gradient-to-br from-pink-500 to-purple-500"
-          />
-        </div>
+          {/* Subheadline */}
+          <p className="text-lg text-[#6B7280] dark:text-[#A0A0A0] leading-relaxed max-w-2xl mx-auto mb-8">
+            We provide world-class AI talent, cloud consulting, and technology solutions to help businesses innovate and scale.
+          </p>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-32 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' as const }}
-            className="space-y-8"
-          >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium mx-auto"
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <motion.a
+              href="/services"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex px-6 py-3 bg-[#10A37F] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Leading Dallas-Based AI Solutions Provider
-            </motion.div>
+              Hire AI Talent
+            </motion.a>
 
-            {/* Main Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight"
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex px-6 py-3 border border-[#E5E7EB] dark:border-[#2D2D2D] text-[#111111] dark:text-[#ECECEC] rounded-lg font-medium hover:bg-[#F9FAFB] dark:hover:bg-[#1A1A1A] transition-colors"
             >
-              Empowering Enterprises with{' '}
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                AI-Driven Solutions
-              </span>
-            </motion.h1>
+              Book Consultation
+            </motion.a>
 
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
+            <motion.a
+              href="/platforms"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex text-[#10A37F] font-medium hover:opacity-80 transition-opacity"
             >
-              Dallas-based technology consulting partner transforming enterprises since
-              2010. Delivering cutting-edge AI talent, platforms, and consulting services
-              that drive innovation and competitive advantage.
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
-            >
-              {/* Primary CTA */}
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl"
-                >
-                  Hire AI Talent
-                  <ArrowRight size={20} />
-                </a>
-              </motion.div>
-
-              {/* Secondary CTA */}
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
-                >
-                  Book Consultation
-                  <ArrowRight size={20} />
-                </a>
-              </motion.div>
-
-              {/* Tertiary CTA */}
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a
-                  href="/platforms"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
-                >
-                  Explore Platforms
-                  <ArrowRight size={20} />
-                </a>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
+              Explore Platforms
+            </motion.a>
+          </div>
+        </motion.div>
       </section>
 
       {/* ===== STATS BAR ===== */}
-      <section className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-16 px-6 sm:px-10">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          <AnimatedCounter end={15} suffix="+" label="Years Experience" delay={0} />
-          <AnimatedCounter end={500} suffix="+" label="Clients Served" delay={0.1} />
-          <AnimatedCounter end={50} suffix="+" label="AI Solutions Deployed" delay={0.2} />
-          <AnimatedCounter end={98} suffix="%" label="Client Satisfaction" delay={0.3} />
-        </div>
-      </section>
-
-      {/* ===== SERVICES OVERVIEW ===== */}
-      <section className="bg-gray-50 dark:bg-gray-950 py-20 px-6 sm:px-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <SectionHeading
-              title="Our Services"
-              subtitle="Comprehensive AI and technology solutions tailored to your business needs"
-              centered
-              gradient={false}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <ServiceCard
-              icon={<Brain size={24} />}
-              title="AI Talent & Consulting"
-              description="Access elite AI engineers and consultants to accelerate your AI initiatives and transformation roadmap."
-              href="/services"
-              delay={0}
-            />
-            <ServiceCard
-              icon={<Cloud size={24} />}
-              title="Cloud & DevOps"
-              description="Scalable cloud infrastructure and DevOps expertise to modernize and streamline your operations."
-              href="/services"
-              delay={0.1}
-            />
-            <ServiceCard
-              icon={<Globe size={24} />}
-              title="Offshore Development Teams"
-              description="Dedicated, managed development teams providing 24/7 coverage and cost-effective software delivery."
-              href="/services"
-              delay={0.2}
-            />
-            <ServiceCard
-              icon={<Users size={24} />}
-              title="Staffing & Recruiting"
-              description="Strategic staffing solutions connecting you with top-tier technical talent across all disciplines."
-              href="/services"
-              delay={0.3}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ===== PLATFORMS SECTION ===== */}
-      <section className="bg-white dark:bg-gray-900 py-20 px-6 sm:px-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <SectionHeading
-              title="Our Platforms"
-              subtitle="Innovative SaaS platforms powering success across recruitment, education, and learning"
-              centered
-              gradient={false}
-            />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <PlatformCard
-              title="DFWITJOBS"
-              description="Premier job marketplace connecting top tech talent with leading companies in the Dallas-Fort Worth metroplex."
-              href="https://www.dfwitjobs.com"
-              icon={<Briefcase size={40} />}
-              color="#3b82f6"
-              delay={0}
-            />
-            <PlatformCard
-              title="OPTPlanet"
-              description="Comprehensive educational platform for professional development and certification in emerging technologies."
-              href="https://www.optplanet.net"
-              icon={<GraduationCap size={40} />}
-              color="#a855f7"
-              delay={0.1}
-            />
-            <PlatformCard
-              title="AI Learn Hub"
-              description="Curated learning center for AI, machine learning, and data science education with industry-expert instructors."
-              href="https://www.ailearnhub.io"
-              icon={<BookOpen size={40} />}
-              color="#06b6d4"
-              delay={0.2}
-            />
-            <PlatformCard
-              title="Benzaiten LMS"
-              description="Powerful learning management system designed for modern training delivery and employee development programs."
-              href="https://benzaitenlms.com"
-              icon={<Award size={40} />}
-              color="#10b981"
-              delay={0.3}
-            />
+      <section className="bg-[#F9FAFB] dark:bg-[#1A1A1A] py-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <AnimatedCounter
+                end={15}
+                suffix="+"
+                label="Years of Excellence"
+                delay={0}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <AnimatedCounter
+                end={500}
+                suffix="+"
+                label="Clients Served"
+                delay={0.1}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <AnimatedCounter
+                end={50}
+                suffix="+"
+                label="AI Solutions Deployed"
+                delay={0.2}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <AnimatedCounter
+                end={98}
+                suffix="%"
+                label="Client Satisfaction"
+                delay={0.3}
+              />
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ===== INDUSTRIES SECTION ===== */}
-      <section className="bg-gray-50 dark:bg-gray-950 py-20 px-6 sm:px-10">
+      {/* ===== SERVICES ===== */}
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <SectionHeading
-              title="Industries We Serve"
-              subtitle="Delivering AI solutions across every major sector with deep domain expertise"
-              centered
-              gradient={false}
-            />
-          </div>
+          <SectionHeading
+            title="What We Do"
+            subtitle="End-to-end technology consulting and AI talent solutions."
+            centered
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <ServiceCard
+                icon={<Brain size={24} />}
+                title="AI Talent & Consulting"
+                description="Access elite AI engineers and consultants to accelerate your AI initiatives and transformation roadmap."
+                href="/services"
+                delay={0}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <ServiceCard
+                icon={<Cloud size={24} />}
+                title="Cloud & DevOps"
+                description="Scalable cloud infrastructure and DevOps expertise to modernize and streamline your operations."
+                href="/services"
+                delay={0.1}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <ServiceCard
+                icon={<Globe size={24} />}
+                title="Offshore Development Teams"
+                description="Dedicated, managed development teams providing 24/7 coverage and cost-effective software delivery."
+                href="/services"
+                delay={0.2}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <ServiceCard
+                icon={<Users size={24} />}
+                title="Staffing & Recruiting"
+                description="Strategic staffing solutions connecting you with top-tier technical talent across all disciplines."
+                href="/services"
+                delay={0.3}
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PLATFORMS ===== */}
+      <section className="bg-[#F9FAFB] dark:bg-[#1A1A1A] py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeading
+            title="Our Platforms"
+            subtitle="Purpose-built platforms powering workforce and education."
+            centered
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <PlatformCard
+                title="DFWITJOBS"
+                description="Premier job marketplace connecting top tech talent with leading companies in the Dallas-Fort Worth metroplex."
+                href="https://www.dfwitjobs.com"
+                icon={<Briefcase size={40} />}
+                color="#10A37F"
+                delay={0}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <PlatformCard
+                title="OPTPlanet"
+                description="Comprehensive educational platform for professional development and certification in emerging technologies."
+                href="https://www.optplanet.net"
+                icon={<GraduationCap size={40} />}
+                color="#6366F1"
+                delay={0.1}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <PlatformCard
+                title="AI Learn Hub"
+                description="Curated learning center for AI, machine learning, and data science education with industry-expert instructors."
+                href="https://www.ailearnhub.io"
+                icon={<BookOpen size={40} />}
+                color="#F59E0B"
+                delay={0.2}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <PlatformCard
+                title="Benzaiten LMS"
+                description="Powerful learning management system designed for modern training delivery and employee development programs."
+                href="https://benzaitenlms.com"
+                icon={<Monitor size={40} />}
+                color="#EC4899"
+                delay={0.3}
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INDUSTRIES ===== */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <SectionHeading
+            title="Industries We Serve"
+            subtitle=""
+            centered
+          />
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
+            {[
+              { icon: Heart, label: 'Healthcare', color: '#EF4444' },
+              { icon: Building2, label: 'Finance', color: '#3B82F6' },
+              { icon: ShoppingCart, label: 'Retail', color: '#F59E0B' },
+              { icon: GraduationCap, label: 'Education', color: '#8B5CF6' },
+              { icon: Factory, label: 'Manufacturing', color: '#10B981' },
+              { icon: Landmark, label: 'Government', color: '#6366F1' },
+            ].map((industry, index) => {
               const IconComponent = industry.icon;
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{
-                    duration: 0.5,
-                    ease: 'easeOut' as const,
-                    delay: index * 0.1,
-                  }}
-                  className="group p-8 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                  className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-5 flex items-center gap-4 hover:border-[#D1D5DB] dark:hover:border-[#3D3D3D] transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    style={{ color: industry.color }}
+                    className="flex-shrink-0"
+                  >
                     <IconComponent size={24} />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                    {industry.name}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {industry.description}
-                  </p>
+                  <span className="text-[#111111] dark:text-[#ECECEC] font-medium">
+                    {industry.label}
+                  </span>
                 </motion.div>
               );
             })}
@@ -324,55 +330,73 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="bg-white dark:bg-gray-900 py-20 px-6 sm:px-10">
+      <section className="bg-[#F9FAFB] dark:bg-[#1A1A1A] py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-16">
-            <SectionHeading
-              title="What Our Clients Say"
-              subtitle="Trusted by Fortune 500 companies and innovative startups alike"
-              centered
-              gradient={false}
-            />
-          </div>
+          <SectionHeading
+            title="What Our Clients Say"
+            subtitle=""
+            centered
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TestimonialCard
-              quote="CTekk Solutions transformed our AI hiring process. Their talent acquisition expertise and platform integration delivered measurable ROI within three months."
-              author="Sarah Chen"
-              role="CTO"
-              company="TechVenture AI"
-              delay={0}
-            />
-            <TestimonialCard
-              quote="Working with CTekk's offshore development team has been seamless. Their professionalism, communication, and code quality exceed our expectations across all projects."
-              author="Michael Rodriguez"
-              role="VP Engineering"
-              company="FinTech Innovations"
-              delay={0.1}
-            />
-            <TestimonialCard
-              quote="Their AI consulting services helped us identify opportunities we missed internally. The actionable insights and strategic roadmap delivered by their team were invaluable."
-              author="Jennifer Park"
-              role="Director of AI Strategy"
-              company="Healthcare Systems Inc."
-              delay={0.2}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <TestimonialCard
+                quote="CTekk Solutions transformed our AI hiring process. Their talent acquisition expertise and platform integration delivered measurable ROI within three months."
+                author="Sarah Chen"
+                role="CTO"
+                company="TechVenture AI"
+                delay={0}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <TestimonialCard
+                quote="Working with CTekk's offshore development team has been seamless. Their professionalism, communication, and code quality exceed our expectations across all projects."
+                author="Michael Rodriguez"
+                role="VP Engineering"
+                company="FinTech Innovations"
+                delay={0.1}
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <TestimonialCard
+                quote="Their AI consulting services helped us identify opportunities we missed internally. The actionable insights and strategic roadmap delivered by their team were invaluable."
+                author="Jennifer Park"
+                role="Director of AI Strategy"
+                company="Healthcare Systems Inc."
+                delay={0.2}
+              />
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="bg-gray-50 dark:bg-gray-950 py-20 px-6 sm:px-10">
+      <section className="py-8 px-6">
         <div className="max-w-6xl mx-auto">
           <CTASection
             title="Ready to Transform Your Business?"
-            subtitle="Partner with CTekk Solutions to unlock the full potential of AI and modern technology for your enterprise."
+            subtitle="Let's discuss how CTekk Solutions can accelerate your digital transformation."
             primaryCTA={{
-              text: 'Get Started Today',
+              text: 'Get Started',
               href: '/contact',
             }}
             secondaryCTA={{
-              text: 'View Our Services',
+              text: 'View Services',
               href: '/services',
             }}
           />

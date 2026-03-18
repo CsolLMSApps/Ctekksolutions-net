@@ -4,19 +4,15 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Phone, ChevronDown } from 'lucide-react';
 import { SectionHeading } from '../../components/SectionHeading';
+import { CTASection } from '../../components/CTASection';
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-  viewport: { once: true },
-};
-
-const staggerContainer = {
-  initial: { opacity: 0 },
-  whileInView: { opacity: 1 },
-  transition: { staggerChildren: 0.15, delayChildren: 0.1 },
-  viewport: { once: true },
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: 'easeOut' as const },
+  },
 };
 
 interface FormData {
@@ -128,295 +124,259 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative min-h-[500px] flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center px-4 md:px-8"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">Get in Touch</h1>
-          <p className="text-xl text-blue-100">
-            We're excited to learn about your technology and talent needs
+    <div className="min-h-screen bg-white dark:bg-[#0D0D0D]">
+      {/* Hero */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' as const }}
+        className="py-20 px-6 text-center"
+      >
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-[#111111] dark:text-[#ECECEC]">
+            Get in Touch
+          </h1>
+          <p className="text-xl text-[#6B7280] dark:text-[#ECECEC]/70">
+            Let's discuss your technology and talent needs
           </p>
-        </motion.div>
-      </section>
+        </div>
+      </motion.section>
 
-      {/* Contact Form & Info Section */}
-      <section className="py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {/* Contact Information Cards */}
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true }}
-              className="md:col-span-1"
-            >
-              {contactInfo.map((info, index) => {
-                const Icon = info.icon;
-                return (
-                  <motion.a
-                    key={index}
-                    variants={fadeInUp}
-                    href={info.href || '#'}
-                    className="block mb-6 p-6 bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all"
-                  >
-                    <div className="flex items-start">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <Icon className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-500 mb-1">{info.label}</p>
-                        <p className="text-lg font-bold text-gray-900">{info.content}</p>
-                        {info.subContent && (
-                          <p className="text-gray-600">{info.subContent}</p>
-                        )}
-                      </div>
+      {/* Contact Form & Info */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: 'easeOut' as const }}
+        className="max-w-6xl mx-auto py-20 px-6"
+      >
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Contact Info */}
+          <div className="space-y-4">
+            {contactInfo.map((info, idx) => {
+              const Icon = info.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-5 bg-white dark:bg-[#0D0D0D]"
+                >
+                  <div className="flex items-start gap-3">
+                    <Icon size={20} className="text-[#10A37F] flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="text-xs text-[#6B7280] dark:text-[#ECECEC]/70 font-medium">
+                        {info.label}
+                      </p>
+                      <p className="font-semibold text-[#111111] dark:text-[#ECECEC]">
+                        {info.content}
+                      </p>
+                      {info.subContent && (
+                        <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]/70">
+                          {info.subContent}
+                        </p>
+                      )}
                     </div>
-                  </motion.a>
-                );
-              })}
-            </motion.div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
 
-            {/* Contact Form */}
+          {/* Form */}
+          <div className="md:col-span-2">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              className="md:col-span-2"
+              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#0D0D0D]"
             >
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Name */}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Full Name *
+                    <label className="block text-sm font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                      Name
                     </label>
                     <input
                       type="text"
-                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      placeholder="John Doe"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                      placeholder="Your name"
+                      className="w-full px-4 py-2 border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-lg bg-white dark:bg-[#0D0D0D] text-[#111111] dark:text-[#ECECEC] placeholder-[#6B7280] dark:placeholder-[#ECECEC]/50 focus:outline-none focus:border-[#10A37F] transition-colors"
                     />
                   </div>
-
-                  {/* Company */}
                   <div>
-                    <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
+                    <label className="block text-sm font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
                       Company
                     </label>
                     <input
                       type="text"
-                      id="company"
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      placeholder="Your Company"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                      placeholder="Your company"
+                      className="w-full px-4 py-2 border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-lg bg-white dark:bg-[#0D0D0D] text-[#111111] dark:text-[#ECECEC] placeholder-[#6B7280] dark:placeholder-[#ECECEC]/50 focus:outline-none focus:border-[#10A37F] transition-colors"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Email */}
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Email *
+                    <label className="block text-sm font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                      Email
                     </label>
                     <input
                       type="email"
-                      id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      placeholder="john@example.com"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                      placeholder="your@email.com"
+                      className="w-full px-4 py-2 border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-lg bg-white dark:bg-[#0D0D0D] text-[#111111] dark:text-[#ECECEC] placeholder-[#6B7280] dark:placeholder-[#ECECEC]/50 focus:outline-none focus:border-[#10A37F] transition-colors"
                     />
                   </div>
-
-                  {/* Phone */}
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
+                    <label className="block text-sm font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
                       Phone
                     </label>
                     <input
                       type="tel"
-                      id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="(555) 123-4567"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                      placeholder="Your phone"
+                      className="w-full px-4 py-2 border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-lg bg-white dark:bg-[#0D0D0D] text-[#111111] dark:text-[#ECECEC] placeholder-[#6B7280] dark:placeholder-[#ECECEC]/50 focus:outline-none focus:border-[#10A37F] transition-colors"
                     />
                   </div>
                 </div>
 
-                {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-                    Message *
+                  <label className="block text-sm font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                    Message
                   </label>
                   <textarea
-                    id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    rows={5}
+                    rows={4}
                     placeholder="Tell us about your needs..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
-                  ></textarea>
+                    className="w-full px-4 py-2 border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-lg bg-white dark:bg-[#0D0D0D] text-[#111111] dark:text-[#ECECEC] placeholder-[#6B7280] dark:placeholder-[#ECECEC]/50 focus:outline-none focus:border-[#10A37F] transition-colors resize-none"
+                  />
                 </div>
 
-                {/* Submit Button */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 disabled:opacity-50 text-white font-bold py-3 px-6 rounded-lg transition-all"
+                  className="w-full px-6 py-3 bg-[#10A37F] text-white rounded-lg font-medium hover:bg-[#0D8A6A] disabled:opacity-50 transition-colors"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
-                </motion.button>
+                </button>
               </form>
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Quick Action Buttons */}
-      <section className="py-16 px-4 md:px-8 bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-center text-gray-900 mb-12"
-          >
-            What Can We Help You With?
-          </motion.h2>
+      {/* Quick Actions */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: 'easeOut' as const }}
+        className="max-w-6xl mx-auto py-20 px-6"
+      >
+        <SectionHeading title="Quick Actions" centered />
+        <div className="mt-12 grid md:grid-cols-3 gap-6">
+          {quickActions.map((action, idx) => (
+            <motion.a
+              key={idx}
+              href={action.href}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
+              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#0D0D0D] text-center hover:border-[#10A37F] transition-colors"
+            >
+              <h3 className="font-semibold text-[#111111] dark:text-[#ECECEC]">
+                {action.label}
+              </h3>
+            </motion.a>
+          ))}
+        </div>
+      </motion.section>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {quickActions.map((action, index) => (
-              <motion.a
-                key={index}
-                variants={fadeInUp}
-                href={action.href}
-                className="group bg-white rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-all border border-gray-200 hover:border-blue-300"
+      {/* FAQ */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: 'easeOut' as const }}
+        className="max-w-4xl mx-auto py-20 px-6"
+      >
+        <SectionHeading title="FAQ" centered />
+        <div className="mt-12 space-y-3">
+          {faqItems.map((item, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.05 }}
+              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl bg-white dark:bg-[#0D0D0D] overflow-hidden"
+            >
+              <button
+                onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
+                className="w-full flex items-center justify-between p-5 hover:bg-[#F9FAFB] dark:hover:bg-[#2D2D2D] transition-colors"
               >
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition">
-                  {action.label}
+                <h3 className="font-semibold text-[#111111] dark:text-[#ECECEC] text-left">
+                  {item.question}
                 </h3>
-              </motion.a>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+                <ChevronDown
+                  size={20}
+                  className={`text-[#6B7280] dark:text-[#ECECEC]/70 flex-shrink-0 transition-transform ${
+                    expandedFAQ === idx ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
 
-      {/* Map Placeholder */}
-      <section className="py-20 px-4 md:px-8">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-center text-gray-900 mb-12"
-          >
-            Find Us
-          </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="w-full h-96 bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100 rounded-lg shadow-xl overflow-hidden relative"
-          >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-blue-600 mx-auto mb-4 opacity-50" />
-                <p className="text-gray-600 text-lg font-semibold">
-                  14800 Quorum Drive, Suite 285, Dallas, TX 75254
-                </p>
-                <p className="text-gray-500 mt-2">Interactive map coming soon</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 px-4 md:px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading
-            title="Frequently Asked Questions"
-            subtitle="Quick answers to common questions"
-          />
-
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-            className="space-y-4 mt-12"
-          >
-            {faqItems.map((item, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="bg-white rounded-lg border border-gray-200 overflow-hidden"
-              >
-                <button
-                  onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 hover:bg-gray-50 transition"
+              {expandedFAQ === idx && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="border-t border-[#E5E7EB] dark:border-[#2D2D2D] p-5 bg-[#F9FAFB] dark:bg-[#0D0D0D]"
                 >
-                  <h3 className="text-lg font-bold text-gray-900 text-left">{item.question}</h3>
-                  <ChevronDown
-                    className={`w-5 h-5 text-gray-600 flex-shrink-0 ml-4 transition-transform ${
-                      expandedFAQ === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {expandedFAQ === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="border-t border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-6"
-                  >
-                    <p className="text-gray-700 leading-relaxed">{item.answer}</p>
-                  </motion.div>
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
+                  <p className="text-[#6B7280] dark:text-[#ECECEC]/70 text-sm leading-relaxed">
+                    {item.answer}
+                  </p>
+                </motion.div>
+              )}
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </motion.section>
+
+      {/* CTA */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: 'easeOut' as const }}
+        className="max-w-6xl mx-auto py-20 px-6"
+      >
+        <CTASection
+          title="Ready to Get Started?"
+          primaryCTA={{ text: 'Send a Message', href: '#' }}
+        />
+      </motion.section>
     </div>
   );
 }

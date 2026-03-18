@@ -1,209 +1,251 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
-import { useState } from 'react';
+import Link from "next/link";
+import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubscribing(true);
-    // Simulate subscription
     setTimeout(() => {
-      setEmail('');
+      setEmail("");
       setIsSubscribing(false);
     }, 1000);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.5, staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  };
+
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 to-slate-950 text-slate-100 py-16">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 opacity-30 bg-gradient-to-r from-blue-900/20 via-transparent to-slate-900/20 pointer-events-none" />
-
-      <div className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main footer content grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {/* Company Info Column */}
-            <div className="space-y-6">
-              <h3 className="text-lg font-bold text-white">Company</h3>
-              <nav className="space-y-3">
-                <Link href="/about" className="block text-slate-300 hover:text-white transition-colors duration-200">
-                  About
-                </Link>
-                <Link href="/services" className="block text-slate-300 hover:text-white transition-colors duration-200">
-                  Services
-                </Link>
-                <Link href="/platforms" className="block text-slate-300 hover:text-white transition-colors duration-200">
-                  Platforms
-                </Link>
-                <Link href="/careers" className="block text-slate-300 hover:text-white transition-colors duration-200">
-                  Careers
-                </Link>
-              </nav>
-            </div>
-
-            {/* Solutions Column */}
-            <div className="space-y-6">
-              <h3 className="text-lg font-bold text-white">Solutions</h3>
-              <nav className="space-y-3">
-                <Link href="/solutions/ai-talent" className="block text-slate-300 hover:text-white transition-colors duration-200">
-                  AI Talent
-                </Link>
-                <Link href="/solutions/cloud-consulting" className="block text-slate-300 hover:text-white transition-colors duration-200">
-                  Cloud Consulting
-                </Link>
-                <Link href="/solutions/staffing" className="block text-slate-300 hover:text-white transition-colors duration-200">
-                  Staffing
-                </Link>
-                <Link href="/solutions/offshore-teams" className="block text-slate-300 hover:text-white transition-colors duration-200">
-                  Offshore Teams
-                </Link>
-              </nav>
-            </div>
-
-            {/* Platforms Column */}
-            <div className="space-y-6">
-              <h3 className="text-lg font-bold text-white">Platforms</h3>
-              <nav className="space-y-3">
-                <a
-                  href="https://www.dfwitjobs.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-slate-300 hover:text-white transition-colors duration-200"
-                >
-                  DFWITJOBS
-                </a>
-                <a
-                  href="https://www.optplanet.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-slate-300 hover:text-white transition-colors duration-200"
-                >
-                  OPTPlanet
-                </a>
-                <a
-                  href="https://www.ailearnhub.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-slate-300 hover:text-white transition-colors duration-200"
-                >
-                  AI Learn Hub
-                </a>
-                <a
-                  href="https://benzaitenlms.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-slate-300 hover:text-white transition-colors duration-200"
-                >
-                  Benzaiten LMS
-                </a>
-              </nav>
-            </div>
-
-            {/* Connect Column */}
-            <div className="space-y-6">
-              <h3 className="text-lg font-bold text-white">Connect</h3>
-
-              {/* Contact Info */}
-              <div className="space-y-3">
-                <a
-                  href="mailto:info@ctekksolutions.net"
-                  className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors duration-200"
-                >
-                  <Mail size={18} />
-                  <span>info@ctekksolutions.net</span>
-                </a>
-                <a
-                  href="tel:408-471-7753"
-                  className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors duration-200"
-                >
-                  <Phone size={18} />
-                  <span>408-471-7753</span>
-                </a>
-                <div className="flex items-start gap-2 text-slate-300">
-                  <MapPin size={18} className="flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">
-                    14800 Quorum Drive<br />
-                    Suite 285<br />
-                    Dallas, TX 75254
-                  </span>
-                </div>
-              </div>
-
-              {/* Newsletter Signup */}
-              <form onSubmit={handleNewsletterSubmit} className="space-y-2">
-                <label htmlFor="newsletter-email" className="block text-sm font-semibold text-white">
-                  Newsletter
-                </label>
-                <div className="flex">
-                  <input
-                    id="newsletter-email"
-                    type="email"
-                    placeholder="Your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-3 py-2 bg-slate-800 text-white placeholder-slate-500 border border-slate-700 rounded-l-md focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    disabled={isSubscribing}
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-r-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubscribing ? 'Subscribing...' : 'Subscribe'}
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="border-t border-slate-800 my-8" />
-
-          {/* Bottom section with social links and copyright */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Social Media Links */}
-            <div className="flex items-center gap-4">
+    <footer className="bg-[#F9FAFB] dark:bg-[#111] border-t border-[#E5E7EB] dark:border-[#2D2D2D]">
+      <motion.div
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Logo and Tagline */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h3 className="text-lg font-semibold text-[#111] dark:text-white">
+              CTekk Solutions
+            </h3>
+            <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
+              Transforming tech careers through talent, consulting, and innovation.
+            </p>
+            <div className="flex gap-3 pt-2">
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/company/ctekk-solutions"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors duration-200"
+                className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#10A37F] dark:hover:text-[#10A37F] transition-colors duration-150"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={24} />
+                <Linkedin size={20} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/ctekksolutions"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors duration-200"
-                aria-label="Twitter/X"
+                className="text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#10A37F] dark:hover:text-[#10A37F] transition-colors duration-150"
+                aria-label="Twitter"
               >
-                <Twitter size={24} />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors duration-200"
-                aria-label="GitHub"
-              >
-                <Github size={24} />
+                <Twitter size={20} />
               </a>
             </div>
+          </motion.div>
 
-            {/* Copyright */}
-            <p className="text-sm text-slate-400 text-center md:text-right">
-              © 2010-2026 CTekk Solutions. All rights reserved.
-            </p>
-          </div>
+          {/* Services */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h4 className="font-semibold text-[#111] dark:text-white text-sm">
+              Services
+            </h4>
+            <nav className="space-y-2">
+              <Link
+                href="/services#ai-talent"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                AI Talent
+              </Link>
+              <Link
+                href="/services#cloud-consulting"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                Cloud Consulting
+              </Link>
+              <Link
+                href="/services#staffing"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                Staffing
+              </Link>
+              <Link
+                href="/services#offshore-teams"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                Offshore Teams
+              </Link>
+            </nav>
+          </motion.div>
+
+          {/* Platforms */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h4 className="font-semibold text-[#111] dark:text-white text-sm">
+              Platforms
+            </h4>
+            <nav className="space-y-2">
+              <a
+                href="https://www.dfwitjobs.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                DFWITJOBS
+              </a>
+              <a
+                href="https://www.optplanet.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                OPTPlanet
+              </a>
+              <a
+                href="https://www.ailearnhub.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                AI Learn Hub
+              </a>
+              <a
+                href="https://benzaitenlms.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                Benzaiten LMS
+              </a>
+            </nav>
+          </motion.div>
+
+          {/* Company */}
+          <motion.div variants={itemVariants} className="space-y-4">
+            <h4 className="font-semibold text-[#111] dark:text-white text-sm">
+              Company
+            </h4>
+            <nav className="space-y-2">
+              <Link
+                href="/about"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                About
+              </Link>
+              <Link
+                href="/careers"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                Careers
+              </Link>
+              <Link
+                href="/insights"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                Insights
+              </Link>
+              <Link
+                href="/contact"
+                className="block text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+              >
+                Contact
+              </Link>
+            </nav>
+          </motion.div>
         </div>
-      </div>
+
+        {/* Divider */}
+        <div className="border-t border-[#E5E7EB] dark:border-[#2D2D2D] my-8" />
+
+        {/* Contact & Newsletter */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"
+        >
+          {/* Contact Info */}
+          <div className="space-y-3">
+            <a
+              href="mailto:info@ctekksolutions.net"
+              className="flex items-center gap-2 text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+            >
+              <Mail size={18} className="flex-shrink-0" />
+              info@ctekksolutions.net
+            </a>
+            <a
+              href="tel:408-471-7753"
+              className="flex items-center gap-2 text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
+            >
+              <Phone size={18} className="flex-shrink-0" />
+              408-471-7753
+            </a>
+            <div className="flex items-start gap-2 text-sm text-[#6B7280] dark:text-[#9CA3AF]">
+              <MapPin size={18} className="flex-shrink-0 mt-0.5" />
+              <span>
+                14800 Quorum Drive, Suite 285
+                <br />
+                Dallas, TX 75254
+              </span>
+            </div>
+          </div>
+
+          {/* Newsletter */}
+          <div className="space-y-3">
+            <label className="block text-sm font-medium text-[#111] dark:text-white">
+              Newsletter
+            </label>
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 px-4 py-2 text-sm bg-white dark:bg-[#2D2D2D] text-[#111] dark:text-white placeholder-[#9CA3AF] border border-[#E5E7EB] dark:border-[#3D3D3D] rounded-lg focus:outline-none focus:border-[#10A37F] transition-colors duration-150"
+                required
+              />
+              <button
+                type="submit"
+                disabled={isSubscribing}
+                className="px-4 py-2 text-sm font-medium bg-[#10A37F] text-white rounded-lg hover:bg-[#0D8A6A] transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubscribing ? "..." : "Subscribe"}
+              </button>
+            </form>
+          </div>
+        </motion.div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-[#E5E7EB] dark:border-[#2D2D2D] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-[#9CA3AF] dark:text-[#6B7280]">
+            © 2010-2026 CTekk Solutions. All rights reserved.
+          </p>
+        </div>
+      </motion.div>
     </footer>
   );
 }

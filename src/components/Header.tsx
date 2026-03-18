@@ -39,25 +39,8 @@ const Header = () => {
   ];
 
   const mobileMenuVariants = {
-    hidden: {
-      opacity: 0,
-      x: "100%",
-      transition: { duration: 0.2 },
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.3 },
-    },
-  };
-
-  const linkVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: (custom: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: { delay: custom * 0.05, duration: 0.2 },
-    }),
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
   };
 
   if (!mounted) {
@@ -66,26 +49,24 @@ const Header = () => {
 
   return (
     <>
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#0D0D0D] border-b border-[#E5E7EB] dark:border-[#2D2D2D]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <div className="text-xl sm:text-2xl font-bold">
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
-                  CTekk Solutions
-                </span>
-              </div>
+              <span className="text-lg font-semibold text-[#111] dark:text-white">
+                CTekk
+                <span className="text-[#10A37F] ml-1">Solutions</span>
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200"
+                  className="text-sm font-medium text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white transition-colors duration-150"
                 >
                   {link.label}
                 </Link>
@@ -93,11 +74,11 @@ const Header = () => {
             </nav>
 
             {/* Right Actions */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {/* CTA Button */}
               <Link
                 href="/consultation"
-                className="hidden sm:inline-flex px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 transform hover:scale-105"
+                className="hidden sm:inline-flex px-4 py-2 bg-[#10A37F] text-white text-sm font-medium rounded-lg hover:bg-[#0D8A6A] transition-colors duration-150"
               >
                 Book Consultation
               </Link>
@@ -105,20 +86,16 @@ const Header = () => {
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200 text-slate-300 hover:text-white"
+                className="p-2 rounded-lg hover:bg-[#F9FAFB] dark:hover:bg-[#2D2D2D] text-[#6B7280] dark:text-[#9CA3AF] transition-colors duration-150"
                 aria-label="Toggle dark mode"
               >
-                {isDark ? (
-                  <Sun size={20} />
-                ) : (
-                  <Moon size={20} />
-                )}
+                {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200 text-slate-300 hover:text-white"
+                className="lg:hidden p-2 rounded-lg hover:bg-[#F9FAFB] dark:hover:bg-[#2D2D2D] text-[#6B7280] dark:text-[#9CA3AF] transition-colors duration-150"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -136,49 +113,34 @@ const Header = () => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="fixed top-16 right-0 bottom-0 w-full sm:w-80 bg-slate-900/95 backdrop-blur-lg border-l border-slate-800 z-40 lg:hidden"
+            className="fixed top-16 left-0 right-0 bg-white dark:bg-[#0D0D0D] border-b border-[#E5E7EB] dark:border-[#2D2D2D] z-40 lg:hidden"
           >
-            <nav className="flex flex-col p-6 gap-2">
-              {navLinks.map((link, index) => (
-                <motion.div
+            <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-1">
+              {navLinks.map((link) => (
+                <Link
                   key={link.href}
-                  custom={index}
-                  variants={linkVariants}
-                  initial="hidden"
-                  animate="visible"
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-2 text-sm font-medium text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111] dark:hover:text-white hover:bg-[#F9FAFB] dark:hover:bg-[#2D2D2D] rounded-lg transition-colors duration-150"
                 >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg transition-colors duration-200 font-medium"
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
+                  {link.label}
+                </Link>
               ))}
 
               {/* Mobile CTA Button */}
-              <motion.div
-                custom={navLinks.length}
-                variants={linkVariants}
-                initial="hidden"
-                animate="visible"
-                className="mt-6 pt-6 border-t border-slate-700"
+              <Link
+                href="/consultation"
+                onClick={() => setIsOpen(false)}
+                className="block w-full mt-4 px-4 py-2 bg-[#10A37F] text-white text-sm font-medium rounded-lg hover:bg-[#0D8A6A] transition-colors duration-150 text-center"
               >
-                <Link
-                  href="/consultation"
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 text-center"
-                >
-                  Book Consultation
-                </Link>
-              </motion.div>
+                Book Consultation
+              </Link>
             </nav>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Spacer to account for fixed header */}
+      {/* Spacer */}
       <div className="h-16" />
     </>
   );

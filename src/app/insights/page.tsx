@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Clock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { SectionHeading } from '../../components/SectionHeading';
 import { CTASection } from '../../components/CTASection';
 
@@ -15,6 +16,7 @@ const featuredArticle = {
   readTime: '8 min read',
   category: 'AI & ML',
   href: '/insights/ai-workforce-trends-2026',
+  image: '/article-ai-workforce.svg',
 };
 
 const articles = [
@@ -25,6 +27,7 @@ const articles = [
     readTime: '6 min read',
     category: 'Cloud Computing',
     href: '/insights/building-scalable-cloud-infrastructure',
+    image: '/article-cloud-infrastructure.svg',
   },
   {
     title: 'The Future of Remote STEM Hiring',
@@ -33,6 +36,7 @@ const articles = [
     readTime: '5 min read',
     category: 'Staffing',
     href: '/insights/future-of-remote-stem-hiring',
+    image: '/article-remote-hiring.svg',
   },
   {
     title: 'A Practical Guide to Enterprise AI Implementation',
@@ -41,6 +45,7 @@ const articles = [
     readTime: '10 min read',
     category: 'Industry Trends',
     href: '/insights/enterprise-ai-implementation-guide',
+    image: '/article-ai-implementation.svg',
   },
   {
     title: 'From Training to Transformation: How AI Upskilling Drives Business Value',
@@ -49,6 +54,7 @@ const articles = [
     readTime: '7 min read',
     category: 'AI & ML',
     href: '/insights/from-training-to-transformation',
+    image: '/article-training.svg',
   },
   {
     title: 'Offshore Development: Best Practices for Global Teams',
@@ -57,6 +63,7 @@ const articles = [
     readTime: '6 min read',
     category: 'Case Studies',
     href: '/insights/offshore-development-best-practices',
+    image: '/article-remote-hiring.svg',
   },
 ];
 
@@ -132,7 +139,9 @@ export default function InsightsPage() {
         >
           <Link href={featuredArticle.href} className="block">
           <div className="flex flex-col lg:flex-row gap-8">
-            <div className="lg:w-1/3 h-48 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#34D399]/20" />
+            <div className="lg:w-1/3 h-48 rounded-lg bg-[#F9FAFB] overflow-hidden flex items-center justify-center">
+              <Image src={featuredArticle.image} alt={featuredArticle.title} width={400} height={200} className="w-full h-full object-cover" />
+            </div>
             <div className="lg:w-2/3 flex flex-col justify-between">
               <div>
                 <span className="text-xs font-medium text-[#10A37F] bg-[#10A37F]/10 px-3 py-1 rounded-full inline-block mb-4">
@@ -210,7 +219,9 @@ export default function InsightsPage() {
               transition={{ delay: idx * 0.05 }}
             >
               <Link href={article.href} className="block border border-[#E5E7EB] rounded-lg overflow-hidden bg-white hover:border-[#10A37F] transition-colors group">
-                <div className="h-40 bg-gradient-to-br from-[#10A37F]/10 to-[#34D399]/10" />
+                <div className="h-40 bg-[#F9FAFB] overflow-hidden flex items-center justify-center">
+                  <Image src={article.image} alt={article.title} width={400} height={200} className="w-full h-full object-cover" />
+                </div>
                 <div className="p-6">
                   <span className="text-xs font-medium text-[#10A37F] bg-[#F0FDF9] px-2 py-1 rounded-full inline-block mb-3">
                     {article.category}

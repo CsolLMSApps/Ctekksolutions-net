@@ -1,0 +1,65 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#F9FAFB"/>
+
+  <!-- Central globe -->
+  <circle cx="200" cy="100" r="45" fill="none" stroke="#0A0F1C" stroke-width="2.5"/>
+  <circle cx="200" cy="100" r="45" fill="none" stroke="#34D399" stroke-width="1" opacity="0.4"/>
+
+  <!-- Globe latitude lines -->
+  <ellipse cx="200" cy="100" rx="45" ry="15" fill="none" stroke="#0A0F1C" stroke-width="1" opacity="0.3"/>
+  <ellipse cx="200" cy="100" rx="45" ry="30" fill="none" stroke="#0A0F1C" stroke-width="1" opacity="0.3"/>
+
+  <!-- Globe longitude lines -->
+  <line x1="200" y1="55" x2="200" y2="145" stroke="#0A0F1C" stroke-width="1" opacity="0.3"/>
+  <line x1="165" y1="70" x2="235" y2="130" stroke="#0A0F1C" stroke-width="1" opacity="0.3"/>
+  <line x1="235" y1="70" x2="165" y2="130" stroke="#0A0F1C" stroke-width="1" opacity="0.3"/>
+
+  <!-- Connection points around the globe -->
+  <!-- Top point -->
+  <circle cx="200" cy="50" r="6" fill="#34D399" stroke="#10A37F" stroke-width="1.5"/>
+
+  <!-- Right point -->
+  <circle cx="250" cy="100" r="6" fill="#34D399" stroke="#10A37F" stroke-width="1.5"/>
+
+  <!-- Bottom point -->
+  <circle cx="200" cy="150" r="6" fill="#34D399" stroke="#10A37F" stroke-width="1.5"/>
+
+  <!-- Left point -->
+  <circle cx="150" cy="100" r="6" fill="#34D399" stroke="#10A37F" stroke-width="1.5"/>
+
+  <!-- Top-right point -->
+  <circle cx="235" cy="68" r="5" fill="#10A37F"/>
+
+  <!-- Bottom-right point -->
+  <circle cx="235" cy="132" r="5" fill="#10A37F"/>
+
+  <!-- Bottom-left point -->
+  <circle cx="165" cy="132" r="5" fill="#10A37F"/>
+
+  <!-- Top-left point -->
+  <circle cx="165" cy="68" r="5" fill="#10A37F"/>
+
+  <!-- Dotted connection lines (using dashes) -->
+  <!-- From top -->
+  <line x1="200" y1="50" x2="200" y2="25" stroke="#34D399" stroke-width="2" stroke-dasharray="3,3" opacity="0.7"/>
+
+  <!-- From right -->
+  <line x1="250" y1="100" x2="300" y2="100" stroke="#34D399" stroke-width="2" stroke-dasharray="3,3" opacity="0.7"/>
+
+  <!-- From bottom -->
+  <line x1="200" y1="150" x2="200" y2="175" stroke="#34D399" stroke-width="2" stroke-dasharray="3,3" opacity="0.7"/>
+
+  <!-- From left -->
+  <line x1="150" y1="100" x2="100" y2="100" stroke="#34D399" stroke-width="2" stroke-dasharray="3,3" opacity="0.7"/>
+
+  <!-- End circles for connection lines -->
+  <circle cx="200" cy="20" r="4" fill="#10A37F"/>
+  <circle cx="305" cy="100" r="4" fill="#10A37F"/>
+  <circle cx="200" cy="180" r="4" fill="#10A37F"/>
+  <circle cx="95" cy="100" r="4" fill="#10A37F"/>
+
+  <!-- Small accent pulses -->
+  <circle cx="200" cy="20" r="7" fill="none" stroke="#34D399" stroke-width="1" opacity="0.4"/>
+  <circle cx="305" cy="100" r="7" fill="none" stroke="#34D399" stroke-width="1" opacity="0.4"/>
+</svg>

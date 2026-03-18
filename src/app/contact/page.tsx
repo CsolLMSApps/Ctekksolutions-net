@@ -141,38 +141,37 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[250px_1fr_250px] gap-8">
           {/* LEFT COLUMN */}
           <div className="space-y-6">
-            {/* Ad Card 1 — AI Job Board */}
+            {/* Ad Card 1 — OPTPlanet.tech AI Job Board (Orange/Black) */}
             <motion.div
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="rounded-lg overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+              className="rounded-lg overflow-hidden bg-[#111111] border border-[#333]"
             >
-              {/* Gradient top bar */}
-              <div className="h-1 bg-gradient-to-r from-[#10A37F] to-[#34D399]" />
+              <div className="h-1 bg-gradient-to-r from-[#F97316] to-[#FB923C]" />
               <div className="p-5">
-                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">AI JOB BOARD</p>
-                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">The AI-Only Job Board</h3>
-                <p className="text-xs text-[#6B7280] mb-3">AI Jobs. Real Opportunities.</p>
+                <p className="text-[10px] font-semibold text-[#F97316] uppercase tracking-wider mb-1">AI JOB BOARD</p>
+                <h3 className="font-bold text-white text-sm mb-2">Global AI Jobs &amp; Contracts</h3>
+                <p className="text-xs text-gray-400 mb-3">Remote AI jobs, prompt engineering &amp; automation work worldwide.</p>
                 <ul className="space-y-1.5 mb-4">
-                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> Machine Learning &amp; LLM roles
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#F97316] mt-0.5">›</span> Machine Learning &amp; LLM roles
                   </li>
-                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> GenAI, MLOps &amp; AI Engineer jobs
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#F97316] mt-0.5">›</span> STEM talent for startups
                   </li>
-                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> Every role verified — no AI-washed listings
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#F97316] mt-0.5">›</span> Remote &amp; contract opportunities
                   </li>
                 </ul>
                 <a
-                  href="https://www.dfwitjobs.com"
+                  href="https://optplanet.tech"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 bg-[#10A37F] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#0D8A6A] transition-colors"
+                  className="inline-flex items-center gap-1 bg-[#F97316] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#EA580C] transition-colors"
                 >
-                  Learn More <ArrowRight size={12} />
+                  Explore Jobs <ArrowRight size={12} />
                 </a>
               </div>
             </motion.div>
@@ -188,8 +187,8 @@ export default function ContactPage() {
             >
               <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
               <div className="p-5">
-                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">EMPLOYER SOLUTIONS</p>
-                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Post Jobs & Find Talent</h3>
+                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">DFW IT JOBS</p>
+                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Post Jobs &amp; Find Talent</h3>
                 <p className="text-xs text-[#6B7280] mb-3">Your brand in front of thousands of active IT professionals.</p>
                 <ul className="space-y-1.5 mb-4">
                   <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
@@ -378,38 +377,38 @@ export default function ContactPage() {
 
           {/* RIGHT COLUMN */}
           <div className="space-y-6">
-            {/* Ad Card 3 — AI Learning Platform */}
+            {/* Ad Card 3 — AI Learning Platform (Orange/Black) */}
             <motion.div
               variants={itemVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="rounded-lg overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+              className="rounded-lg overflow-hidden bg-[#111111] border border-[#333]"
             >
-              <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
+              <div className="h-1 bg-gradient-to-r from-[#F97316] to-[#FB923C]" />
               <div className="p-5">
-                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">AI LEARNING PLATFORM</p>
-                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">#1 AI Platform for Professionals</h3>
-                <p className="text-xs text-[#6B7280] mb-3">Master AI. Less theory. More real-life AI.</p>
+                <p className="text-[10px] font-semibold text-[#F97316] uppercase tracking-wider mb-1">AI LEARNING PLATFORM</p>
+                <h3 className="font-bold text-white text-sm mb-2">#1 AI Platform for Professionals</h3>
+                <p className="text-xs text-gray-400 mb-3">Master AI. Less theory. More real-life AI.</p>
                 <ul className="space-y-1.5 mb-4">
-                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> Apply AI to everyday decisions
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#F97316] mt-0.5">›</span> Apply AI to everyday decisions
                   </li>
-                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> LLM, GenAI &amp; workflow automation
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#F97316] mt-0.5">›</span> LLM, GenAI &amp; workflow automation
                   </li>
-                  <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> Clarity over complexity
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#F97316] mt-0.5">›</span> Clarity over complexity
                   </li>
                 </ul>
                 <a
                   href="https://www.ailearnhub.io"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 bg-[#10A37F] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#059669] transition-colors"
+                  className="inline-flex items-center gap-1 bg-[#F97316] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#EA580C] transition-colors"
                 >
-                  Learn More <ArrowRight size={12} />
+                  Start Learning <ArrowRight size={12} />
                 </a>
               </div>
             </motion.div>
@@ -440,7 +439,7 @@ export default function ContactPage() {
                   </li>
                 </ul>
                 <a
-                  href="/contact"
+                  href="/services"
                   className="inline-flex items-center gap-1 bg-[#10A37F] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#059669] transition-colors"
                 >
                   Learn More <ArrowRight size={12} />

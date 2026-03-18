@@ -1,0 +1,42 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#F9FAFB"/>
+
+  <!-- Connecting lines -->
+  <line x1="80" y1="60" x2="160" y2="100" stroke="#34D399" stroke-width="2" opacity="0.6"/>
+  <line x1="160" y1="100" x2="240" y2="70" stroke="#34D399" stroke-width="2" opacity="0.6"/>
+  <line x1="240" y1="70" x2="320" y2="120" stroke="#34D399" stroke-width="2" opacity="0.6"/>
+  <line x1="160" y1="100" x2="200" y2="150" stroke="#34D399" stroke-width="2" opacity="0.6"/>
+  <line x1="80" y1="60" x2="120" y2="140" stroke="#10A37F" stroke-width="1.5" opacity="0.5"/>
+  <line x1="320" y1="120" x2="240" y2="150" stroke="#10A37F" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Node circles - people/AI collaboration -->
+  <!-- Top left - Human -->
+  <circle cx="80" cy="60" r="12" fill="#10A37F"/>
+  <circle cx="80" cy="60" r="8" fill="none" stroke="#34D399" stroke-width="1.5"/>
+
+  <!-- Center-left - AI -->
+  <circle cx="160" cy="100" r="14" fill="#34D399"/>
+  <circle cx="160" cy="100" r="9" fill="none" stroke="#10A37F" stroke-width="2"/>
+
+  <!-- Top right - Human -->
+  <circle cx="240" cy="70" r="12" fill="#10A37F"/>
+  <circle cx="240" cy="70" r="8" fill="none" stroke="#34D399" stroke-width="1.5"/>
+
+  <!-- Right - AI -->
+  <circle cx="320" cy="120" r="14" fill="#34D399"/>
+  <circle cx="320" cy="120" r="9" fill="none" stroke="#10A37F" stroke-width="2"/>
+
+  <!-- Bottom center - Human -->
+  <circle cx="200" cy="150" r="12" fill="#10A37F"/>
+  <circle cx="200" cy="150" r="8" fill="none" stroke="#34D399" stroke-width="1.5"/>
+
+  <!-- Bottom left - AI -->
+  <circle cx="120" cy="140" r="14" fill="#34D399"/>
+  <circle cx="120" cy="140" r="9" fill="none" stroke="#10A37F" stroke-width="2"/>
+
+  <!-- Small accent dots -->
+  <circle cx="90" cy="35" r="3" fill="#10A37F" opacity="0.4"/>
+  <circle cx="310" cy="50" r="3" fill="#34D399" opacity="0.4"/>
+  <circle cx="140" cy="170" r="3" fill="#10A37F" opacity="0.4"/>
+</svg>

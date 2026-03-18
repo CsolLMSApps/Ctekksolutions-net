@@ -1,0 +1,44 @@
+<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#F9FAFB"/>
+
+  <!-- Bottom layer - servers -->
+  <g opacity="0.3">
+    <rect x="60" y="150" width="30" height="35" rx="2" fill="#0A0F1C"/>
+    <rect x="155" y="150" width="30" height="35" rx="2" fill="#0A0F1C"/>
+    <rect x="250" y="150" width="30" height="35" rx="2" fill="#0A0F1C"/>
+    <rect x="310" y="150" width="30" height="35" rx="2" fill="#0A0F1C"/>
+  </g>
+
+  <!-- Connection lines to servers -->
+  <line x1="100" y1="125" x2="90" y2="150" stroke="#34D399" stroke-width="2" opacity="0.6"/>
+  <line x1="150" y1="110" x2="170" y2="150" stroke="#34D399" stroke-width="2" opacity="0.6"/>
+  <line x1="220" y1="115" x2="265" y2="150" stroke="#34D399" stroke-width="2" opacity="0.6"/>
+  <line x1="280" y1="120" x2="325" y2="150" stroke="#34D399" stroke-width="2" opacity="0.6"/>
+
+  <!-- Middle layer - cloud platform -->
+  <path d="M 130 120 Q 120 100 140 90 Q 150 80 170 85 Q 180 70 200 75 Q 220 65 240 80 Q 260 75 270 95 Q 280 100 270 120 Z" fill="#34D399" opacity="0.7"/>
+  <path d="M 130 120 Q 120 100 140 90 Q 150 80 170 85 Q 180 70 200 75 Q 220 65 240 80 Q 260 75 270 95 Q 280 100 270 120 Z" fill="none" stroke="#10A37F" stroke-width="2"/>
+
+  <!-- Internal cloud lines/structure -->
+  <line x1="160" y1="105" x2="180" y2="95" stroke="#0A0F1C" stroke-width="1.5" opacity="0.4"/>
+  <line x1="180" y1="95" x2="220" y2="100" stroke="#0A0F1C" stroke-width="1.5" opacity="0.4"/>
+  <line x1="200" y1="95" x2="200" y2="120" stroke="#0A0F1C" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="190" cy="110" r="4" fill="#10A37F"/>
+  <circle cx="210" cy="105" r="4" fill="#10A37F"/>
+
+  <!-- Top layer - data center -->
+  <g>
+    <!-- Main circle -->
+    <circle cx="200" cy="50" r="25" fill="none" stroke="#10A37F" stroke-width="2.5"/>
+    <circle cx="200" cy="50" r="18" fill="#F9FAFB" stroke="#34D399" stroke-width="1.5"/>
+
+    <!-- Inner design -->
+    <line x1="185" y1="35" x2="215" y2="65" stroke="#34D399" stroke-width="1.5" opacity="0.6"/>
+    <line x1="215" y1="35" x2="185" y2="65" stroke="#34D399" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Accent elements -->
+  <circle cx="120" cy="40" r="3" fill="#34D399" opacity="0.5"/>
+  <circle cx="280" cy="45" r="3" fill="#10A37F" opacity="0.5"/>
+</svg>

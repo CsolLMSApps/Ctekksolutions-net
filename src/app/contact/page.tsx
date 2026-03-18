@@ -152,9 +152,6 @@ export default function ContactPage() {
               {/* Gradient top bar */}
               <div className="h-1 bg-gradient-to-r from-[#10A37F] to-[#34D399]" />
               <div className="p-5">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
-                </div>
                 <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">AI JOB BOARD</p>
                 <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">The AI-Only Job Board</h3>
                 <p className="text-xs text-[#6B7280] mb-3">AI Jobs. Real Opportunities.</p>
@@ -191,11 +188,8 @@ export default function ContactPage() {
             >
               <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
               <div className="p-5">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
-                </div>
-                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">ADVERTISE HERE</p>
-                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Reach DFW IT Talent</h3>
+                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">EMPLOYER SOLUTIONS</p>
+                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Post Jobs & Find Talent</h3>
                 <p className="text-xs text-[#6B7280] mb-3">Your brand in front of thousands of active IT professionals.</p>
                 <ul className="space-y-1.5 mb-4">
                   <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
@@ -395,9 +389,6 @@ export default function ContactPage() {
             >
               <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
               <div className="p-5">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
-                </div>
                 <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">AI LEARNING PLATFORM</p>
                 <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">#1 AI Platform for Professionals</h3>
                 <p className="text-xs text-[#6B7280] mb-3">Master AI. Less theory. More real-life AI.</p>
@@ -434,11 +425,8 @@ export default function ContactPage() {
             >
               <div className="h-1 bg-gradient-to-r from-[#0D8A6A] to-[#10A37F]" />
               <div className="p-5">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-medium text-[#6B7280] bg-[#F9FAFB] dark:bg-[#0A0F1C] px-2 py-0.5 rounded border border-[#E5E7EB] dark:border-[#2D2D2D]">SPONSORED</span>
-                </div>
-                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">ADVERTISE HERE</p>
-                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Sponsor This Space</h3>
+                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">PARTNERSHIP</p>
+                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Partner With Us</h3>
                 <p className="text-xs text-[#6B7280] mb-3">Reach thousands of DFW tech professionals every month.</p>
                 <ul className="space-y-1.5 mb-4">
                   <li className="text-xs text-[#6B7280] flex items-start gap-1.5">

@@ -28,7 +28,7 @@ export function CTASection({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="bg-white py-20 md:py-24"
+      className="bg-white py-12 md:py-16"
     >
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">

@@ -134,7 +134,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid - LIGHT */}
-      <section className="bg-white py-20 md:py-32 px-6">
+      <section className="bg-white py-16 md:py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
@@ -187,7 +187,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section - DARK */}
-      <section className="bg-[#0A0F1C] text-white py-20 md:py-32 px-6">
+      <section className="bg-[#0A0F1C] text-white py-16 md:py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#10A37F] to-[#34D399] bg-clip-text text-transparent mb-4">

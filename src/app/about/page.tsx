@@ -86,7 +86,7 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white py-20 md:py-32 px-6"
+        className="bg-white py-16 md:py-20 px-6"
       >
         <div className="max-w-3xl mx-auto">
           <SectionHeading title="Our Story" centered />
@@ -119,7 +119,7 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#F9FAFB] py-20 md:py-32 px-6"
+        className="bg-[#F9FAFB] py-16 md:py-20 px-6"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="mb-12">
@@ -167,7 +167,7 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#111827] py-20 md:py-32 px-6"
+        className="bg-[#111827] py-16 md:py-20 px-6"
       >
         <div className="max-w-7xl mx-auto">
           <div className="bg-white/5 border border-white/10 rounded-lg p-12">
@@ -200,7 +200,7 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white py-20 md:py-32 px-6"
+        className="bg-white py-16 md:py-20 px-6"
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeading title="Core Values" centered />
@@ -236,7 +236,7 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#F9FAFB] py-20 md:py-32 px-6"
+        className="bg-[#F9FAFB] py-16 md:py-20 px-6"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="mb-12">

@@ -167,7 +167,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 bg-[#10A37F]/10 border border-[#10A37F]/30 rounded-full px-4 py-1.5 mb-8"
             >
               <Zap size={16} className="text-[#10A37F]" />
-              <span className="text-[#10A37F]">AI-Powered Consulting Since 2010</span>
+              <span className="text-[#10A37F]">Empowering Businesses Since 2010</span>
             </motion.div>
 
             {/* Headline */}
@@ -256,7 +256,7 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES SECTION ===== */}
-      <section className="bg-white py-20 md:py-32">
+      <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <motion.h2
@@ -306,7 +306,7 @@ export default function Home() {
       </section>
 
       {/* ===== PLATFORMS SECTION ===== */}
-      <section className="bg-gray-50 py-20 md:py-32">
+      <section className="bg-gray-50 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <motion.h2
@@ -361,7 +361,7 @@ export default function Home() {
       </section>
 
       {/* ===== INDUSTRIES SECTION ===== */}
-      <section className="bg-[#111827] py-20 md:py-32">
+      <section className="bg-[#111827] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <motion.h2
@@ -411,7 +411,7 @@ export default function Home() {
       </section>
 
       {/* ===== AI JOURNEY SECTION ===== */}
-      <section className="bg-gray-100 py-20 md:py-32">
+      <section className="bg-gray-100 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <motion.h2

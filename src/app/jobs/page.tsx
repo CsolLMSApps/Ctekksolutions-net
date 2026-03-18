@@ -183,7 +183,7 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#F9FAFB] py-20 md:py-32 px-6"
+        className="bg-[#F9FAFB] py-16 md:py-20 px-6"
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -215,7 +215,7 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white py-20 md:py-32 px-6"
+        className="bg-white py-16 md:py-20 px-6"
       >
         <div className="max-w-7xl mx-auto">
           <SectionHeading title="Open Positions" centered />
@@ -265,10 +265,10 @@ export default function JobsPage() {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href={`/apply?position=${encodeURIComponent(job.title)}`}
                   className="inline-block text-sm bg-[#10A37F] text-white px-4 py-1.5 rounded-md hover:bg-[#059669] transition-colors"
                 >
-                  Apply
+                  Apply Now
                 </Link>
               </motion.div>
             ))}
@@ -282,7 +282,7 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#111827] py-20 md:py-32 px-6"
+        className="bg-[#111827] py-16 md:py-20 px-6"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div className="mb-12">

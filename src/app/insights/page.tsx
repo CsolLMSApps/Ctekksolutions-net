@@ -9,56 +9,55 @@ import { CTASection } from '../../components/CTASection';
 const categories = ['All', 'AI & ML', 'Cloud Computing', 'Staffing', 'Industry Trends', 'Case Studies'];
 
 const featuredArticle = {
-  title: 'The Future of Enterprise AI: Trends and Predictions for 2026',
-  excerpt: 'Explore the transformative trends shaping enterprise AI adoption.',
-  date: 'March 15, 2026',
-  readTime: '12 min read',
+  title: 'AI Workforce Trends Shaping 2026',
+  excerpt: 'From AI-native roles to upskilling imperatives, the workforce is transforming faster than ever. Here\'s what leaders need to know.',
+  date: 'March 10, 2026',
+  readTime: '8 min read',
   category: 'AI & ML',
+  href: '/insights/ai-workforce-trends-2026',
 };
 
 const articles = [
   {
-    title: 'Scaling Machine Learning in Production',
-    excerpt: 'Best practices for deploying and scaling ML models.',
-    date: 'March 13, 2026',
-    readTime: '8 min read',
-    category: 'AI & ML',
-  },
-  {
-    title: 'Cloud-Native Architecture: A Complete Guide',
-    excerpt: 'Design and implement cloud-native applications.',
-    date: 'March 10, 2026',
-    readTime: '10 min read',
+    title: 'Building Scalable Cloud Infrastructure for AI Workloads',
+    excerpt: 'How to architect cloud environments that support demanding ML pipelines while controlling costs.',
+    date: 'February 22, 2026',
+    readTime: '6 min read',
     category: 'Cloud Computing',
+    href: '/insights/building-scalable-cloud-infrastructure',
   },
   {
-    title: 'Building a High-Performance AI Talent Strategy',
-    excerpt: 'Finding and recruiting top AI talent in a competitive market.',
-    date: 'March 8, 2026',
-    readTime: '9 min read',
+    title: 'The Future of Remote STEM Hiring',
+    excerpt: 'Remote work has reshaped how companies find STEM talent. Platforms like DFWITJOBS and OPTPlanet.tech are leading the way.',
+    date: 'February 8, 2026',
+    readTime: '5 min read',
     category: 'Staffing',
+    href: '/insights/future-of-remote-stem-hiring',
   },
   {
-    title: 'LLMs in Enterprise: Implementation and Challenges',
-    excerpt: 'Leveraging large language models for business intelligence.',
-    date: 'March 5, 2026',
-    readTime: '11 min read',
+    title: 'A Practical Guide to Enterprise AI Implementation',
+    excerpt: 'A step-by-step approach to adopting AI in the enterprise — from discovery to full-scale deployment.',
+    date: 'January 15, 2026',
+    readTime: '10 min read',
     category: 'Industry Trends',
+    href: '/insights/enterprise-ai-implementation-guide',
   },
   {
-    title: 'Case Study: AI Implementation at Fortune 500 Company',
-    excerpt: 'Real-world transformation with AI-powered solutions.',
-    date: 'February 28, 2026',
-    readTime: '15 min read',
-    category: 'Case Studies',
-  },
-  {
-    title: 'The Hidden Costs of Technical Debt in ML Systems',
-    excerpt: 'Understanding and mitigating technical debt in ML projects.',
-    date: 'February 25, 2026',
+    title: 'From Training to Transformation: How AI Upskilling Drives Business Value',
+    excerpt: 'Why corporate AI training programs deliver measurable ROI when designed around real business outcomes.',
+    date: 'December 20, 2025',
     readTime: '7 min read',
     category: 'AI & ML',
-  }
+    href: '/insights/from-training-to-transformation',
+  },
+  {
+    title: 'Offshore Development: Best Practices for Global Teams',
+    excerpt: 'Managing distributed teams across Dallas and Mysuru — lessons learned from CTekk\'s global delivery model.',
+    date: 'November 12, 2025',
+    readTime: '6 min read',
+    category: 'Case Studies',
+    href: '/insights/offshore-development-best-practices',
+  },
 ];
 
 const itemVariants = {
@@ -111,7 +110,7 @@ export default function InsightsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#0A0F1C] max-w-7xl mx-auto py-20 md:py-32 px-6"
+        className="bg-[#0A0F1C] max-w-7xl mx-auto py-16 md:py-20 px-6"
       >
         <motion.div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold"
@@ -131,6 +130,7 @@ export default function InsightsPage() {
           viewport={{ once: true }}
           className="bg-white/5 border border-white/10 rounded-lg p-8 hover:border-[#10A37F]/50 transition-colors"
         >
+          <Link href={featuredArticle.href} className="block">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="lg:w-1/3 h-48 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#34D399]/20" />
             <div className="lg:w-2/3 flex flex-col justify-between">
@@ -159,6 +159,7 @@ export default function InsightsPage() {
               </div>
             </div>
           </div>
+          </Link>
         </motion.div>
       </motion.section>
 
@@ -196,7 +197,7 @@ export default function InsightsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white max-w-7xl mx-auto py-20 md:py-32 px-6"
+        className="bg-white max-w-7xl mx-auto py-16 md:py-20 px-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((article, idx) => (
@@ -207,30 +208,31 @@ export default function InsightsPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white hover:border-[#10A37F] transition-colors group"
             >
-              <div className="h-40 bg-gradient-to-br from-[#10A37F]/10 to-[#34D399]/10" />
-              <div className="p-6">
-                <span className="text-xs font-medium text-[#10A37F] bg-[#F0FDF9] px-2 py-1 rounded-full inline-block mb-3">
-                  {article.category}
-                </span>
-                <h3 className="font-semibold text-[#111111] mb-2 line-clamp-2 text-sm">
-                  {article.title}
-                </h3>
-                <p className="text-sm text-[#6B7280] mb-4 line-clamp-2">
-                  {article.excerpt}
-                </p>
-                <div className="flex items-center justify-between pt-4 border-t border-[#E5E7EB] text-xs text-[#6B7280]">
-                  <div className="flex gap-2">
-                    <span>{article.date}</span>
-                    <span className="flex items-center gap-1">
-                      <Clock size={14} />
-                      {article.readTime}
-                    </span>
+              <Link href={article.href} className="block border border-[#E5E7EB] rounded-lg overflow-hidden bg-white hover:border-[#10A37F] transition-colors group">
+                <div className="h-40 bg-gradient-to-br from-[#10A37F]/10 to-[#34D399]/10" />
+                <div className="p-6">
+                  <span className="text-xs font-medium text-[#10A37F] bg-[#F0FDF9] px-2 py-1 rounded-full inline-block mb-3">
+                    {article.category}
+                  </span>
+                  <h3 className="font-semibold text-[#111111] mb-2 line-clamp-2 text-sm">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm text-[#6B7280] mb-4 line-clamp-2">
+                    {article.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between pt-4 border-t border-[#E5E7EB] text-xs text-[#6B7280]">
+                    <div className="flex gap-2">
+                      <span>{article.date}</span>
+                      <span className="flex items-center gap-1">
+                        <Clock size={14} />
+                        {article.readTime}
+                      </span>
+                    </div>
+                    <ArrowRight size={16} className="text-[#10A37F] opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <ArrowRight size={16} className="text-[#10A37F] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -242,7 +244,7 @@ export default function InsightsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white max-w-7xl mx-auto py-20 md:py-32 px-6"
+        className="bg-white max-w-7xl mx-auto py-16 md:py-20 px-6"
       >
         <CTASection
           title="Ready to Learn More?"

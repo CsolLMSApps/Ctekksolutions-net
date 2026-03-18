@@ -6,6 +6,7 @@ import {
   GraduationCap,
   BookOpen,
   Monitor,
+  Rocket,
   ExternalLink,
   Zap,
   Cpu,
@@ -79,27 +80,41 @@ const platforms = [
       'Analytics dashboard',
     ],
   },
+  {
+    title: 'OPTPlanet.tech',
+    url: 'optplanet.tech',
+    icon: Rocket,
+    color: '#8B5CF6',
+    description:
+      'Global AI job board connecting startups with STEM resources. Find remote AI jobs, prompt engineering roles, and automation contract opportunities worldwide.',
+    features: [
+      'Global AI job listings',
+      'Remote & contract opportunities',
+      'STEM talent matching',
+      'Startup-focused hiring',
+    ],
+  },
 ];
 
 const benefits = [
+  {
+    title: 'Complete Ecosystem',
+    description: 'Talent discovery, training, and career placement all working together seamlessly',
+    icon: Zap,
+  },
   {
     title: 'Career Advancement',
     description: 'Move seamlessly from learning to employment with integrated pathways',
     icon: TrendingUp,
   },
   {
-    title: 'Unified Experience',
-    description: 'Consistent user experience and shared data across all platforms',
-    icon: Zap,
-  },
-  {
     title: 'Data-Driven',
-    description: 'Track progress with comprehensive analytics and reporting',
+    description: 'Track progress with comprehensive analytics and reporting across the full platform suite',
     icon: Cpu,
   },
   {
     title: 'Enterprise Ready',
-    description: 'Enterprise-grade security, scalability, and support',
+    description: 'Enterprise-grade security, scalability, and support with global reach',
     icon: Lock,
   },
 ];

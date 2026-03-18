@@ -89,7 +89,7 @@ const jsonLd = {
     email: "info@ctekksolutions.net",
   },
   sameAs: [
-    "https://www.linkedin.com/company/ctekksolutions",
+    "https://www.linkedin.com/company/c-tekk-solutions",
     "https://twitter.com/ctekksolutions",
   ],
 };

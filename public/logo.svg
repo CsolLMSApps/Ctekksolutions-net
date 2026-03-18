@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" fill="none">
+  <!-- CSOL Letters -->
+  <text x="12" y="38" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="700" fill="#10A37F" letter-spacing="6">CSOL</text>
+  <!-- C.Tekk Solutions Inc -->
+  <text x="12" y="60" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#111111" letter-spacing="0.5">C.Tekk Solutions Inc</text>
+  <!-- Accent dot -->
+  <circle cx="188" cy="28" r="4" fill="#10A37F"/>
+</svg>

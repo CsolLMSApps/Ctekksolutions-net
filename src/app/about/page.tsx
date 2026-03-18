@@ -16,33 +16,6 @@ const itemVariants = {
 };
 
 export default function AboutPage() {
-  const team = [
-    {
-      name: 'Raj Patel',
-      initials: 'RP',
-      title: 'CEO',
-      bio: 'Visionary leader with 20+ years in tech consulting.',
-    },
-    {
-      name: 'Sarah Williams',
-      initials: 'SW',
-      title: 'CTO',
-      bio: 'AI and cloud architecture expert.',
-    },
-    {
-      name: 'Vikram Singh',
-      initials: 'VS',
-      title: 'VP Delivery',
-      bio: 'Operations and delivery excellence leader.',
-    },
-    {
-      name: 'Maria Garcia',
-      initials: 'MG',
-      title: 'VP BD',
-      bio: 'Strategic partnerships and growth driver.',
-    },
-  ];
-
   const values = [
     {
       icon: Lightbulb,
@@ -112,7 +85,7 @@ export default function AboutPage() {
             Founded in 2010 in Dallas, Texas, CTekk Solutions began as a specialized staffing company connecting enterprises with top technical talent. Over 15 years, we've evolved into a comprehensive technology consulting firm.
           </p>
           <p>
-            Today, we're recognized leaders in AI solutions, cloud architecture, and workforce transformation. Our dual-shore delivery model combines Dallas-based expertise with India-based technical excellence, enabling world-class solutions at competitive rates.
+            Today, we're recognized leaders in AI solutions, cloud architecture, and workforce transformation. Our dual-shore delivery model combines Dallas-based expertise with India-based technical excellence, enabling world-class solutions at competitive rates. Beyond consulting, we're committed to advancing professional careers through our training and workforce platforms, helping both enterprises and individuals thrive in the AI-driven economy.
           </p>
         </motion.div>
       </motion.section>
@@ -249,8 +222,10 @@ export default function AboutPage() {
                 Dallas HQ
               </h3>
             </div>
-            <p className="text-[#6B7280] dark:text-[#ECECEC]/70 text-sm">
-              Strategic leadership and client-facing services. 14800 Quorum Drive, Suite 285, Dallas, TX 75254
+            <p className="text-[#6B7280] dark:text-[#ECECEC]/70 text-sm space-y-2">
+              <span className="block">Strategic leadership and client-facing services</span>
+              <span className="block font-medium text-[#111111] dark:text-[#ECECEC]">14800 Quorum Drive, Suite 285, Dallas, TX 75254</span>
+              <span className="block font-medium text-[#111111] dark:text-[#ECECEC]">408-471-7753</span>
             </p>
           </motion.div>
           <motion.div
@@ -266,49 +241,15 @@ export default function AboutPage() {
                 <MapPin size={24} className="text-white" />
               </div>
               <h3 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC]">
-                India Delivery
+                Mysuru, India
               </h3>
             </div>
-            <p className="text-[#6B7280] dark:text-[#ECECEC]/70 text-sm">
-              24/7 technical expertise and development excellence with full US/UK timezone coverage
+            <p className="text-[#6B7280] dark:text-[#ECECEC]/70 text-sm space-y-2">
+              <span className="block">24/7 technical expertise and development excellence</span>
+              <span className="block font-medium text-[#111111] dark:text-[#ECECEC]">2nd Floor, 442, Jayachamarajendra Rd, Vijayanagar 1st Stage, Mysuru, Karnataka 570017, India</span>
+              <span className="block font-medium text-[#111111] dark:text-[#ECECEC]">+91 76766 66844</span>
             </p>
           </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Leadership */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
-      >
-        <SectionHeading title="Leadership Team" centered />
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {team.map((member, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-6 bg-white dark:bg-[#0D0D0D] text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-[#F0FDF9] dark:bg-[#10A37F]/20 flex items-center justify-center mx-auto mb-4 text-[#10A37F] font-semibold text-lg">
-                {member.initials}
-              </div>
-              <h3 className="font-semibold text-[#111111] dark:text-[#ECECEC] mb-1">
-                {member.name}
-              </h3>
-              <p className="text-xs text-[#10A37F] font-medium mb-3">
-                {member.title}
-              </p>
-              <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]/70">
-                {member.bio}
-              </p>
-            </motion.div>
-          ))}
         </div>
       </motion.section>
 

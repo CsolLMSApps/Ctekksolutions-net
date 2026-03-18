@@ -6,6 +6,7 @@ import {
   Cloud,
   Users,
   Briefcase,
+  GraduationCap,
   CheckCircle2,
   ArrowRight,
 } from 'lucide-react';
@@ -76,6 +77,20 @@ const services = [
     ],
     cta: 'Find Talent',
   },
+  {
+    title: 'AI Training & Workforce Development',
+    description:
+      'Upskill your workforce and advance your career with live instructor-led AI training programs designed for professionals and enterprises.',
+    icon: GraduationCap,
+    color: '#EC4899',
+    features: [
+      'Live instructor-led training',
+      'Corporate upskilling programs',
+      'Hands-on AI workshops',
+      'Career-aligned certification paths',
+    ],
+    cta: 'Explore Training',
+  },
 ];
 
 const steps = [
@@ -111,15 +126,14 @@ export default function ServicesPage() {
             Our Services
           </h1>
           <p className="text-lg text-[#6B7280] dark:text-[#A3A3A3] max-w-2xl mx-auto">
-            End-to-end technology consulting to transform your business. From AI strategy to execution,
-            we deliver results.
+            End-to-end technology consulting, training, and talent solutions to transform your business. From AI strategy to execution and workforce development, we deliver results.
           </p>
         </motion.div>
       </section>
 
       {/* Services Grid */}
       <section className="max-w-6xl mx-auto py-20 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Clock, ArrowRight, Mail } from 'lucide-react';
+import { Clock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { SectionHeading } from '../../components/SectionHeading';
 import { CTASection } from '../../components/CTASection';
@@ -208,35 +208,6 @@ export default function InsightsPage() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </motion.section>
-
-      {/* Newsletter */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="max-w-6xl mx-auto py-20 px-6"
-      >
-        <div className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-[#F9FAFB] dark:bg-[#0D0D0D] text-center">
-          <h2 className="text-2xl font-semibold text-[#111111] dark:text-[#ECECEC] mb-3">
-            Subscribe to Our Newsletter
-          </h2>
-          <p className="text-[#6B7280] dark:text-[#ECECEC]/70 mb-6">
-            Get the latest insights delivered to your inbox
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#0D0D0D] text-[#111111] dark:text-[#ECECEC] placeholder-[#6B7280] dark:placeholder-[#ECECEC]/50 focus:outline-none focus:border-[#10A37F] transition-colors"
-            />
-            <button className="px-6 py-3 bg-[#10A37F] text-white rounded-lg font-medium hover:bg-[#0D8A6A] transition-colors whitespace-nowrap flex items-center justify-center gap-2">
-              <Mail size={18} />
-              Subscribe
-            </button>
-          </div>
         </div>
       </motion.section>
 

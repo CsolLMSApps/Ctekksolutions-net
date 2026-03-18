@@ -71,9 +71,15 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: MapPin,
-      label: 'Address',
+      label: 'Dallas, TX — Headquarters',
       content: '14800 Quorum Drive, Suite 285',
       subContent: 'Dallas, TX 75254',
+    },
+    {
+      icon: MapPin,
+      label: 'Mysuru, India — Offshore Delivery',
+      content: '2nd Floor, 442, Jayachamarajendra Rd',
+      subContent: 'Vijayanagar, Mysuru, Karnataka 570017',
     },
     {
       icon: Mail,
@@ -83,9 +89,15 @@ export default function ContactPage() {
     },
     {
       icon: Phone,
-      label: 'Phone',
+      label: 'US Phone',
       content: '408-471-7753',
       href: 'tel:408-471-7753',
+    },
+    {
+      icon: Phone,
+      label: 'India Phone',
+      content: '+91 76766 66844',
+      href: 'tel:+917676666844',
     },
   ];
 

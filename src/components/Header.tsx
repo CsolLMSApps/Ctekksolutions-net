@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -32,7 +33,7 @@ const Header = () => {
     { href: "/services", label: "Services" },
     { href: "/platforms", label: "Platforms" },
     { href: "/education", label: "Education" },
-    { href: "/jobs", label: "Jobs" },
+    { href: "/jobs", label: "Careers" },
     { href: "/insights", label: "Insights" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
@@ -54,10 +55,14 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-lg font-semibold text-[#111] dark:text-white">
-                CTekk
-                <span className="text-[#10A37F] ml-1">Solutions</span>
-              </span>
+              <Image
+                src="/logo.svg"
+                alt="CSOL - C.Tekk Solutions Inc"
+                width={120}
+                height={48}
+                className="h-10 w-auto dark:invert"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -77,7 +82,7 @@ const Header = () => {
             <div className="flex items-center gap-3">
               {/* CTA Button */}
               <Link
-                href="/consultation"
+                href="/contact"
                 className="hidden sm:inline-flex px-4 py-2 bg-[#10A37F] text-white text-sm font-medium rounded-lg hover:bg-[#0D8A6A] transition-colors duration-150"
               >
                 Book Consultation
@@ -129,7 +134,7 @@ const Header = () => {
 
               {/* Mobile CTA Button */}
               <Link
-                href="/consultation"
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="block w-full mt-4 px-4 py-2 bg-[#10A37F] text-white text-sm font-medium rounded-lg hover:bg-[#0D8A6A] transition-colors duration-150 text-center"
               >

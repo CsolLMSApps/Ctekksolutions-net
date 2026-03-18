@@ -12,6 +12,7 @@ import {
   Monitor,
   ExternalLink,
   CheckCircle2,
+  Rocket,
 } from 'lucide-react';
 import { SectionHeading } from '../../components/SectionHeading';
 import { CTASection } from '../../components/CTASection';
@@ -128,8 +129,7 @@ export default function EducationPage() {
             AI Education & Training
           </h1>
           <p className="text-lg text-[#6B7280] dark:text-[#A3A3A3] max-w-2xl mx-auto">
-            Empower your workforce with cutting-edge AI and machine learning education through our
-            comprehensive training programs.
+            Whether you're an enterprise looking to transform your workforce or a professional seeking to advance your AI career, our training programs are designed to meet you where you are.
           </p>
         </motion.div>
       </section>
@@ -218,7 +218,27 @@ export default function EducationPage() {
         </div>
       </section>
 
-      {/* Corporate Training Section */}
+      {/* Career-Ready Training Callout */}
+      <section className="max-w-6xl mx-auto py-20 px-6">
+        <motion.div
+          {...fadeIn}
+          className="border border-[#10A37F] rounded-xl p-8 bg-gradient-to-br from-[#F0FDF9] to-[#F0FDF9]/50 dark:from-[#10A37F]/10 dark:to-[#10A37F]/5"
+        >
+          <div className="flex items-start gap-4">
+            <Rocket size={32} className="text-[#10A37F] flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                Career-Ready Training
+              </h3>
+              <p className="text-[#6B7280] dark:text-[#ECECEC]/70">
+                Our programs are designed to build skills that matter in today's AI-driven job market. Pair your training with our career platforms—DFWITJOBS, OPTPlanet, and OPTPlanet.tech—to take the next step in your professional journey.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Custom Training Programs Section */}
       <section className="max-w-6xl mx-auto py-20 px-6">
         <SectionHeading title="Custom Training Programs" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">

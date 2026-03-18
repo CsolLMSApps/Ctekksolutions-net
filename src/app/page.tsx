@@ -15,11 +15,11 @@ import {
   Factory,
   Landmark,
   Monitor,
+  Rocket,
 } from 'lucide-react';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServiceCard } from '@/components/ServiceCard';
 import { PlatformCard } from '@/components/PlatformCard';
-import { TestimonialCard } from '@/components/TestimonialCard';
 import { CTASection } from '@/components/CTASection';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
 
@@ -36,7 +36,7 @@ export default function Home() {
         >
           {/* Badge */}
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#F0FDF9] text-[#10A37F] text-xs font-medium mb-6">
-            AI-Powered Consulting Since 2010
+            AI-Powered Consulting · Training · Talent
           </div>
 
           {/* Headline */}
@@ -46,7 +46,7 @@ export default function Home() {
 
           {/* Subheadline */}
           <p className="text-lg text-[#6B7280] dark:text-[#A0A0A0] leading-relaxed max-w-2xl mx-auto mb-8">
-            We provide world-class AI talent, cloud consulting, and technology solutions to help businesses innovate and scale.
+            From talent acquisition to AI training and career platforms, we help enterprises and professionals thrive in the age of AI.
           </p>
 
           {/* CTA Buttons */}
@@ -57,16 +57,16 @@ export default function Home() {
               whileTap={{ scale: 0.98 }}
               className="inline-flex px-6 py-3 bg-[#10A37F] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
             >
-              Hire AI Talent
+              Explore Services
             </motion.a>
 
             <motion.a
-              href="/contact"
+              href="/education"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex px-6 py-3 border border-[#E5E7EB] dark:border-[#2D2D2D] text-[#111111] dark:text-[#ECECEC] rounded-lg font-medium hover:bg-[#F9FAFB] dark:hover:bg-[#1A1A1A] transition-colors"
             >
-              Book Consultation
+              Start Your AI Journey
             </motion.a>
 
             <motion.a
@@ -75,7 +75,7 @@ export default function Home() {
               whileTap={{ scale: 0.98 }}
               className="inline-flex text-[#10A37F] font-medium hover:opacity-80 transition-opacity"
             >
-              Explore Platforms
+              View Platforms
             </motion.a>
           </div>
         </motion.div>
@@ -150,6 +150,10 @@ export default function Home() {
             centered
           />
 
+          <p className="text-center text-[#6B7280] dark:text-[#A0A0A0] max-w-2xl mx-auto mt-6 mb-12">
+            Whether you're scaling your team or advancing your career, our services bridge the gap between talent and opportunity.
+          </p>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -220,7 +224,7 @@ export default function Home() {
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -281,6 +285,21 @@ export default function Home() {
                 delay={0.3}
               />
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <PlatformCard
+                title="OPTPlanet.tech"
+                description="Global AI job board connecting startups with STEM talent for remote AI jobs, prompt engineering roles, and automation work."
+                href="https://optplanet.tech"
+                icon={<Rocket size={40} />}
+                color="#8B5CF6"
+                delay={0.4}
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -329,57 +348,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="bg-[#F9FAFB] dark:bg-[#1A1A1A] py-20 px-6">
+      {/* ===== YOUR AI JOURNEY ===== */}
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionHeading
-            title="What Our Clients Say"
+            title="Your AI Journey Starts Here"
             subtitle=""
             centered
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              className="text-center"
             >
-              <TestimonialCard
-                quote="CTekk Solutions transformed our AI hiring process. Their talent acquisition expertise and platform integration delivered measurable ROI within three months."
-                author="Sarah Chen"
-                role="CTO"
-                company="TechVenture AI"
-                delay={0}
-              />
+              <div className="flex justify-center mb-4">
+                <div className="p-3 rounded-lg bg-[#F0FDF9]">
+                  <GraduationCap size={32} className="text-[#10A37F]" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                Upskill
+              </h3>
+              <p className="text-[#6B7280] dark:text-[#A0A0A0]">
+                Find the right training programs to master emerging technologies and advance your expertise.
+              </p>
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center"
             >
-              <TestimonialCard
-                quote="Working with CTekk's offshore development team has been seamless. Their professionalism, communication, and code quality exceed our expectations across all projects."
-                author="Michael Rodriguez"
-                role="VP Engineering"
-                company="FinTech Innovations"
-                delay={0.1}
-              />
+              <div className="flex justify-center mb-4">
+                <div className="p-3 rounded-lg bg-[#F0FDF9]">
+                  <Users size={32} className="text-[#10A37F]" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                Connect
+              </h3>
+              <p className="text-[#6B7280] dark:text-[#A0A0A0]">
+                Match with opportunities that fit your expertise and career goals across our platform ecosystem.
+              </p>
             </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center"
             >
-              <TestimonialCard
-                quote="Their AI consulting services helped us identify opportunities we missed internally. The actionable insights and strategic roadmap delivered by their team were invaluable."
-                author="Jennifer Park"
-                role="Director of AI Strategy"
-                company="Healthcare Systems Inc."
-                delay={0.2}
-              />
+              <div className="flex justify-center mb-4">
+                <div className="p-3 rounded-lg bg-[#F0FDF9]">
+                  <Rocket size={32} className="text-[#10A37F]" />
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                Grow
+              </h3>
+              <p className="text-[#6B7280] dark:text-[#A0A0A0]">
+                Advance your career with global platforms connecting you to leading opportunities worldwide.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -389,15 +425,15 @@ export default function Home() {
       <section className="py-8 px-6">
         <div className="max-w-6xl mx-auto">
           <CTASection
-            title="Ready to Transform Your Business?"
-            subtitle="Let's discuss how CTekk Solutions can accelerate your digital transformation."
+            title="Ready to Get Started?"
+            subtitle=""
             primaryCTA={{
-              text: 'Get Started',
+              text: 'Contact Us',
               href: '/contact',
             }}
             secondaryCTA={{
-              text: 'View Services',
-              href: '/services',
+              text: 'Explore Platforms',
+              href: '/platforms',
             }}
           />
         </div>

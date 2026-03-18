@@ -6,8 +6,6 @@ import {
   Cloud,
   Globe,
   Briefcase,
-  MapPin,
-  Clock,
   Heart,
   Wifi,
   Zap,
@@ -25,55 +23,97 @@ const jobCategories = [
   { icon: Briefcase, label: 'Corporate' }
 ];
 
-const featuredPositions = [
+const jobs = [
   {
-    title: 'Senior AI Engineer',
-    department: 'AI & ML',
-    location: 'Dallas',
-    type: 'Full-time',
-  },
-  {
-    title: 'Cloud Architect',
-    department: 'Cloud',
-    location: 'Remote',
-    type: 'Full-time',
-  },
-  {
-    title: 'ML Operations Engineer',
-    department: 'AI & ML',
-    location: 'Dallas',
-    type: 'Full-time',
-  },
-  {
-    title: 'DevOps Lead',
-    department: 'Cloud',
-    location: 'Remote',
-    type: 'Contract',
-  },
-  {
-    title: 'Full Stack Developer',
+    title: 'Senior Software Developer',
     department: 'Engineering',
-    location: 'India',
+    location: 'Dallas, TX (Hybrid)',
     type: 'Full-time',
+    posted: 'Mar 2026',
+    duties: 'Design, develop, and maintain full-stack web applications for the DFWITJOBS and OPTPlanet.tech platforms. Implement features, conduct code reviews, and optimize application performance.',
+    requirements: 'Bachelor\'s in CS or related. 5+ years professional development experience. Proficiency in React, Node.js, and cloud platforms.',
   },
   {
-    title: 'AI Research Scientist',
-    department: 'AI & ML',
-    location: 'Dallas',
+    title: 'Systems Analyst',
+    department: 'IT Operations',
+    location: 'Dallas, TX',
     type: 'Full-time',
+    posted: 'Feb 2026',
+    duties: 'Analyze and evaluate IT systems architecture supporting CTekk Solutions platform operations. Gather requirements, design integration solutions, and conduct feasibility studies for platform enhancements.',
+    requirements: 'Bachelor\'s in CS or Information Systems. 3+ years systems analysis experience. Strong knowledge of enterprise systems and business process analysis.',
   },
   {
-    title: 'Recruiter',
-    department: 'Corporate',
-    location: 'Dallas',
+    title: 'Data Scientist',
+    department: 'AI & Analytics',
+    location: 'Remote (US)',
     type: 'Full-time',
+    posted: 'Jan 2026',
+    duties: 'Develop predictive models to enhance job matching accuracy within DFWITJOBS and OPTPlanet platforms. Conduct exploratory analysis on workforce datasets and design A/B testing frameworks.',
+    requirements: 'Master\'s in Data Science, Statistics, or related. 4+ years data science experience. Strong proficiency in Python, R, SQL, and ML frameworks.',
   },
   {
-    title: 'Data Engineer',
+    title: 'Data Analytics Engineer',
+    department: 'Data Engineering',
+    location: 'Remote (US)',
+    type: 'Full-time',
+    posted: 'Jan 2026',
+    duties: 'Build and maintain data pipelines collecting workforce data from DFWITJOBS and OPTPlanet platforms. Create analytics dashboards and optimize data models for real-time reporting.',
+    requirements: 'Bachelor\'s in CS, Statistics, or Engineering. 3+ years data/analytics engineering. Proficiency in SQL, data warehousing, and cloud data platforms.',
+  },
+  {
+    title: 'AI/ML Engineer',
+    department: 'AI & Machine Learning',
+    location: 'Dallas, TX (Hybrid)',
+    type: 'Full-time',
+    posted: 'Dec 2025',
+    duties: 'Develop and deploy ML models powering intelligent talent matching on DFWITJOBS and OPTPlanet. Architect AI-driven features for AI Learn Hub including personalized learning pathways.',
+    requirements: 'Master\'s in CS, ML, or related STEM field. 5+ years ML experience. Advanced proficiency in Python, TensorFlow/PyTorch.',
+  },
+  {
+    title: 'Corporate Training Specialist',
+    department: 'Education & Training',
+    location: 'Dallas, TX',
+    type: 'Full-time',
+    posted: 'Nov 2025',
+    duties: 'Design and develop training curriculum for the Benzaiten LMS platform. Assess training needs, create targeted learning programs, and deliver instructor-led workshops on AI and technology topics.',
+    requirements: 'Bachelor\'s in Instructional Design, Education, or related. 3+ years corporate training experience. Experience with LMS platforms.',
+  },
+  {
+    title: 'Database Analyst',
+    department: 'Data Engineering',
+    location: 'Dallas, TX',
+    type: 'Full-time',
+    posted: 'Oct 2025',
+    duties: 'Design, implement, and optimize databases supporting the DFWITJOBS job posting platform and OPTPlanet talent analytics. Monitor performance, implement security protocols, and manage data recovery procedures.',
+    requirements: 'Bachelor\'s in CS or IT. 3+ years database analysis/administration. Strong expertise in SQL, database design, and performance tuning.',
+  },
+  {
+    title: 'Web & Interface Developer',
     department: 'Engineering',
-    location: 'Remote',
+    location: 'Remote (US)',
     type: 'Full-time',
-  }
+    posted: 'Sep 2025',
+    duties: 'Develop responsive interfaces for DFWITJOBS and OPTPlanet.tech platforms. Implement interactive features, optimize user experience, and enhance the Benzaiten LMS interface.',
+    requirements: 'Bachelor\'s in CS or Web Development. 3+ years frontend experience. Proficiency in React, TypeScript, and modern CSS frameworks.',
+  },
+  {
+    title: 'DevOps Engineer',
+    department: 'Cloud Infrastructure',
+    location: 'Remote (US)',
+    type: 'Full-time',
+    posted: 'Sep 2025',
+    duties: 'Design and maintain CI/CD pipelines for continuous deployment of DFWITJOBS, OPTPlanet, and Benzaiten LMS applications. Automate infrastructure provisioning using Terraform and containerize applications with Docker/Kubernetes.',
+    requirements: 'Bachelor\'s in CS or Software Engineering. 4+ years DevOps experience. Expertise in CI/CD, Docker, Kubernetes, and AWS/Azure.',
+  },
+  {
+    title: 'Cloud Solutions Architect',
+    department: 'Cloud & Strategy',
+    location: 'Dallas, TX (Hybrid)',
+    type: 'Full-time',
+    posted: 'Aug 2025',
+    duties: 'Architect enterprise cloud infrastructure supporting DFWITJOBS, OPTPlanet, AI Learn Hub, and Benzaiten LMS platforms. Design scalable, secure cloud solutions and lead technical design reviews.',
+    requirements: 'Bachelor\'s in CS or Engineering. 5+ years cloud architecture experience. AWS/Azure certification preferred. Proven expertise in scalable cloud solutions.',
+  },
 ];
 
 const benefits = [
@@ -96,7 +136,7 @@ const itemVariants = {
 
 export default function JobsPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0D0D0D]">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
@@ -108,18 +148,26 @@ export default function JobsPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-6xl font-bold mb-6 text-[#111111] dark:text-[#ECECEC]"
+            transition={{ duration: 0.6, delay: 0.1 as const }}
+            className="text-5xl md:text-6xl font-bold mb-6 text-[#111111]"
           >
             Careers at CTekk Solutions
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-[#6B7280] dark:text-[#ECECEC]/70"
+            transition={{ duration: 0.6, delay: 0.2 as const }}
+            className="text-xl text-[#6B7280] mb-4"
           >
-            Join our team and help drive AI and cloud innovation
+            Join a team that's shaping the future of AI talent, training, and technology. We're always looking for exceptional people.
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 as const }}
+            className="text-lg text-[#6B7280]"
+          >
+            At CTekk, we help professionals advance their careers through innovative platforms and cutting-edge solutions.
           </motion.p>
         </div>
       </motion.section>
@@ -142,10 +190,10 @@ export default function JobsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-5 bg-white dark:bg-[#0D0D0D] hover:border-[#10A37F] transition-colors"
+                className="border border-[#E5E7EB] rounded-xl p-5 bg-white hover:border-[#10A37F] transition-colors"
               >
                 <Icon size={24} className="text-[#10A37F] mb-3" />
-                <h3 className="font-semibold text-[#111111] dark:text-[#ECECEC]">
+                <h3 className="font-semibold text-[#111111]">
                   {cat.label}
                 </h3>
               </motion.div>
@@ -154,7 +202,7 @@ export default function JobsPage() {
         </div>
       </motion.section>
 
-      {/* Featured Positions */}
+      {/* Open Positions */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -162,9 +210,9 @@ export default function JobsPage() {
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
         className="max-w-6xl mx-auto py-20 px-6"
       >
-        <SectionHeading title="Featured Positions" centered />
-        <motion.div className="mt-12 space-y-3">
-          {featuredPositions.map((job, idx) => (
+        <SectionHeading title="Open Positions" centered />
+        <motion.div className="mt-12 space-y-4">
+          {jobs.map((job, idx) => (
             <motion.div
               key={idx}
               variants={itemVariants}
@@ -172,32 +220,48 @@ export default function JobsPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-5 bg-white dark:bg-[#0D0D0D] hover:border-[#10A37F] transition-all group"
+              className="border border-[#E5E7EB] rounded-xl p-6 bg-white hover:border-[#10A37F] transition-all"
             >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div className="flex-1">
-                  <h3 className="font-semibold text-[#111111] dark:text-[#ECECEC] text-lg mb-2">
-                    {job.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-[#F9FAFB] dark:bg-[#2D2D2D] text-[#6B7280] dark:text-[#ECECEC]/70 px-3 py-1 rounded-full">
-                      {job.department}
-                    </span>
-                    <span className="text-xs bg-[#F9FAFB] dark:bg-[#2D2D2D] text-[#6B7280] dark:text-[#ECECEC]/70 px-3 py-1 rounded-full">
-                      {job.location}
-                    </span>
-                    <span className="text-xs bg-[#F9FAFB] dark:bg-[#2D2D2D] text-[#6B7280] dark:text-[#ECECEC]/70 px-3 py-1 rounded-full">
-                      {job.type}
-                    </span>
-                  </div>
+              <div className="mb-4">
+                <h3 className="font-semibold text-[#111111] text-lg mb-3">
+                  {job.title}
+                </h3>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="text-xs bg-[#F9FAFB] text-[#6B7280] px-3 py-1 rounded-full">
+                    {job.department}
+                  </span>
+                  <span className="text-xs bg-[#F9FAFB] text-[#6B7280] px-3 py-1 rounded-full">
+                    {job.location}
+                  </span>
+                  <span className="text-xs bg-[#F9FAFB] text-[#6B7280] px-3 py-1 rounded-full">
+                    {job.type}
+                  </span>
+                  <span className="text-xs bg-[#F9FAFB] text-[#6B7280] px-3 py-1 rounded-full">
+                    Posted: {job.posted}
+                  </span>
                 </div>
-                <Link
-                  href="/contact"
-                  className="px-6 py-2 bg-[#10A37F] text-white rounded-lg font-medium hover:bg-[#0D8A6A] transition-colors whitespace-nowrap"
-                >
-                  Apply Now
-                </Link>
               </div>
+
+              <div className="mb-4">
+                <h4 className="font-semibold text-[#111111] text-sm mb-2">Duties</h4>
+                <p className="text-sm text-[#6B7280] leading-relaxed">
+                  {job.duties}
+                </p>
+              </div>
+
+              <div className="mb-6">
+                <h4 className="font-semibold text-[#111111] text-sm mb-2">Requirements</h4>
+                <p className="text-sm text-[#6B7280] leading-relaxed">
+                  {job.requirements}
+                </p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="inline-block px-6 py-2 bg-[#10A37F] text-white rounded-lg font-medium hover:bg-[#0D8A6A] transition-colors"
+              >
+                Apply Now
+              </Link>
             </motion.div>
           ))}
         </motion.div>
@@ -222,13 +286,13 @@ export default function JobsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-6 bg-white dark:bg-[#0D0D0D]"
+                className="border border-[#E5E7EB] rounded-xl p-6 bg-white"
               >
                 <Icon size={24} className="text-[#10A37F] mb-3" />
-                <h3 className="font-semibold text-[#111111] dark:text-[#ECECEC] mb-2">
+                <h3 className="font-semibold text-[#111111] mb-2">
                   {benefit.label}
                 </h3>
-                <p className="text-sm text-[#6B7280] dark:text-[#ECECEC]/70">
+                <p className="text-sm text-[#6B7280]">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -245,11 +309,15 @@ export default function JobsPage() {
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
         className="max-w-6xl mx-auto py-20 px-6"
       >
-        <div className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-[#F9FAFB] dark:bg-[#0D0D0D] text-center">
-          <p className="text-[#6B7280] dark:text-[#ECECEC]/70">
-            These positions are internal to CTekk Solutions. For external client opportunities, visit{' '}
+        <div className="border border-[#E5E7EB] rounded-xl p-8 bg-[#F9FAFB] text-center">
+          <p className="text-[#6B7280]">
+            These positions are internal to CTekk Solutions. For external staffing and contract opportunities, visit{' '}
             <a href="https://dfwitjobs.com" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
               DFWITJOBS
+            </a>
+            {' '}or{' '}
+            <a href="https://optplanet.tech" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
+              OPTPlanet.tech
             </a>
             .
           </p>
@@ -265,7 +333,7 @@ export default function JobsPage() {
         className="max-w-6xl mx-auto py-20 px-6"
       >
         <CTASection
-          title="Submit Your Resume"
+          title="Interested? Let's Talk"
           primaryCTA={{ text: 'Get in Touch', href: '/contact' }}
         />
       </motion.section>

@@ -279,7 +279,7 @@ export default function EducationPage() {
                   Career-Ready Training
                 </h3>
                 <p className="text-[#6B7280]">
-                  Our programs are designed to build skills that matter in today's AI-driven job market. Pair your training with our career platforms—DFWITJOBS, OPTPlanet, and OPTPlanet.tech—to take the next step in your professional journey.
+                  Our programs are designed to build skills that matter in today's AI-driven job market. Pair your training with our career platforms—DFWITJOBS, OPTPlanet, OPTPlanet.tech, and OPTPlanet Online—to take the next step in your professional journey. OPTPlanet Online provides AI-powered career acceleration tools to complement your training.
                 </p>
               </div>
             </div>

@@ -17,6 +17,7 @@ import {
   Globe,
   Award,
   Mail,
+  Sparkles,
 } from 'lucide-react';
 
 export default function Home() {
@@ -83,6 +84,11 @@ export default function Home() {
       title: 'Benzaiten LMS',
       description: 'Powerful learning management system designed for modern training delivery and employee development programs.',
       url: 'https://benzaitenlms.com',
+    },
+    {
+      title: 'OPTPlanet Online',
+      description: 'AI career acceleration platform with resume analysis, job matching, and interview prep tools for STEM and tech professionals.',
+      url: 'https://optplanet.online',
     },
   ];
 
@@ -330,32 +336,35 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {platforms.map((platform, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1, ease: 'easeOut' as const }}
-                className="bg-white border border-gray-200 rounded-lg p-8 hover:border-[#10A37F] transition-all"
-              >
-                <div className="w-12 h-12 bg-[#10A37F]/10 rounded-lg flex items-center justify-center mb-6">
-                  <Cloud className="text-[#10A37F]" size={24} />
-                </div>
-                <h3 className="text-2xl mb-3 font-medium text-gray-900">{platform.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  {platform.description}
-                </p>
-                <a
-                  href={platform.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#10A37F] hover:gap-3 transition-all text-sm font-medium"
+            {platforms.map((platform, idx) => {
+              const IconComponent = idx === 5 ? Sparkles : Cloud;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1, ease: 'easeOut' as const }}
+                  className="bg-white border border-gray-200 rounded-lg p-8 hover:border-[#10A37F] transition-all"
                 >
-                  Learn More <ArrowRight size={14} />
-                </a>
-              </motion.div>
-            ))}
+                  <div className="w-12 h-12 bg-[#10A37F]/10 rounded-lg flex items-center justify-center mb-6">
+                    <IconComponent className="text-[#10A37F]" size={24} />
+                  </div>
+                  <h3 className="text-2xl mb-3 font-medium text-gray-900">{platform.title}</h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {platform.description}
+                  </p>
+                  <a
+                    href={platform.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#10A37F] hover:gap-3 transition-all text-sm font-medium"
+                  >
+                    Learn More <ArrowRight size={14} />
+                  </a>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

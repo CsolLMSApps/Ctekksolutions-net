@@ -65,6 +65,7 @@ export default function InvestorsPage() {
     { name: 'OPTPlanet.tech', role: 'AI Talent Matching', desc: 'Specialized AI job board connecting startups with global STEM talent' },
     { name: 'AI Learn Hub', role: 'Skills Development', desc: 'Training platform converting learners into job-ready professionals' },
     { name: 'Benzaiten LMS', role: 'Enterprise Learning', desc: 'LMS generating recurring enterprise subscription revenue' },
+    { name: 'OPTPlanet Online', role: 'Career Acceleration', desc: 'AI-powered career tools driving job seekers to partner job boards' },
   ];
 
   const useOfFunds = [

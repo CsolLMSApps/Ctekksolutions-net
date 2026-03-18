@@ -12,6 +12,7 @@ import {
   Cpu,
   TrendingUp,
   Lock,
+  Sparkles,
 } from 'lucide-react';
 import { SectionHeading } from '../../components/SectionHeading';
 import { CTASection } from '../../components/CTASection';
@@ -92,6 +93,20 @@ const platforms = [
       'Remote & contract opportunities',
       'STEM talent matching',
       'Startup-focused hiring',
+    ],
+  },
+  {
+    title: 'OPTPlanet Online',
+    url: 'optplanet.online',
+    icon: Sparkles,
+    color: '#10A37F',
+    description:
+      'AI-powered career tools for OPT, STEM, and tech job seekers — Resume Analyzer, Job Match Scorer, Interview Prep, Cover Letter Generator, and Job Readiness Score.',
+    features: [
+      'AI-powered resume analysis',
+      'Intelligent job matching',
+      'Interview preparation tools',
+      'Career readiness scoring',
     ],
   },
 ];

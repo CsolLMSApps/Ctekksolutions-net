@@ -39,6 +39,7 @@ export default function AboutPage() {
     { name: 'OPTPlanet.tech', desc: 'AI-focused job board matching startups with global STEM and AI talent' },
     { name: 'AI Learn Hub', desc: 'Live, practical AI training for individuals and enterprise teams' },
     { name: 'Benzaiten LMS', desc: 'Enterprise learning management system for scalable workforce development' },
+    { name: 'OPTPlanet Online', desc: 'AI career acceleration tools for STEM job seekers — resume analysis, job matching, and interview prep' },
   ];
 
   const stats = [

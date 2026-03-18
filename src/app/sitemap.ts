@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${baseUrl}/apply`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: `${baseUrl}/investors`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: 'yearly' as const, priority: 0.3 },
+    { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: 'yearly' as const, priority: 0.3 },
+    { url: `${baseUrl}/cookies`, lastModified: now, changeFrequency: 'yearly' as const, priority: 0.2 },
+    { url: `${baseUrl}/accessibility`, lastModified: now, changeFrequency: 'yearly' as const, priority: 0.2 },
   ]
 
   // Insight articles

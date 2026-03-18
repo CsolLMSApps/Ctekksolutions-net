@@ -116,6 +116,14 @@ export default function Footer() {
                 >
                   Offshore Teams
                 </Link>
+                <a
+                  href="https://optplanet.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
+                >
+                  OPTPlanet Online
+                </a>
               </nav>
             </div>
 

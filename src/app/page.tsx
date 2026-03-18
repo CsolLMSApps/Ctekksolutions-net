@@ -4,31 +4,22 @@ import { motion } from 'framer-motion';
 import {
   Brain,
   Cloud,
-  Globe,
   Users,
-  Briefcase,
-  BookOpen,
+  Code,
+  GraduationCap,
   Heart,
   Building2,
   ShoppingCart,
-  GraduationCap,
   Factory,
   Landmark,
-  Monitor,
-  Rocket,
   ArrowRight,
   Zap,
+  Globe,
+  Award,
+  Mail,
 } from 'lucide-react';
-import { SectionHeading } from '@/components/SectionHeading';
-import { ServiceCard } from '@/components/ServiceCard';
-import { PlatformCard } from '@/components/PlatformCard';
-import { CTASection } from '@/components/CTASection';
-import { AnimatedCounter } from '@/components/AnimatedCounter';
 
 export default function Home() {
-  const easeInOutCubic = [0.42, 0, 0.58, 1] as const;
-  const easeOutQuart = [0.25, 1, 0.25, 1] as const;
-
   const tickerItems = [
     '🟢 Now Hiring: Senior AI/ML Engineer — Dallas, TX',
     '📊 New Insight: AI Workforce Trends 2026',
@@ -39,400 +30,274 @@ export default function Home() {
     '🟢 Now Hiring: Data Scientist — Remote US',
   ];
 
+  const services = [
+    {
+      icon: Cloud,
+      title: 'Cloud & DevOps',
+      description: 'Scalable cloud infrastructure and DevOps expertise to modernize and streamline your operations.',
+    },
+    {
+      icon: Brain,
+      title: 'AI Talent & Solutions',
+      description: 'Access elite AI engineers and consultants to accelerate your AI initiatives and transformation roadmap.',
+    },
+    {
+      icon: Users,
+      title: 'Staffing & Recruiting',
+      description: 'Strategic staffing solutions connecting you with top-tier technical talent across all disciplines.',
+    },
+    {
+      icon: Code,
+      title: 'Offshore Development',
+      description: 'Dedicated, managed development teams providing 24/7 coverage and cost-effective software delivery.',
+    },
+    {
+      icon: GraduationCap,
+      title: 'AI Training Programs',
+      description: 'Comprehensive training programs to upskill your workforce in emerging AI technologies and best practices.',
+    },
+  ];
+
+  const platforms = [
+    {
+      title: 'DFWITJOBS',
+      description: 'Premier job marketplace connecting top tech talent with leading companies in the Dallas-Fort Worth metroplex.',
+      url: 'https://www.dfwitjobs.com',
+    },
+    {
+      title: 'OPTPlanet',
+      description: 'Comprehensive educational platform for professional development and certification in emerging technologies.',
+      url: 'https://www.optplanet.net',
+    },
+    {
+      title: 'OPTPlanet.tech',
+      description: 'Global AI job board connecting startups with STEM talent for remote AI jobs and prompt engineering roles.',
+      url: 'https://optplanet.tech',
+    },
+    {
+      title: 'AI Learn Hub',
+      description: 'Curated learning center for AI, machine learning, and data science education with industry-expert instructors.',
+      url: 'https://www.ailearnhub.io',
+    },
+    {
+      title: 'Benzaiten LMS',
+      description: 'Powerful learning management system designed for modern training delivery and employee development programs.',
+      url: 'https://benzaitenlms.com',
+    },
+  ];
+
+  const industries = [
+    {
+      icon: Heart,
+      title: 'Healthcare',
+      description: 'HIPAA-compliant platforms and AI-driven diagnostics for improved patient outcomes.',
+    },
+    {
+      icon: Building2,
+      title: 'Finance',
+      description: 'Secure fintech solutions and compliance automation for financial institutions.',
+    },
+    {
+      icon: ShoppingCart,
+      title: 'Retail',
+      description: 'Omnichannel experiences and inventory AI for modern retail operations.',
+    },
+    {
+      icon: GraduationCap,
+      title: 'Education',
+      description: 'Learning platforms and AI-powered educational tools for institutions.',
+    },
+    {
+      icon: Factory,
+      title: 'Manufacturing',
+      description: 'IoT integration and predictive maintenance for industrial efficiency.',
+    },
+    {
+      icon: Landmark,
+      title: 'Government',
+      description: 'Enterprise solutions and compliance systems for public sector organizations.',
+    },
+  ];
+
+  const aiJourneySteps = [
+    {
+      icon: GraduationCap,
+      title: 'Upskill',
+      description: 'Find the right training programs to master emerging technologies and advance your expertise.',
+    },
+    {
+      icon: Users,
+      title: 'Connect',
+      description: 'Match with opportunities that fit your expertise and career goals across our platform ecosystem.',
+    },
+    {
+      icon: Zap,
+      title: 'Grow',
+      description: 'Advance your career with global platforms connecting you to leading opportunities worldwide.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* ===== ANIMATED TICKER BAR ===== */}
-      <div className="bg-[#0A0F1C] border-b border-white/5 overflow-hidden">
-        <div className="flex gap-8 whitespace-nowrap py-2 px-6 animate-ticker">
+      <div className="bg-[#0A0F1C] py-3 border-b border-white/10 overflow-hidden">
+        <div className="flex gap-8 whitespace-nowrap animate-ticker">
           {tickerItems.map((item, i) => (
-            <span key={i} className="text-xs text-gray-500 flex-shrink-0">
-              {item} ·
+            <span key={i} className="text-gray-500 mx-8 flex-shrink-0">
+              {item}
             </span>
           ))}
           {tickerItems.map((item, i) => (
-            <span key={`repeat-${i}`} className="text-xs text-gray-500 flex-shrink-0">
-              {item} ·
+            <span key={`repeat-${i}`} className="text-gray-500 mx-8 flex-shrink-0">
+              {item}
             </span>
           ))}
         </div>
       </div>
 
-      {/* ===== HERO SECTION — DARK ===== */}
-      <section className="bg-[#0A0F1C] text-white py-24 md:py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: easeOutQuart }}
-            className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1 mb-8"
-          >
+      {/* ===== HERO SECTION ===== */}
+      <section className="bg-[#0A0F1C] py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            {/* Badge */}
             <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-2 h-2 bg-[#10A37F] rounded-full"
-            />
-            <span className="text-xs text-gray-300">Serving enterprises since 2010</span>
-          </motion.div>
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: 'easeOut' as const }}
+              className="inline-flex items-center gap-2 bg-[#10A37F]/10 border border-[#10A37F]/30 rounded-full px-4 py-1.5 mb-8"
+            >
+              <Zap size={16} className="text-[#10A37F]" />
+              <span className="text-[#10A37F]">AI-Powered Consulting Since 2010</span>
+            </motion.div>
 
-          {/* Headline with gradient */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: easeInOutCubic }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              <span>Empowering Enterprises with </span>
-              <span className="bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
-                AI-Driven Solutions.
+            {/* Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' as const }}
+              className="text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight"
+            >
+              <span className="block bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
+                Empowering Enterprises
               </span>
-            </h1>
-          </motion.div>
+              <span className="block bg-gradient-to-r from-[#10A37F] via-[#0d8c6a] to-[#10A37F] bg-clip-text text-transparent">
+                With AI-Driven Solutions
+              </span>
+            </motion.h1>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: easeInOutCubic }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            From talent acquisition to AI training and career platforms — we help enterprises and professionals thrive in the age of AI.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: easeInOutCubic }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap"
-          >
-            <motion.a
-              href="/services"
-              whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(16, 163, 127, 0.3)' }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#10A37F] text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' as const }}
+              className="text-xl text-gray-400 max-w-3xl mx-auto mb-10"
             >
-              Explore Services
-              <ArrowRight size={16} />
-            </motion.a>
+              From talent acquisition to AI training and career platforms — we help enterprises and professionals thrive in the age of AI.
+            </motion.p>
 
-            <motion.a
-              href="/education"
-              whileHover={{ scale: 1.05, borderColor: 'rgba(255,255,255,0.3)', backgroundColor: 'rgba(255,255,255,0.08)' }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-lg font-medium hover:bg-white/5 transition-colors"
-            >
-              Start Your AI Journey
-              <Zap size={16} />
-            </motion.a>
-
-            <motion.a
-              href="/platforms"
-              whileHover={{ scale: 1.05, x: 8 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 text-[#34D399] font-medium hover:text-[#6EE7B7] transition-colors"
-            >
-              View Platforms
-              <ArrowRight size={16} />
-            </motion.a>
-          </motion.div>
-
-          {/* Stats Row — Inside Dark Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: easeInOutCubic }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-1 mt-20 pt-12 border-t border-white/10"
-          >
-            <div className="py-6 px-4 border-r border-white/10 last:border-r-0">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">15+</div>
-              <div className="text-sm text-gray-400">Years</div>
-            </div>
-            <div className="py-6 px-4 border-r border-white/10 last:border-r-0">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
-              <div className="text-sm text-gray-400">Clients</div>
-            </div>
-            <div className="py-6 px-4 border-r border-white/10 last:border-r-0">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
-              <div className="text-sm text-gray-400">AI Solutions</div>
-            </div>
-            <div className="py-6 px-4 border-r border-white/10 last:border-r-0">
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">98%</div>
-              <div className="text-sm text-gray-400">Satisfaction</div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== SERVICES — LIGHT ===== */}
-      <section className="bg-white py-20 px-6 md:py-24">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeading
-            title="What We Do"
-            subtitle="End-to-end technology consulting, AI talent, and workforce development."
-            centered
-          />
-
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mt-6 mb-12">
-            Whether you're scaling your team or advancing your career, our services bridge the gap between talent and opportunity.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: easeInOutCubic }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' as const }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
             >
-              <ServiceCard
-                icon={<Brain size={24} />}
-                title="AI Talent"
-                description="Access elite AI engineers and consultants to accelerate your AI initiatives and transformation roadmap."
-                href="/services"
-                delay={0}
-              />
+              <button className="bg-[#10A37F] text-white px-8 py-3 rounded-md hover:bg-[#0d8c6a] transition-colors flex items-center justify-center gap-2">
+                Explore Services
+                <ArrowRight size={18} />
+              </button>
+              <button className="bg-white/10 text-white border border-white/20 px-8 py-3 rounded-md hover:border-[#10A37F] transition-colors">
+                View Platforms
+              </button>
+              <button className="text-gray-300 hover:text-[#10A37F] transition-colors flex items-center justify-center gap-2">
+                Start Your AI Journey
+                <ArrowRight size={18} />
+              </button>
             </motion.div>
 
+            {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1, ease: easeInOutCubic }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' as const }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
             >
-              <ServiceCard
-                icon={<Cloud size={24} />}
-                title="Cloud & DevOps"
-                description="Scalable cloud infrastructure and DevOps expertise to modernize and streamline your operations."
-                href="/services"
-                delay={0.1}
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2, ease: easeInOutCubic }}
-            >
-              <ServiceCard
-                icon={<Globe size={24} />}
-                title="Offshore Teams"
-                description="Dedicated, managed development teams providing 24/7 coverage and cost-effective software delivery."
-                href="/services"
-                delay={0.2}
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3, ease: easeInOutCubic }}
-            >
-              <ServiceCard
-                icon={<Users size={24} />}
-                title="Staffing & Recruiting"
-                description="Strategic staffing solutions connecting you with top-tier technical talent across all disciplines."
-                href="/services"
-                delay={0.3}
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4, ease: easeInOutCubic }}
-            >
-              <ServiceCard
-                icon={<GraduationCap size={24} />}
-                title="AI Training & Upskilling"
-                description="Comprehensive training programs to upskill your workforce in emerging AI technologies and best practices."
-                href="/services"
-                delay={0.4}
-              />
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <Users className="text-[#10A37F]" size={24} />
+                </div>
+                <div className="text-3xl text-white mb-1">500+</div>
+                <div className="text-gray-400">Global Clients</div>
+              </div>
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <Globe className="text-[#10A37F]" size={24} />
+                </div>
+                <div className="text-3xl text-white mb-1">50+</div>
+                <div className="text-gray-400">Countries</div>
+              </div>
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <Award className="text-[#10A37F]" size={24} />
+                </div>
+                <div className="text-3xl text-white mb-1">98%</div>
+                <div className="text-gray-400">Success Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <Zap className="text-[#10A37F]" size={24} />
+                </div>
+                <div className="text-3xl text-white mb-1">1000+</div>
+                <div className="text-gray-400">Projects</div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ===== PLATFORMS — LIGHT ===== */}
-      <section className="bg-[#F9FAFB] py-20 px-6 md:py-24">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: easeInOutCubic }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Platform Ecosystem</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Purpose-built platforms powering workforce, careers, and education.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* DFWITJOBS */}
-            <motion.div
+      {/* ===== SERVICES SECTION ===== */}
+      <section className="bg-white py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: easeInOutCubic }}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#10A37F]/30 hover:shadow-lg transition-all group"
+              transition={{ duration: 0.6, ease: 'easeOut' as const }}
+              className="text-4xl md:text-5xl mb-4 text-gray-900"
             >
-              <div className="h-1 w-12 bg-[#10A37F] rounded-full mb-6" />
-              <div className="mb-4 text-[#10A37F]">
-                <Briefcase size={32} />
-              </div>
-              <h3 className="text-gray-900 font-bold text-lg mb-2">DFWITJOBS</h3>
-              <p className="text-gray-600 text-sm mb-6">
-                Premier job marketplace connecting top tech talent with leading companies in the Dallas-Fort Worth metroplex.
-              </p>
-              <motion.a
-                href="https://www.dfwitjobs.com"
-                whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#10A37F] font-medium text-sm hover:gap-3 transition-all"
-              >
-                Visit <ArrowRight size={14} />
-              </motion.a>
-            </motion.div>
-
-            {/* OPTPlanet */}
-            <motion.div
+              What We Do
+            </motion.h2>
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1, ease: easeInOutCubic }}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#059669]/30 hover:shadow-lg transition-all group"
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' as const }}
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
             >
-              <div className="h-1 w-12 bg-[#059669] rounded-full mb-6" />
-              <div className="mb-4 text-[#059669]">
-                <GraduationCap size={32} />
-              </div>
-              <h3 className="text-gray-900 font-bold text-lg mb-2">OPTPlanet</h3>
-              <p className="text-gray-600 text-sm mb-6">
-                Comprehensive educational platform for professional development and certification in emerging technologies.
-              </p>
-              <motion.a
-                href="https://www.optplanet.net"
-                whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#059669] font-medium text-sm hover:gap-3 transition-all"
-              >
-                Visit <ArrowRight size={14} />
-              </motion.a>
-            </motion.div>
-
-            {/* OPTPlanet.tech */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2, ease: easeInOutCubic }}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#0D8A6A]/30 hover:shadow-lg transition-all group"
-            >
-              <div className="h-1 w-12 bg-[#0D8A6A] rounded-full mb-6" />
-              <div className="mb-4 text-[#0D8A6A]">
-                <Rocket size={32} />
-              </div>
-              <h3 className="text-gray-900 font-bold text-lg mb-2">OPTPlanet.tech</h3>
-              <p className="text-gray-600 text-sm mb-6">
-                Global AI job board connecting startups with STEM talent for remote AI jobs and prompt engineering roles.
-              </p>
-              <motion.a
-                href="https://optplanet.tech"
-                whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#0D8A6A] font-medium text-sm hover:gap-3 transition-all"
-              >
-                Visit <ArrowRight size={14} />
-              </motion.a>
-            </motion.div>
-
-            {/* AI Learn Hub */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3, ease: easeInOutCubic }}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#34D399]/30 hover:shadow-lg transition-all group"
-            >
-              <div className="h-1 w-12 bg-[#34D399] rounded-full mb-6" />
-              <div className="mb-4 text-[#34D399]">
-                <BookOpen size={32} />
-              </div>
-              <h3 className="text-gray-900 font-bold text-lg mb-2">AI Learn Hub</h3>
-              <p className="text-gray-600 text-sm mb-6">
-                Curated learning center for AI, machine learning, and data science education with industry-expert instructors.
-              </p>
-              <motion.a
-                href="https://www.ailearnhub.io"
-                whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#34D399] font-medium text-sm hover:gap-3 transition-all"
-              >
-                Visit <ArrowRight size={14} />
-              </motion.a>
-            </motion.div>
-
-            {/* Benzaiten LMS */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4, ease: easeInOutCubic }}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#10A37F]/30 hover:shadow-lg transition-all group"
-            >
-              <div className="h-1 w-12 bg-[#10A37F] rounded-full mb-6" />
-              <div className="mb-4 text-[#10A37F]">
-                <Monitor size={32} />
-              </div>
-              <h3 className="text-gray-900 font-bold text-lg mb-2">Benzaiten LMS</h3>
-              <p className="text-gray-600 text-sm mb-6">
-                Powerful learning management system designed for modern training delivery and employee development programs.
-              </p>
-              <motion.a
-                href="https://benzaitenlms.com"
-                whileHover={{ x: 4 }}
-                className="inline-flex items-center gap-2 text-[#10A37F] font-medium text-sm hover:gap-3 transition-all"
-              >
-                Visit <ArrowRight size={14} />
-              </motion.a>
-            </motion.div>
+              End-to-end technology consulting, AI talent, and workforce development.
+            </motion.p>
           </div>
-        </div>
-      </section>
 
-      {/* ===== INDUSTRIES — DARK ===== */}
-      <section className="bg-[#111827] text-white py-20 px-6 md:py-24">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeading
-            title="Industries We Serve"
-            subtitle="Trusted by enterprises across sectors"
-            centered
-          />
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12">
-            {[
-              { icon: Heart, label: 'Healthcare', color: '#10A37F' },
-              { icon: Building2, label: 'Finance', color: '#34D399' },
-              { icon: ShoppingCart, label: 'Retail', color: '#059669' },
-              { icon: GraduationCap, label: 'Education', color: '#10A37F' },
-              { icon: Factory, label: 'Manufacturing', color: '#34D399' },
-              { icon: Landmark, label: 'Government', color: '#6EE7B7' },
-            ].map((industry, index) => {
-              const IconComponent = industry.icon;
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, idx) => {
+              const IconComponent = service.icon;
               return (
                 <motion.div
-                  key={index}
+                  key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05, ease: easeInOutCubic }}
-                  className="border border-white/10 rounded-xl p-5 flex items-center gap-4 hover:border-white/20 hover:bg-white/5 transition-colors group"
+                  transition={{ duration: 0.5, delay: idx * 0.1, ease: 'easeOut' as const }}
+                  className="border border-gray-200 rounded-lg p-8 hover:border-[#10A37F] transition-all group"
                 >
-                  <div style={{ color: industry.color }} className="flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <IconComponent size={24} />
+                  <div className="w-12 h-12 bg-[#10A37F]/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-[#10A37F] transition-colors">
+                    <IconComponent className="text-[#10A37F] group-hover:text-white transition-colors" size={24} />
                   </div>
-                  <span className="text-white font-medium">{industry.label}</span>
+                  <h3 className="text-2xl mb-3 font-medium text-gray-900">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
                 </motion.div>
               );
             })}
@@ -440,108 +305,189 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== YOUR AI JOURNEY — LIGHT ===== */}
-      <section className="bg-[#F3F4F6] py-20 px-6 md:py-24">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: easeInOutCubic }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-              <span className="bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
-                Your AI Journey Starts Here
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Upskill */}
-            <motion.div
+      {/* ===== PLATFORMS SECTION ===== */}
+      <section className="bg-gray-50 py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: easeInOutCubic }}
-              className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:border-[#10A37F]/30 hover:shadow-lg transition-all"
+              transition={{ duration: 0.6, ease: 'easeOut' as const }}
+              className="text-4xl md:text-5xl mb-4 text-gray-900"
             >
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                className="flex justify-center mb-6"
-              >
-                <div className="text-[#10A37F]">
-                  <GraduationCap size={40} />
-                </div>
-              </motion.div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Upskill</h3>
-              <p className="text-gray-600">
-                Find the right training programs to master emerging technologies and advance your expertise.
-              </p>
-            </motion.div>
-
-            {/* Connect */}
-            <motion.div
+              Our Platform Ecosystem
+            </motion.h2>
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1, ease: easeInOutCubic }}
-              className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:border-[#34D399]/30 hover:shadow-lg transition-all"
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' as const }}
+              className="text-xl text-gray-600 max-w-2xl mx-auto"
             >
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                className="flex justify-center mb-6"
-              >
-                <div className="text-[#34D399]">
-                  <Users size={40} />
-                </div>
-              </motion.div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Connect</h3>
-              <p className="text-gray-600">
-                Match with opportunities that fit your expertise and career goals across our platform ecosystem.
-              </p>
-            </motion.div>
+              Purpose-built platforms powering workforce, careers, and education.
+            </motion.p>
+          </div>
 
-            {/* Grow */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2, ease: easeInOutCubic }}
-              className="bg-white border border-gray-200 rounded-xl p-8 text-center hover:border-[#059669]/30 hover:shadow-lg transition-all"
-            >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {platforms.map((platform, idx) => (
               <motion.div
-                whileHover={{ scale: 1.1 }}
-                className="flex justify-center mb-6"
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: 'easeOut' as const }}
+                className="bg-white border border-gray-200 rounded-lg p-8 hover:border-[#10A37F] transition-all"
               >
-                <div className="text-[#059669]">
-                  <Rocket size={40} />
+                <div className="w-12 h-12 bg-[#10A37F]/10 rounded-lg flex items-center justify-center mb-6">
+                  <Cloud className="text-[#10A37F]" size={24} />
                 </div>
+                <h3 className="text-2xl mb-3 font-medium text-gray-900">{platform.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  {platform.description}
+                </p>
+                <a
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#10A37F] hover:gap-3 transition-all text-sm font-medium"
+                >
+                  Learn More <ArrowRight size={14} />
+                </a>
               </motion.div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Grow</h3>
-              <p className="text-gray-600">
-                Advance your career with global platforms connecting you to leading opportunities worldwide.
-              </p>
-            </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ===== CTA SECTION — WHITE ===== */}
-      <section className="bg-white py-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <CTASection
-            title="Ready to Get Started?"
-            subtitle=""
-            primaryCTA={{
-              text: 'Contact Us',
-              href: '/contact',
-            }}
-            secondaryCTA={{
-              text: 'Explore Platforms',
-              href: '/platforms',
-            }}
-          />
+      {/* ===== INDUSTRIES SECTION ===== */}
+      <section className="bg-[#111827] py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: 'easeOut' as const }}
+              className="text-4xl md:text-5xl mb-4 text-white"
+            >
+              Industries We Serve
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' as const }}
+              className="text-xl text-gray-400 max-w-2xl mx-auto"
+            >
+              Trusted by enterprises across sectors
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((industry, idx) => {
+              const IconComponent = industry.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.05, ease: 'easeOut' as const }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8 hover:border-[#10A37F]/50 transition-all"
+                >
+                  <div className="w-12 h-12 bg-[#10A37F]/20 rounded-lg flex items-center justify-center mb-6">
+                    <IconComponent className="text-[#10A37F]" size={24} />
+                  </div>
+                  <h3 className="text-2xl mb-3 text-white font-medium">{industry.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">
+                    {industry.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== AI JOURNEY SECTION ===== */}
+      <section className="bg-gray-100 py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: 'easeOut' as const }}
+              className="text-4xl md:text-5xl mb-4 text-gray-900"
+            >
+              Your AI Journey Starts Here
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {aiJourneySteps.map((step, idx) => {
+              const IconComponent = step.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1, ease: 'easeOut' as const }}
+                  className="bg-white border border-gray-200 rounded-lg p-8 text-center hover:border-[#10A37F] transition-all"
+                >
+                  <div className="w-16 h-16 bg-[#10A37F]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <IconComponent className="text-[#10A37F]" size={28} />
+                  </div>
+                  <h3 className="text-2xl mb-4 font-medium text-gray-900">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {step.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CTA SECTION ===== */}
+      <section className="bg-white py-20 md:py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' as const }}
+            className="text-4xl md:text-5xl mb-6 text-gray-900"
+          >
+            Ready to Transform Your Business?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' as const }}
+            className="text-xl text-gray-600 mb-10"
+          >
+            Let's discuss how our AI and cloud solutions can accelerate your digital transformation.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' as const }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <button className="bg-[#10A37F] text-white px-8 py-3 rounded-md hover:bg-[#0d8c6a] transition-colors flex items-center justify-center gap-2">
+              Schedule a Consultation
+              <ArrowRight size={18} />
+            </button>
+            <button className="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-md hover:border-[#10A37F] hover:text-[#10A37F] transition-colors flex items-center justify-center gap-2">
+              Contact Sales
+              <Mail size={18} />
+            </button>
+          </motion.div>
         </div>
       </section>
     </div>

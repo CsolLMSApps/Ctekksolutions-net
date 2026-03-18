@@ -27,9 +27,9 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A0F1C] border-b border-white/5">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A0F1C] border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
               <Image
@@ -37,7 +37,7 @@ const Header = () => {
                 alt="CSOL - C.Tekk Solutions Inc"
                 width={180}
                 height={56}
-                className="h-11 w-auto invert"
+                className="h-10 w-auto invert"
                 priority
               />
             </Link>
@@ -48,7 +48,7 @@ const Header = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-150"
+                  className="text-sm font-medium text-gray-300 hover:text-[#10A37F] transition-colors duration-150"
                 >
                   {link.label}
                 </Link>
@@ -60,7 +60,7 @@ const Header = () => {
               {/* CTA Button */}
               <Link
                 href="/contact"
-                className="hidden sm:inline-flex px-4 py-2 bg-[#10A37F] text-white text-sm font-medium rounded-lg hover:bg-[#0D8A6A] transition-colors duration-150"
+                className="hidden sm:inline-flex px-6 py-2 bg-[#10A37F] text-white text-sm font-medium rounded-md hover:bg-[#0d8c6a] transition-colors duration-150"
               >
                 Book Consultation
               </Link>
@@ -68,7 +68,7 @@ const Header = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors duration-150"
+                className="lg:hidden p-2 text-gray-300 hover:text-[#10A37F] transition-colors duration-150"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,15 +86,15 @@ const Header = () => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="fixed top-16 left-0 right-0 bg-[#0A0F1C] border-b border-white/5 z-40 lg:hidden"
+            className="fixed top-16 left-0 right-0 bg-[#0A0F1C] border-b border-white/10 z-40 lg:hidden"
           >
-            <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-1">
+            <nav className="max-w-7xl mx-auto px-6 py-4 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-colors duration-150"
+                  className="block px-4 py-2 text-sm font-medium text-gray-300 hover:text-[#10A37F] hover:bg-white/5 rounded-lg transition-colors duration-150"
                 >
                   {link.label}
                 </Link>
@@ -104,7 +104,7 @@ const Header = () => {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full mt-4 px-4 py-2 bg-[#10A37F] text-white text-sm font-medium rounded-lg hover:bg-[#0D8A6A] transition-colors duration-150 text-center"
+                className="block w-full mt-4 px-6 py-2 bg-[#10A37F] text-white text-sm font-medium rounded-md hover:bg-[#0d8c6a] transition-colors duration-150 text-center"
               >
                 Book Consultation
               </Link>
@@ -114,7 +114,7 @@ const Header = () => {
       </AnimatePresence>
 
       {/* Spacer */}
-      <div className="h-16" />
+      <div className="h-20" />
     </>
   );
 };

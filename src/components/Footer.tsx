@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Shield, Lock } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -31,274 +31,187 @@ export default function Footer() {
       {/* Gradient top border */}
       <div className="h-px bg-gradient-to-r from-[#059669] via-[#10A37F] to-[#34D399]" />
 
-      <footer className="bg-[#0A0F1C] text-gray-400">
+      <footer className="bg-[#0A0F1C] border-t border-white/10 text-gray-400">
         <motion.div
-          className="max-w-6xl mx-auto px-6 py-12"
+          className="max-w-7xl mx-auto px-6 py-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* Top Section — Logo + Tagline + Social */}
+          {/* 4-Column Grid */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col md:flex-row justify-between items-start gap-12 mb-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
           >
-            {/* Left: Logo + Brand */}
-            <div className="flex-1">
+            {/* Column 1: Logo + Tagline + Social */}
+            <div>
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-white">CSOL</h3>
                 <p className="text-xs text-gray-500 mt-1">C.Tekk Solutions Inc</p>
               </div>
-              <p className="text-sm text-gray-400 max-w-sm leading-relaxed">
+              <p className="text-sm text-gray-400 leading-relaxed mb-6">
                 Empowering careers and enterprises through AI talent, cloud consulting, and workforce development.
               </p>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.linkedin.com/company/c-tekk-solutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-[#10A37F] transition-colors duration-200"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a
+                  href="https://twitter.com/ctekksolutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-[#10A37F] transition-colors duration-200"
+                  aria-label="Twitter"
+                >
+                  <Twitter size={20} />
+                </a>
+                <a
+                  href="mailto:info@ctekksolutions.net"
+                  className="text-gray-500 hover:text-[#10A37F] transition-colors duration-200"
+                  aria-label="Email"
+                >
+                  <Mail size={20} />
+                </a>
+              </div>
             </div>
 
-            {/* Right: Social Icons */}
-            <motion.div variants={itemVariants} className="flex gap-4">
-              <a
-                href="https://www.linkedin.com/company/c-tekk-solutions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-[#10A37F] transition-colors duration-200"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a
-                href="https://twitter.com/ctekksolutions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-[#10A37F] transition-colors duration-200"
-                aria-label="Twitter"
-              >
-                <Twitter size={24} />
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Link Columns */}
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10"
-          >
-            {/* Services */}
+            {/* Column 2: Services */}
             <div>
               <h4 className="font-semibold text-white text-sm mb-4">Services</h4>
               <nav className="space-y-3">
                 <Link
                   href="/services"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   AI Talent & Consulting
                 </Link>
                 <Link
                   href="/services"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   Cloud & DevOps
                 </Link>
                 <Link
                   href="/services"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   Staffing & Recruiting
                 </Link>
                 <Link
                   href="/services"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
-                  AI Training & Upskilling
+                  AI Training
                 </Link>
                 <Link
                   href="/services"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   Offshore Teams
                 </Link>
               </nav>
             </div>
 
-            {/* Platforms */}
-            <div>
-              <h4 className="font-semibold text-white text-sm mb-4">Platforms</h4>
-              <nav className="space-y-3">
-                <a
-                  href="https://www.dfwitjobs.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  DFWITJOBS
-                </a>
-                <a
-                  href="https://www.optplanet.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  OPTPlanet
-                </a>
-                <a
-                  href="https://optplanet.tech"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  OPTPlanet.tech
-                </a>
-                <a
-                  href="https://www.ailearnhub.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  AI Learn Hub
-                </a>
-                <a
-                  href="https://benzaitenlms.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  Benzaiten LMS
-                </a>
-              </nav>
-            </div>
-
-            {/* Company */}
+            {/* Column 3: Company */}
             <div>
               <h4 className="font-semibold text-white text-sm mb-4">Company</h4>
               <nav className="space-y-3">
                 <Link
                   href="/about"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   About Us
                 </Link>
                 <Link
                   href="/jobs"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   Careers
                 </Link>
                 <Link
                   href="/insights"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   Insights
                 </Link>
                 <Link
                   href="/contact"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   Contact
                 </Link>
                 <Link
-                  href="/education"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  Education
-                </Link>
-              </nav>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h4 className="font-semibold text-white text-sm mb-4">Legal</h4>
-              <nav className="space-y-3">
-                <Link
                   href="/privacy"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                  className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
                   Privacy Policy
                 </Link>
-                <Link
-                  href="/terms"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  Terms of Service
-                </Link>
-                <Link
-                  href="/disclaimer"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  Disclaimer
-                </Link>
-                <Link
-                  href="/cookies"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  Cookie Policy
-                </Link>
-                <Link
-                  href="/accessibility"
-                  className="block text-sm text-gray-500 hover:text-white transition-colors duration-200"
-                >
-                  Accessibility
-                </Link>
               </nav>
             </div>
-          </motion.div>
 
-          {/* Office Locations */}
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 border-t border-white/5 pt-8"
-          >
-            {/* Dallas HQ */}
+            {/* Column 4: Contact */}
             <div>
-              <h4 className="font-semibold text-white text-xs mb-4">DALLAS HQ</h4>
-              <div className="space-y-2">
-                <div className="flex items-start gap-2">
-                  <MapPin size={14} className="flex-shrink-0 mt-0.5 text-gray-600" />
-                  <span className="text-xs text-gray-500">
-                    14800 Quorum Drive, Suite 285, Dallas, TX 75254
-                  </span>
+              <h4 className="font-semibold text-white text-sm mb-4">Contact</h4>
+              <nav className="space-y-4">
+                {/* Dallas */}
+                <div>
+                  <h5 className="text-xs font-semibold text-gray-300 mb-2">Dallas TX</h5>
+                  <div className="flex items-start gap-2 mb-3">
+                    <MapPin size={14} className="flex-shrink-0 mt-0.5 text-gray-600" />
+                    <span className="text-xs text-gray-400">
+                      14800 Quorum Drive, Suite 285, Dallas, TX 75254
+                    </span>
+                  </div>
+                  <a
+                    href="tel:408-471-7753"
+                    className="flex items-center gap-2 text-xs text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
+                  >
+                    <Phone size={12} className="flex-shrink-0" />
+                    408-471-7753
+                  </a>
                 </div>
+
+                {/* Mysuru */}
+                <div>
+                  <h5 className="text-xs font-semibold text-gray-300 mb-2">Mysuru India</h5>
+                  <div className="flex items-start gap-2 mb-3">
+                    <MapPin size={14} className="flex-shrink-0 mt-0.5 text-gray-600" />
+                    <span className="text-xs text-gray-400">
+                      2nd Floor, 442, Jayachamarajendra Rd, Vijayanagar 1st Stage, Mysuru, Karnataka 570017, India
+                    </span>
+                  </div>
+                  <a
+                    href="tel:+917676666844"
+                    className="flex items-center gap-2 text-xs text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
+                  >
+                    <Phone size={12} className="flex-shrink-0" />
+                    +91 76766 66844
+                  </a>
+                </div>
+
+                {/* Email */}
                 <a
                   href="mailto:info@ctekksolutions.net"
-                  className="flex items-center gap-2 text-xs text-gray-500 hover:text-[#10A37F] transition-colors duration-200"
+                  className="flex items-center gap-2 text-xs text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
-                  <Mail size={14} className="flex-shrink-0 text-gray-600" />
+                  <Mail size={12} className="flex-shrink-0" />
                   info@ctekksolutions.net
                 </a>
-                <a
-                  href="tel:408-471-7753"
-                  className="flex items-center gap-2 text-xs text-gray-500 hover:text-[#10A37F] transition-colors duration-200"
-                >
-                  <Phone size={14} className="flex-shrink-0 text-gray-600" />
-                  408-471-7753
-                </a>
-              </div>
-            </div>
-
-            {/* Mysuru, India */}
-            <div>
-              <h4 className="font-semibold text-white text-xs mb-4">MYSURU, INDIA</h4>
-              <div className="space-y-2">
-                <div className="flex items-start gap-2">
-                  <MapPin size={14} className="flex-shrink-0 mt-0.5 text-gray-600" />
-                  <span className="text-xs text-gray-500">
-                    2nd Floor, 442, Jayachamarajendra Rd, Vijayanagar 1st Stage, Mysuru, Karnataka 570017, India
-                  </span>
-                </div>
-                <a
-                  href="tel:+917676666844"
-                  className="flex items-center gap-2 text-xs text-gray-500 hover:text-[#10A37F] transition-colors duration-200"
-                >
-                  <Phone size={14} className="flex-shrink-0 text-gray-600" />
-                  +91 76766 66844
-                </a>
-              </div>
+              </nav>
             </div>
           </motion.div>
 
           {/* Compliance Badges Bar */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap gap-4 justify-center items-center mb-8 py-4 border-t border-white/5"
+            className="flex flex-wrap gap-4 justify-center items-center mb-8 py-4 border-t border-white/10"
           >
             {complianceBadges.map((badge, idx) => (
               <div
@@ -314,12 +227,11 @@ export default function Footer() {
           {/* Bottom Bar */}
           <motion.div
             variants={itemVariants}
-            className="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4"
+            className="border-t border-white/10 pt-8 text-center"
           >
-            <p className="text-xs text-gray-600">
+            <p className="text-xs text-gray-500">
               © 2010–{year} C.Tekk Solutions Inc. All rights reserved.
             </p>
-            <p className="text-xs text-gray-600">Dallas, TX · Mysuru, India</p>
           </motion.div>
         </motion.div>
       </footer>

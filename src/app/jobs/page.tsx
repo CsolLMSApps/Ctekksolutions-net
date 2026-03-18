@@ -183,9 +183,9 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#F9FAFB] py-16 px-6"
+        className="bg-[#F9FAFB] py-20 md:py-32 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {jobCategories.map((cat, idx) => {
               const Icon = cat.icon;
@@ -196,7 +196,7 @@ export default function JobsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                  className="bg-white border border-[#E5E7EB] rounded-xl p-6 hover:border-[#10A37F] transition-colors"
+                  className="bg-white border border-[#E5E7EB] rounded-lg p-8 hover:border-[#10A37F] transition-colors"
                 >
                   <Icon size={28} className="text-[#10A37F] mb-3" />
                   <h3 className="font-semibold text-[#111827]">
@@ -215,9 +215,9 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white py-16 px-6"
+        className="bg-white py-20 md:py-32 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <SectionHeading title="Open Positions" centered />
           <motion.div className="mt-12 space-y-4">
             {jobs.map((job, idx) => (
@@ -228,7 +228,7 @@ export default function JobsPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="border border-[#E5E7EB] rounded-xl p-6 bg-white hover:border-[#10A37F] transition-all"
+                className="border border-[#E5E7EB] rounded-lg p-8 bg-white hover:border-[#10A37F] transition-all"
               >
                 <div className="mb-4">
                   <h3 className="font-semibold text-[#111827] text-lg mb-3">
@@ -282,11 +282,11 @@ export default function JobsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#111827] py-16 px-6"
+        className="bg-[#111827] py-20 md:py-32 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4"
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4"
               style={{
                 background: 'linear-gradient(135deg, #10A37F, #34D399, #6EE7B7)',
                 WebkitBackgroundClip: 'text',
@@ -306,7 +306,7 @@ export default function JobsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                  className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-6"
+                  className="bg-white/5 border border-white/10 rounded-lg p-8"
                 >
                   <Icon size={24} className="text-[#10A37F] mb-3" />
                   <h3 className="font-semibold text-white mb-2">
@@ -330,8 +330,8 @@ export default function JobsPage() {
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
         className="bg-[#F9FAFB] py-8 px-6"
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="border border-[#E5E7EB] rounded-xl p-8 bg-white text-center">
+        <div className="max-w-7xl mx-auto">
+          <div className="border border-[#E5E7EB] rounded-lg p-8 bg-white text-center">
             <p className="text-[#6B7280]">
               These positions are internal to CTekk Solutions. For external staffing and contract opportunities, visit{' '}
               <a href="https://dfwitjobs.com" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
@@ -355,7 +355,7 @@ export default function JobsPage() {
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
         className="bg-white py-8 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <CTASection
             title="Interested? Let's Talk"
             primaryCTA={{ text: 'Get in Touch', href: '/contact' }}

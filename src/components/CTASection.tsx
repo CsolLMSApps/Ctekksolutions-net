@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 
 interface CTAProps {
   text: string;
@@ -28,35 +28,38 @@ export function CTASection({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="border border-[#E5E7EB] dark:border-white/10 rounded-xl py-10 px-6 text-center bg-[#F9FAFB] dark:bg-[#111827]"
+      className="bg-white py-20 md:py-24"
     >
-      <h3 className="text-xl font-semibold text-[#111] dark:text-white">
-        {title}
-      </h3>
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          {title}
+        </h2>
 
-      {subtitle && (
-        <p className="text-sm text-[#6B7280] dark:text-gray-400 mt-2 max-w-lg mx-auto">
-          {subtitle}
-        </p>
-      )}
-
-      <div className="flex flex-wrap gap-3 justify-center items-center mt-5">
-        <Link
-          href={primaryCTA.href}
-          className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#10A37F] text-white text-sm font-medium rounded-lg hover:bg-[#059669] transition-colors duration-150"
-        >
-          {primaryCTA.text}
-          <ArrowRight size={14} />
-        </Link>
-
-        {secondaryCTA && (
-          <Link
-            href={secondaryCTA.href}
-            className="px-5 py-2.5 border border-[#D1D5DB] dark:border-white/10 text-[#111] dark:text-gray-300 text-sm font-medium rounded-lg hover:bg-white dark:hover:bg-white/5 transition-colors duration-150"
-          >
-            {secondaryCTA.text}
-          </Link>
+        {subtitle && (
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+            {subtitle}
+          </p>
         )}
+
+        <div className="flex flex-wrap gap-4 justify-center items-center">
+          <Link
+            href={primaryCTA.href}
+            className="inline-flex items-center gap-2 px-8 py-3 bg-[#10A37F] text-white text-base font-medium rounded-md hover:bg-[#0d8c6a] transition-colors duration-150"
+          >
+            {primaryCTA.text}
+            <ArrowRight size={18} />
+          </Link>
+
+          {secondaryCTA && (
+            <Link
+              href={secondaryCTA.href}
+              className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-900 text-gray-900 text-base font-medium rounded-md hover:border-[#10A37F] hover:text-[#10A37F] transition-colors duration-150"
+            >
+              <Mail size={18} />
+              {secondaryCTA.text}
+            </Link>
+          )}
+        </div>
       </div>
     </motion.div>
   );

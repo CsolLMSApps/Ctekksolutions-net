@@ -124,7 +124,7 @@ export default function PlatformsPage() {
     <main className="bg-white">
       {/* Hero Section - DARK */}
       <section className="bg-[#0A0F1C] text-white py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <motion.div {...fadeIn}>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
               Our Platforms
@@ -137,8 +137,8 @@ export default function PlatformsPage() {
       </section>
 
       {/* Platforms Grid - DARK with Glass Cards */}
-      <section className="bg-[#0A0F1C] text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-[#0A0F1C] text-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {platforms.map((platform, index) => {
               const Icon = platform.icon;
@@ -146,7 +146,7 @@ export default function PlatformsPage() {
                 <motion.div
                   key={index}
                   {...fadeIn}
-                  className="group relative rounded-xl overflow-hidden bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl p-8 hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300"
+                  className="group relative rounded-lg overflow-hidden bg-white/5 border border-white/10 backdrop-blur-sm p-8 hover:bg-white/10 hover:border-[#10A37F]/50 transition-all duration-300"
                 >
                   {/* Gradient accent top bar */}
                   <div
@@ -162,7 +162,7 @@ export default function PlatformsPage() {
                     >
                       <Icon size={28} color={platform.color} />
                     </div>
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className="text-2xl font-medium text-white">
                       {platform.title}
                     </h3>
                   </div>
@@ -198,10 +198,10 @@ export default function PlatformsPage() {
       </section>
 
       {/* Benefits Section - LIGHT */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#111111] mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">
               Why Our Platforms
             </h2>
           </motion.div>
@@ -212,12 +212,12 @@ export default function PlatformsPage() {
                 <motion.div
                   key={index}
                   {...fadeIn}
-                  className="group rounded-xl border-2 border-[#E5E7EB] bg-white p-8 hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
+                  className="group rounded-lg border-2 border-[#E5E7EB] bg-white p-8 hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
                 >
                   <div className="p-3 rounded-lg bg-gradient-to-br from-[#10A37F]/10 to-[#34D399]/10 inline-block mb-4">
                     <Icon size={24} className="text-[#10A37F]" />
                   </div>
-                  <h3 className="text-lg font-semibold text-[#111111] mb-2">
+                  <h3 className="text-xl font-medium text-[#111111] mb-2">
                     {benefit.title}
                   </h3>
                   <p className="text-[#6B7280]">{benefit.description}</p>

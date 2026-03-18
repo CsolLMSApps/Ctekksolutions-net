@@ -132,7 +132,7 @@ export default function EducationPage() {
     <main className="bg-white">
       {/* Hero Section - DARK */}
       <section className="bg-[#0A0F1C] text-white py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <motion.div {...fadeIn}>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
               AI Education & Training
@@ -145,8 +145,8 @@ export default function EducationPage() {
       </section>
 
       {/* Highlights Section - DARK with Glass Cards */}
-      <section className="bg-[#0A0F1C] text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-[#0A0F1C] text-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {highlights.map((item, idx) => {
               const Icon = item.icon;
@@ -154,7 +154,7 @@ export default function EducationPage() {
                 <motion.div
                   key={idx}
                   {...fadeIn}
-                  className="group rounded-xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl p-8 hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300 text-center"
+                  className="group rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300 text-center"
                 >
                   <div className="p-3 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#34D399]/20 inline-block mb-4">
                     <Icon size={32} className="text-[#10A37F]" />
@@ -171,10 +171,10 @@ export default function EducationPage() {
       </section>
 
       {/* Course Categories Section - LIGHT */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#111111] mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">
               Course Categories
             </h2>
           </motion.div>
@@ -185,7 +185,7 @@ export default function EducationPage() {
                 <motion.div
                   key={idx}
                   {...fadeIn}
-                  className="group relative rounded-xl border-2 border-[#E5E7EB] bg-white hover:border-[#10A37F] hover:shadow-lg transition-all duration-300 overflow-hidden"
+                  className="group relative rounded-lg border-2 border-[#E5E7EB] bg-white hover:border-[#10A37F] hover:shadow-lg transition-all duration-300 overflow-hidden"
                 >
                   {/* Colored top accent bar */}
                   <div
@@ -199,7 +199,7 @@ export default function EducationPage() {
                     >
                       <Icon size={24} style={{ color: course.color }} />
                     </div>
-                    <h3 className="text-lg font-semibold text-[#111111] mb-3">
+                    <h3 className="text-xl font-medium text-[#111111] mb-3">
                       {course.title}
                     </h3>
                     <p className="text-[#6B7280] text-sm">{course.description}</p>
@@ -212,10 +212,10 @@ export default function EducationPage() {
       </section>
 
       {/* Learning Platforms Section - DARK with Glass Cards */}
-      <section className="bg-[#0A0F1C] text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-[#0A0F1C] text-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#34D399] bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#10A37F] to-[#34D399] bg-clip-text text-transparent mb-4">
               Learning Platforms
             </h2>
           </motion.div>
@@ -224,7 +224,7 @@ export default function EducationPage() {
               <motion.div
                 key={idx}
                 {...fadeIn}
-                className="group relative rounded-xl overflow-hidden bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl p-8 hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300"
+                className="group relative rounded-lg overflow-hidden bg-white/5 border border-white/10 backdrop-blur-sm p-8 hover:bg-white/10 hover:border-[#10A37F]/50 transition-all duration-300"
               >
                 {/* Gradient accent top bar */}
                 <div
@@ -233,7 +233,7 @@ export default function EducationPage() {
                     backgroundImage: `linear-gradient(to right, ${platform.color}, transparent)`,
                   }}
                 />
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <h3 className="text-2xl font-medium text-white mb-2">
                   {platform.name}
                 </h3>
                 <p className="text-gray-400 mb-4 text-sm">{platform.url}</p>
@@ -262,11 +262,11 @@ export default function EducationPage() {
       </section>
 
       {/* Career-Ready Training Callout - LIGHT */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             {...fadeIn}
-            className="relative rounded-xl overflow-hidden border-2 border-[#10A37F] p-8 bg-gradient-to-br from-[#F0FDF9] to-white hover:shadow-lg transition-all duration-300"
+            className="relative rounded-lg overflow-hidden border-2 border-[#10A37F] p-8 bg-gradient-to-br from-[#F0FDF9] to-white hover:shadow-lg transition-all duration-300"
           >
             {/* Accent bar */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7]" />
@@ -288,10 +288,10 @@ export default function EducationPage() {
       </section>
 
       {/* Custom Training Programs Section - LIGHT */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#111111] mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-4">
               Custom Training Programs
             </h2>
           </motion.div>
@@ -300,9 +300,9 @@ export default function EducationPage() {
               <motion.div
                 key={idx}
                 {...fadeIn}
-                className="group rounded-xl border-2 border-[#E5E7EB] bg-white p-8 hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
+                className="group rounded-lg border-2 border-[#E5E7EB] bg-white p-8 hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
               >
-                <h4 className="text-lg font-semibold text-[#111111] mb-3">
+                <h4 className="text-xl font-medium text-[#111111] mb-3">
                   {program.title}
                 </h4>
                 <p className="text-[#6B7280] text-sm">{program.description}</p>

@@ -147,7 +147,7 @@ export default function ContactPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+              className="rounded-lg overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
               {/* Gradient top bar */}
               <div className="h-1 bg-gradient-to-r from-[#10A37F] to-[#34D399]" />
@@ -187,7 +187,7 @@ export default function ContactPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+              className="rounded-lg overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
               <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
               <div className="p-5">
@@ -226,7 +226,7 @@ export default function ContactPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: 0.15 }}
-              className="rounded-xl p-5 bg-[#F9FAFB] dark:bg-[#0A0F1C] border border-[#E5E7EB] dark:border-[#2D2D2D]"
+              className="rounded-lg p-8 bg-[#F9FAFB] dark:bg-[#0A0F1C] border border-[#E5E7EB] dark:border-[#2D2D2D]"
             >
               <p className="text-[10px] font-semibold text-[#6B7280] uppercase tracking-wider mb-3">OUR OFFICE</p>
               <div className="space-y-3">
@@ -251,9 +251,9 @@ export default function ContactPage() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl p-8 bg-white dark:bg-[#111827]"
+            className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-lg p-8 bg-white dark:bg-[#111827]"
           >
-            <h2 className="text-xl font-semibold text-[#111111] dark:text-[#ECECEC] mb-6">
+            <h2 className="text-2xl font-medium text-[#111111] dark:text-[#ECECEC] mb-6">
               Send us a message
             </h2>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -391,7 +391,7 @@ export default function ContactPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+              className="rounded-lg overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
               <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
               <div className="p-5">
@@ -430,7 +430,7 @@ export default function ContactPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+              className="rounded-lg overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
               <div className="h-1 bg-gradient-to-r from-[#0D8A6A] to-[#10A37F]" />
               <div className="p-5">
@@ -467,7 +467,7 @@ export default function ContactPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: 0.35 }}
-              className="rounded-xl overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
+              className="rounded-lg overflow-hidden border border-[#E5E7EB] dark:border-[#2D2D2D] bg-white dark:bg-[#111827]"
             >
               <div className="p-4 border-b border-[#E5E7EB] dark:border-[#2D2D2D] flex items-center gap-2">
                 <MapPin size={16} className="text-[#10A37F]" />
@@ -480,7 +480,7 @@ export default function ContactPage() {
                 height={220}
                 className="w-full h-auto"
               />
-              <div className="p-3 flex items-center justify-between">
+              <div className="p-6 flex items-center justify-between">
                 <p className="text-[10px] text-[#6B7280]">14800 Quorum Dr, Suite 285, Dallas, TX</p>
                 <a
                   href="https://maps.google.com/?q=14800+Quorum+Dr+Suite+285+Dallas+TX+75254"
@@ -504,9 +504,9 @@ export default function ContactPage() {
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
         className="bg-[#F9FAFB] dark:bg-[#111827] py-16 px-6"
       >
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <SectionHeading title="Frequently Asked Questions" centered />
-          <div className="mt-12 space-y-3">
+          <div className="mt-12 space-y-3 max-w-3xl mx-auto">
             {faqItems.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -514,7 +514,7 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.05 }}
-                className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-xl bg-white dark:bg-[#0A0F1C] overflow-hidden"
+                className="border border-[#E5E7EB] dark:border-[#2D2D2D] rounded-lg bg-white dark:bg-[#0A0F1C] overflow-hidden"
               >
                 <button
                   onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
@@ -558,7 +558,7 @@ export default function ContactPage() {
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
         className="py-8 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <CTASection
             title="Ready to Get Started?"
             primaryCTA={{ text: 'Send a Message', href: '#' }}

@@ -121,7 +121,7 @@ export default function ServicesPage() {
     <main className="bg-white">
       {/* Hero Section - DARK */}
       <section className="bg-[#0A0F1C] text-white py-24 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto text-center">
           <motion.div {...fadeIn}>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-[#6EE7B7] bg-clip-text text-transparent">
               Our Services
@@ -134,8 +134,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid - LIGHT */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
@@ -143,7 +143,7 @@ export default function ServicesPage() {
                 <motion.div
                   key={index}
                   {...fadeIn}
-                  className="group relative rounded-xl overflow-hidden border-2 border-[#E5E7EB] bg-white hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
+                  className="group relative rounded-lg overflow-hidden border-2 border-[#E5E7EB] bg-white hover:border-[#10A37F] hover:shadow-lg transition-all duration-300"
                 >
                   {/* Colored top accent bar */}
                   <div
@@ -158,7 +158,7 @@ export default function ServicesPage() {
                       >
                         <Icon size={28} color={service.color} />
                       </div>
-                      <h3 className="text-xl font-semibold text-[#111111]">
+                      <h3 className="text-2xl font-medium text-[#111111]">
                         {service.title}
                       </h3>
                     </div>
@@ -187,10 +187,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section - DARK */}
-      <section className="bg-[#0A0F1C] text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-[#0A0F1C] text-white py-20 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-[#10A37F] to-[#34D399] bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#10A37F] to-[#34D399] bg-clip-text text-transparent mb-4">
               Our Process
             </h2>
           </motion.div>
@@ -199,7 +199,7 @@ export default function ServicesPage() {
               <motion.div
                 key={index}
                 {...fadeIn}
-                className="relative group rounded-xl p-8 bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-300"
+                className="relative group rounded-lg p-8 bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-all duration-300"
               >
                 {/* Gradient accent top bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#10A37F] via-[#34D399] to-transparent rounded-t-xl" />

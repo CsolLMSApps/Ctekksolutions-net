@@ -86,7 +86,7 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white py-16 px-6"
+        className="bg-white py-20 md:py-32 px-6"
       >
         <div className="max-w-3xl mx-auto">
           <SectionHeading title="Our Story" centered />
@@ -119,11 +119,11 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#F9FAFB] py-16 px-6"
+        className="bg-[#F9FAFB] py-20 md:py-32 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#111827]">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#111827]">
               Mission & Vision
             </h2>
           </motion.div>
@@ -133,7 +133,7 @@ export default function AboutPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 border-l-4 border-[#10A37F]"
+              className="bg-white rounded-lg p-8 border-l-4 border-[#10A37F]"
             >
               <h3 className="text-xl font-semibold text-[#111827] mb-4">
                 Our Mission
@@ -148,7 +148,7 @@ export default function AboutPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-xl p-8 border-l-4 border-[#059669]"
+              className="bg-white rounded-lg p-8 border-l-4 border-[#059669]"
             >
               <h3 className="text-xl font-semibold text-[#111827] mb-4">
                 Our Vision
@@ -167,10 +167,10 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#111827] py-16 px-6"
+        className="bg-[#111827] py-20 md:py-32 px-6"
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white/5 border border-white/10 rounded-lg p-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, idx) => (
                 <motion.div
@@ -200,9 +200,9 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white py-16 px-6"
+        className="bg-white py-20 md:py-32 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <SectionHeading title="Core Values" centered />
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, idx) => {
@@ -214,7 +214,7 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, ease: 'easeOut' as const, delay: idx * 0.1 }}
-                  className="border border-[#E5E7EB] rounded-xl p-6 bg-white hover:border-[#10A37F] transition-colors"
+                  className="border border-[#E5E7EB] rounded-lg p-8 bg-white hover:border-[#10A37F] transition-colors"
                 >
                   <Icon size={24} className="text-[#10A37F] mb-3" />
                   <h3 className="font-semibold text-[#111827] mb-2">
@@ -236,11 +236,11 @@ export default function AboutPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#F9FAFB] py-16 px-6"
+        className="bg-[#F9FAFB] py-20 md:py-32 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#111827]">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#111827]">
               Global Delivery
             </h2>
           </motion.div>
@@ -273,7 +273,7 @@ export default function AboutPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white rounded-xl p-8 border border-[#E5E7EB]"
+              className="bg-white rounded-lg p-8 border border-[#E5E7EB]"
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-lg bg-[#059669] flex items-center justify-center flex-shrink-0">
@@ -303,7 +303,7 @@ export default function AboutPage() {
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
         className="bg-white py-8 px-6"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <CTASection
             title="Ready to Transform Your Business?"
             primaryCTA={{ text: 'Book Consultation', href: '/contact' }}

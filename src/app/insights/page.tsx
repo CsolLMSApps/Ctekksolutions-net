@@ -111,7 +111,7 @@ export default function InsightsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-[#0A0F1C] max-w-6xl mx-auto py-20 px-6"
+        className="bg-[#0A0F1C] max-w-7xl mx-auto py-20 md:py-32 px-6"
       >
         <motion.div className="mb-12">
           <h2 className="text-2xl md:text-3xl font-bold"
@@ -129,7 +129,7 @@ export default function InsightsPage() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="bg-white/[0.03] border border-white/[0.06] rounded-xl p-8 hover:border-white/[0.12] transition-colors"
+          className="bg-white/5 border border-white/10 rounded-lg p-8 hover:border-[#10A37F]/50 transition-colors"
         >
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="lg:w-1/3 h-48 rounded-lg bg-gradient-to-br from-[#10A37F]/20 to-[#34D399]/20" />
@@ -168,7 +168,7 @@ export default function InsightsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white max-w-6xl mx-auto py-8 px-6"
+        className="bg-white max-w-7xl mx-auto py-8 px-6"
       >
         <div className="flex flex-wrap gap-2 justify-center">
           {categories.map((cat, idx) => (
@@ -196,7 +196,7 @@ export default function InsightsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-7xl mx-auto py-20 md:py-32 px-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {articles.map((article, idx) => (
@@ -207,7 +207,7 @@ export default function InsightsPage() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="border border-[#E5E7EB] rounded-xl overflow-hidden bg-white hover:border-[#10A37F] transition-colors group"
+              className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white hover:border-[#10A37F] transition-colors group"
             >
               <div className="h-40 bg-gradient-to-br from-[#10A37F]/10 to-[#34D399]/10" />
               <div className="p-6">
@@ -242,7 +242,7 @@ export default function InsightsPage() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, ease: 'easeOut' as const }}
-        className="bg-white max-w-6xl mx-auto py-20 px-6"
+        className="bg-white max-w-7xl mx-auto py-20 md:py-32 px-6"
       >
         <CTASection
           title="Ready to Learn More?"

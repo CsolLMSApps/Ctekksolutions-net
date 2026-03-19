@@ -28,7 +28,7 @@ export default function InvestorsPage() {
     {
       icon: Layers,
       title: 'Five Platforms, One Ecosystem',
-      description: 'DFWITJOBS, OPTPlanet, OPTPlanet.tech, AI Learn Hub, and Benzaiten LMS form an integrated talent-to-training pipeline. Each platform drives users to the others — creating compounding network effects.',
+      description: 'DFW IT Jobs, OPT Planet, OPT Planet Tech, AI Learn Hub, and Benzaiten LMS form an integrated talent-to-training pipeline. Each platform drives users to the others — creating compounding network effects.',
     },
     {
       icon: Rocket,
@@ -60,12 +60,12 @@ export default function InvestorsPage() {
   ];
 
   const platforms = [
-    { name: 'DFWITJOBS', role: 'Talent Acquisition', desc: 'Job board generating employer revenue and candidate data' },
-    { name: 'OPTPlanet', role: 'STEM Pipeline', desc: 'Career platform feeding qualified STEM graduates into the ecosystem' },
-    { name: 'OPTPlanet.tech', role: 'AI Talent Matching', desc: 'Specialized AI job board connecting startups with global STEM talent' },
+    { name: 'DFW IT Jobs', role: 'Talent Acquisition', desc: 'Job board generating employer revenue and candidate data' },
+    { name: 'OPT Planet', role: 'STEM Pipeline', desc: 'Career platform feeding qualified STEM graduates into the ecosystem' },
+    { name: 'OPT Planet Tech', role: 'AI Talent Matching', desc: 'Specialized AI job board connecting startups with global STEM talent' },
     { name: 'AI Learn Hub', role: 'Skills Development', desc: 'Training platform converting learners into job-ready professionals' },
     { name: 'Benzaiten LMS', role: 'Enterprise Learning', desc: 'LMS generating recurring enterprise subscription revenue' },
-    { name: 'OPTPlanet Online', role: 'Career Acceleration', desc: 'AI-powered career tools driving job seekers to partner job boards' },
+    { name: 'OPT Planet - AI Career', role: 'Career Acceleration', desc: 'AI-powered career tools driving job seekers to partner job boards' },
   ];
 
   const useOfFunds = [

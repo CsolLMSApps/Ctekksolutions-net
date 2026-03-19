@@ -24,7 +24,7 @@ export default function Home() {
   const tickerItems = [
     '🟢 Now Hiring: Senior AI/ML Engineer — Dallas, TX',
     '📊 New Insight: AI Workforce Trends 2026',
-    '🚀 OPTPlanet.tech: 200+ Global AI Jobs Listed',
+    '🚀 OPT Planet Tech: 200+ Global AI Jobs Listed',
     '📚 Benzaiten LMS: New Corporate Training Modules',
     '🟢 Now Hiring: Cloud Solutions Architect — Remote',
     '💡 AI Learn Hub: Advanced NLP Course Now Live',
@@ -61,17 +61,17 @@ export default function Home() {
 
   const platforms = [
     {
-      title: 'DFWITJOBS',
+      title: 'DFW IT Jobs',
       description: 'Premier job marketplace connecting top tech talent with leading companies in the Dallas-Fort Worth metroplex.',
       url: 'https://www.dfwitjobs.com',
     },
     {
-      title: 'OPTPlanet',
+      title: 'OPT Planet',
       description: 'Comprehensive educational platform for professional development and certification in emerging technologies.',
       url: 'https://www.optplanet.net',
     },
     {
-      title: 'OPTPlanet.tech',
+      title: 'OPT Planet Tech',
       description: 'Global AI job board connecting startups with STEM talent for remote AI jobs and prompt engineering roles.',
       url: 'https://optplanet.tech',
     },
@@ -86,7 +86,7 @@ export default function Home() {
       url: 'https://benzaitenlms.com',
     },
     {
-      title: 'OPTPlanet Online',
+      title: 'OPT Planet - AI Career',
       description: 'AI career acceleration platform with resume analysis, job matching, and interview prep tools for STEM and tech professionals.',
       url: 'https://optplanet.online',
     },

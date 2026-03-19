@@ -30,7 +30,7 @@ const jobs = [
     location: 'Dallas, TX (Hybrid)',
     type: 'Full-time',
     posted: 'Mar 2026',
-    duties: 'Design, develop, and maintain full-stack web applications for the DFWITJOBS and OPTPlanet.tech platforms. Implement features, conduct code reviews, and optimize application performance.',
+    duties: 'Design, develop, and maintain full-stack web applications for the DFW IT Jobs and OPT Planet Tech platforms. Implement features, conduct code reviews, and optimize application performance.',
     requirements: 'Bachelor\'s in CS or related. 5+ years professional development experience. Proficiency in React, Node.js, and cloud platforms.',
   },
   {
@@ -48,7 +48,7 @@ const jobs = [
     location: 'Remote (US)',
     type: 'Full-time',
     posted: 'Jan 2026',
-    duties: 'Develop predictive models to enhance job matching accuracy within DFWITJOBS and OPTPlanet platforms. Conduct exploratory analysis on workforce datasets and design A/B testing frameworks.',
+    duties: 'Develop predictive models to enhance job matching accuracy within DFW IT Jobs and OPT Planet platforms. Conduct exploratory analysis on workforce datasets and design A/B testing frameworks.',
     requirements: 'Master\'s in Data Science, Statistics, or related. 4+ years data science experience. Strong proficiency in Python, R, SQL, and ML frameworks.',
   },
   {
@@ -57,7 +57,7 @@ const jobs = [
     location: 'Remote (US)',
     type: 'Full-time',
     posted: 'Jan 2026',
-    duties: 'Build and maintain data pipelines collecting workforce data from DFWITJOBS and OPTPlanet platforms. Create analytics dashboards and optimize data models for real-time reporting.',
+    duties: 'Build and maintain data pipelines collecting workforce data from DFW IT Jobs and OPT Planet platforms. Create analytics dashboards and optimize data models for real-time reporting.',
     requirements: 'Bachelor\'s in CS, Statistics, or Engineering. 3+ years data/analytics engineering. Proficiency in SQL, data warehousing, and cloud data platforms.',
   },
   {
@@ -66,7 +66,7 @@ const jobs = [
     location: 'Dallas, TX (Hybrid)',
     type: 'Full-time',
     posted: 'Dec 2025',
-    duties: 'Develop and deploy ML models powering intelligent talent matching on DFWITJOBS and OPTPlanet. Architect AI-driven features for AI Learn Hub including personalized learning pathways.',
+    duties: 'Develop and deploy ML models powering intelligent talent matching on DFW IT Jobs and OPT Planet. Architect AI-driven features for AI Learn Hub including personalized learning pathways.',
     requirements: 'Master\'s in CS, ML, or related STEM field. 5+ years ML experience. Advanced proficiency in Python, TensorFlow/PyTorch.',
   },
   {
@@ -84,7 +84,7 @@ const jobs = [
     location: 'Dallas, TX',
     type: 'Full-time',
     posted: 'Oct 2025',
-    duties: 'Design, implement, and optimize databases supporting the DFWITJOBS job posting platform and OPTPlanet talent analytics. Monitor performance, implement security protocols, and manage data recovery procedures.',
+    duties: 'Design, implement, and optimize databases supporting the DFW IT Jobs job posting platform and OPT Planet talent analytics. Monitor performance, implement security protocols, and manage data recovery procedures.',
     requirements: 'Bachelor\'s in CS or IT. 3+ years database analysis/administration. Strong expertise in SQL, database design, and performance tuning.',
   },
   {
@@ -93,7 +93,7 @@ const jobs = [
     location: 'Remote (US)',
     type: 'Full-time',
     posted: 'Sep 2025',
-    duties: 'Develop responsive interfaces for DFWITJOBS and OPTPlanet.tech platforms. Implement interactive features, optimize user experience, and enhance the Benzaiten LMS interface.',
+    duties: 'Develop responsive interfaces for DFW IT Jobs and OPT Planet Tech platforms. Implement interactive features, optimize user experience, and enhance the Benzaiten LMS interface.',
     requirements: 'Bachelor\'s in CS or Web Development. 3+ years frontend experience. Proficiency in React, TypeScript, and modern CSS frameworks.',
   },
   {
@@ -102,7 +102,7 @@ const jobs = [
     location: 'Remote (US)',
     type: 'Full-time',
     posted: 'Sep 2025',
-    duties: 'Design and maintain CI/CD pipelines for continuous deployment of DFWITJOBS, OPTPlanet, and Benzaiten LMS applications. Automate infrastructure provisioning using Terraform and containerize applications with Docker/Kubernetes.',
+    duties: 'Design and maintain CI/CD pipelines for continuous deployment of DFW IT Jobs, OPT Planet, and Benzaiten LMS applications. Automate infrastructure provisioning using Terraform and containerize applications with Docker/Kubernetes.',
     requirements: 'Bachelor\'s in CS or Software Engineering. 4+ years DevOps experience. Expertise in CI/CD, Docker, Kubernetes, and AWS/Azure.',
   },
   {
@@ -111,7 +111,7 @@ const jobs = [
     location: 'Dallas, TX (Hybrid)',
     type: 'Full-time',
     posted: 'Aug 2025',
-    duties: 'Architect enterprise cloud infrastructure supporting DFWITJOBS, OPTPlanet, AI Learn Hub, and Benzaiten LMS platforms. Design scalable, secure cloud solutions and lead technical design reviews.',
+    duties: 'Architect enterprise cloud infrastructure supporting DFW IT Jobs, OPT Planet, AI Learn Hub, and Benzaiten LMS platforms. Design scalable, secure cloud solutions and lead technical design reviews.',
     requirements: 'Bachelor\'s in CS or Engineering. 5+ years cloud architecture experience. AWS/Azure certification preferred. Proven expertise in scalable cloud solutions.',
   },
 ];
@@ -335,11 +335,11 @@ export default function JobsPage() {
             <p className="text-[#6B7280]">
               These positions are internal to CTekk Solutions. For external staffing and contract opportunities, visit{' '}
               <a href="https://dfwitjobs.com" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
-                DFWITJOBS
+                DFW IT Jobs
               </a>
               {' '}or{' '}
               <a href="https://optplanet.tech" target="_blank" rel="noopener noreferrer" className="text-[#10A37F] font-medium hover:underline">
-                OPTPlanet.tech
+                OPT Planet Tech
               </a>
               .
             </p>

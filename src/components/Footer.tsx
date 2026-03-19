@@ -122,7 +122,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="block text-sm text-gray-400 hover:text-[#10A37F] transition-colors duration-200"
                 >
-                  OPTPlanet Online
+                  OPT Planet - AI Career
                 </a>
               </nav>
             </div>

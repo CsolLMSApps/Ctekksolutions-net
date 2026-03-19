@@ -26,7 +26,7 @@ const fadeIn = {
 
 const platforms = [
   {
-    title: 'DFWITJOBS',
+    title: 'DFW IT Jobs',
     url: 'www.dfwitjobs.com',
     icon: Briefcase,
     color: '#10A37F',
@@ -40,10 +40,10 @@ const platforms = [
     ],
   },
   {
-    title: 'OPTPlanet',
+    title: 'OPT Planet',
     url: 'www.optplanet.net',
     icon: GraduationCap,
-    color: '#059669',
+    color: '#7C3AED',
     description:
       'Comprehensive platform for OPT/CPT students and H1B professionals seeking opportunities',
     features: [
@@ -57,7 +57,7 @@ const platforms = [
     title: 'AI Learn Hub',
     url: 'www.ailearnhub.io',
     icon: BookOpen,
-    color: '#34D399',
+    color: '#F97316',
     description:
       'Cutting-edge AI education platform with hands-on courses and certifications',
     features: [
@@ -71,7 +71,7 @@ const platforms = [
     title: 'Benzaiten LMS',
     url: 'benzaitenlms.com',
     icon: Monitor,
-    color: '#6EE7B7',
+    color: '#6D28D9',
     description:
       'Enterprise learning management system for corporate training and skill development',
     features: [
@@ -82,10 +82,10 @@ const platforms = [
     ],
   },
   {
-    title: 'OPTPlanet.tech',
+    title: 'OPT Planet Tech',
     url: 'optplanet.tech',
     icon: Rocket,
-    color: '#0D8A6A',
+    color: '#F97316',
     description:
       'Global AI job board connecting startups with STEM resources. Find remote AI jobs, prompt engineering roles, and automation contract opportunities worldwide.',
     features: [
@@ -96,10 +96,10 @@ const platforms = [
     ],
   },
   {
-    title: 'OPTPlanet Online',
+    title: 'OPT Planet - AI Career',
     url: 'optplanet.online',
     icon: Sparkles,
-    color: '#10A37F',
+    color: '#2563EB',
     description:
       'AI-powered career tools for OPT, STEM, and tech job seekers — Resume Analyzer, Job Match Scorer, Interview Prep, Cover Letter Generator, and Job Readiness Score.',
     features: [

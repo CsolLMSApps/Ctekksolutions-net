@@ -176,7 +176,7 @@ export default function ContactPage() {
               </div>
             </motion.div>
 
-            {/* Ad Card 2 — Advertise / Employers */}
+            {/* Ad Card 2 — DFW IT Jobs - Find Jobs (Green/Black/White, Job Seeker focused) */}
             <motion.div
               variants={itemVariants}
               initial="hidden"
@@ -187,18 +187,18 @@ export default function ContactPage() {
             >
               <div className="h-1 bg-gradient-to-r from-[#059669] to-[#34D399]" />
               <div className="p-5">
-                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">DFW IT JOBS</p>
-                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">Post Jobs &amp; Find Talent</h3>
-                <p className="text-xs text-[#6B7280] mb-3">Your brand in front of thousands of active IT professionals.</p>
+                <p className="text-[10px] font-semibold text-[#10A37F] uppercase tracking-wider mb-1">JOB BOARD</p>
+                <h3 className="font-bold text-[#111] dark:text-white text-sm mb-2">DFW IT Jobs - Find Jobs</h3>
+                <p className="text-xs text-[#6B7280] mb-3">Search thousands of IT &amp; tech jobs across all industries.</p>
                 <ul className="space-y-1.5 mb-4">
                   <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> Highly targeted tech audience
+                    <span className="text-[#10A37F] mt-0.5">›</span> All industries, nationwide reach
                   </li>
                   <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> Affordable sponsored placements
+                    <span className="text-[#10A37F] mt-0.5">›</span> Verified employers
                   </li>
                   <li className="text-xs text-[#6B7280] flex items-start gap-1.5">
-                    <span className="text-[#6B7280] mt-0.5">›</span> Contact us to get started
+                    <span className="text-[#10A37F] mt-0.5">›</span> Apply directly, no middleman
                   </li>
                 </ul>
                 <a
@@ -207,7 +207,43 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 bg-[#10A37F] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#0D8A6A] transition-colors"
                 >
-                  Learn More <ArrowRight size={12} />
+                  Search Jobs <ArrowRight size={12} />
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Ad Card — OPT Planet - AI Career (Blue/Black/White) */}
+            <motion.div
+              variants={itemVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.12 }}
+              className="rounded-lg overflow-hidden bg-[#111111] border border-[#333]"
+            >
+              <div className="h-1 bg-gradient-to-r from-[#2563EB] to-[#60A5FA]" />
+              <div className="p-5">
+                <p className="text-[10px] font-semibold text-[#2563EB] uppercase tracking-wider mb-1">AI CAREER TOOLS</p>
+                <h3 className="font-bold text-white text-sm mb-2">Boost Resume, Get Hired Faster</h3>
+                <p className="text-xs text-gray-400 mb-3">Free AI tools to optimize your resume and prep for interviews.</p>
+                <ul className="space-y-1.5 mb-4">
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#2563EB] mt-0.5">›</span> AI resume analysis &amp; scoring
+                  </li>
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#2563EB] mt-0.5">›</span> Smart job matching
+                  </li>
+                  <li className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span className="text-[#2563EB] mt-0.5">›</span> Interview prep &amp; cover letters
+                  </li>
+                </ul>
+                <a
+                  href="https://optplanet.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 bg-[#2563EB] text-white text-xs font-medium px-4 py-2 rounded-lg hover:bg-[#1D4ED8] transition-colors"
+                >
+                  Try Free <ArrowRight size={12} />
                 </a>
               </div>
             </motion.div>

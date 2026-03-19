@@ -86,7 +86,7 @@ const platforms = [
     name: 'AI Learn Hub',
     url: 'www.ailearnhub.io',
     description: 'Comprehensive online learning platform',
-    color: '#34D399',
+    color: '#F97316',
     features: [
       'Interactive courses with hands-on projects',
       'Expert-led workshops and seminars',
@@ -98,7 +98,7 @@ const platforms = [
     name: 'Benzaiten LMS',
     url: 'benzaitenlms.com',
     description: 'Enterprise learning management system',
-    color: '#6EE7B7',
+    color: '#6D28D9',
     features: [
       'Custom curriculum development',
       'Progress tracking and analytics',
@@ -279,7 +279,7 @@ export default function EducationPage() {
                   Career-Ready Training
                 </h3>
                 <p className="text-[#6B7280]">
-                  Our programs are designed to build skills that matter in today's AI-driven job market. Pair your training with our career platforms—DFWITJOBS, OPTPlanet, OPTPlanet.tech, and OPTPlanet Online—to take the next step in your professional journey. OPTPlanet Online provides AI-powered career acceleration tools to complement your training.
+                  Our programs are designed to build skills that matter in today's AI-driven job market. Pair your training with our career platforms—DFW IT Jobs, OPT Planet, OPT Planet Tech, and OPT Planet - AI Career—to take the next step in your professional journey. OPT Planet - AI Career provides AI-powered career acceleration tools to complement your training.
                 </p>
               </div>
             </div>

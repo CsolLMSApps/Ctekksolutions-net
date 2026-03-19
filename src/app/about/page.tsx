@@ -53,10 +53,10 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { label: 'Years in Operation', value: 15, suffix: '+' },
-    { label: 'Enterprise Clients', value: 500, suffix: '+' },
-    { label: 'AI Solutions Deployed', value: 50, suffix: '+' },
-    { label: 'Client Retention', value: 98, suffix: '%' },
+    { label: 'Years in Business', value: 15, suffix: '+' },
+    { label: 'Active Clients', value: 20, suffix: '+' },
+    { label: 'Countries', value: 3, suffix: '' },
+    { label: 'Client Satisfaction', value: 98, suffix: '%' },
   ];
 
   return (

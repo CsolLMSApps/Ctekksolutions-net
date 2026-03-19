@@ -226,20 +226,20 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' as const }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+              className="grid grid-cols-3 gap-8 max-w-3xl mx-auto"
             >
               <div className="text-center">
                 <div className="flex justify-center mb-2">
                   <Users className="text-[#10A37F]" size={24} />
                 </div>
-                <div className="text-3xl text-white mb-1">500+</div>
-                <div className="text-gray-400">Global Clients</div>
+                <div className="text-3xl text-white mb-1">20+</div>
+                <div className="text-gray-400">Active Clients</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-2">
                   <Globe className="text-[#10A37F]" size={24} />
                 </div>
-                <div className="text-3xl text-white mb-1">50+</div>
+                <div className="text-3xl text-white mb-1">3</div>
                 <div className="text-gray-400">Countries</div>
               </div>
               <div className="text-center">
@@ -247,14 +247,7 @@ export default function Home() {
                   <Award className="text-[#10A37F]" size={24} />
                 </div>
                 <div className="text-3xl text-white mb-1">98%</div>
-                <div className="text-gray-400">Success Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="flex justify-center mb-2">
-                  <Zap className="text-[#10A37F]" size={24} />
-                </div>
-                <div className="text-3xl text-white mb-1">1000+</div>
-                <div className="text-gray-400">Projects</div>
+                <div className="text-gray-400">Client Satisfaction</div>
               </div>
             </motion.div>
           </div>

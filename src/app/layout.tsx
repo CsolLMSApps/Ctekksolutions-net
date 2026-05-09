@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -102,6 +101,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Google Analytics — placed in <head> for Google Search Console verification */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PTDLVKXJ01"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-PTDLVKXJ01');
+            `,
+          }}
+        />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -116,20 +130,6 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased bg-white dark:bg-[#0D0D0D] text-[#111] dark:text-[#ECECEC]">
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PTDLVKXJ01"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-PTDLVKXJ01');
-          `}
-        </Script>
-
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

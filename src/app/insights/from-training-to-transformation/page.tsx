@@ -63,7 +63,7 @@ export default function TrainingToTransformationPage() {
           </p>
 
           <p className="text-gray-600 leading-relaxed mb-6">
-            Building organization-wide AI literacy is where platforms like <a href="/products/ai-learn-hub" className="text-[#10A37F] hover:underline">AI Learn Hub</a> and <a href="/products/benzaiten-lms" className="text-[#10A37F] hover:underline">Benzaiten LMS</a> create disproportionate value. Rather than organizations attempting to design and deliver custom training programs (a task most aren't equipped for), these platforms provide structured, comprehensive AI curricula that can be deployed at scale. They handle updating content as technology evolves, they track learning progress, they adapt to different learning styles and proficiency levels, and they provide the infrastructure to make learning part of normal work rather than a separate activity.
+            Building organization-wide AI literacy is where platforms like <a href="https://www.ailearnhub.io" className="text-[#10A37F] hover:underline">AI Learn Hub</a> and <a href="https://benzaitenlms.com" className="text-[#10A37F] hover:underline">Benzaiten LMS</a> create disproportionate value. Rather than organizations attempting to design and deliver custom training programs (a task most aren't equipped for), these platforms provide structured, comprehensive AI curricula that can be deployed at scale. They handle updating content as technology evolves, they track learning progress, they adapt to different learning styles and proficiency levels, and they provide the infrastructure to make learning part of normal work rather than a separate activity.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Measuring Training ROI</h2>
@@ -94,17 +94,17 @@ export default function TrainingToTransformationPage() {
         <h3 className="text-xl font-bold text-gray-900 mb-6">Explore Our Solutions</h3>
         <div className="space-y-3">
           <div>
-            <a href="/products/ai-learn-hub" className="text-[#10A37F] hover:underline font-medium">
+            <a href="https://www.ailearnhub.io" className="text-[#10A37F] hover:underline font-medium">
               → AI Learn Hub: Comprehensive AI Education Platform
             </a>
           </div>
           <div>
-            <a href="/products/benzaiten-lms" className="text-[#10A37F] hover:underline font-medium">
+            <a href="https://benzaitenlms.com" className="text-[#10A37F] hover:underline font-medium">
               → Benzaiten LMS: Scalable Learning Management System
             </a>
           </div>
           <div>
-            <a href="/services/ai-consulting" className="text-[#10A37F] hover:underline font-medium">
+            <a href="/services" className="text-[#10A37F] hover:underline font-medium">
               → AI Consulting: Transformation Strategy & Execution
             </a>
           </div>

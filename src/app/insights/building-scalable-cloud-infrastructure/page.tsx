@@ -82,12 +82,12 @@ export default function ScalableCloudInfrastructurePage() {
         <h3 className="text-xl font-bold text-gray-900 mb-6">Explore Our Solutions</h3>
         <div className="space-y-3">
           <div>
-            <a href="/services/cloud-consulting" className="text-[#10A37F] hover:underline font-medium">
+            <a href="/services" className="text-[#10A37F] hover:underline font-medium">
               → Cloud Consulting: AI-Ready Infrastructure Design
             </a>
           </div>
           <div>
-            <a href="/services/devops-implementation" className="text-[#10A37F] hover:underline font-medium">
+            <a href="/services" className="text-[#10A37F] hover:underline font-medium">
               → DevOps Services: Scalable ML Pipeline Management
             </a>
           </div>

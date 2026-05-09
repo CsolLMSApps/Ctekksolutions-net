@@ -61,7 +61,7 @@ export default function EnterpriseAIImplementationPage() {
           <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Phase 2: Building Organization Capability and Culture</h2>
 
           <p className="text-gray-600 leading-relaxed mb-6">
-            Before deploying AI systems, build organizational capability to understand and use them effectively. This means investing in AI education and literacy across the organization, not just for technical teams. Business stakeholders need to understand what AI can and can't do, what "AI-powered" actually means versus marketing hype, and how to evaluate AI solutions critically. Technical teams need deep training on ML fundamentals, model evaluation, and responsible AI practices. This is where <a href="/products/ai-learn-hub" className="text-[#10A37F] hover:underline">AI Learn Hub</a> and <a href="/products/benzaiten-lms" className="text-[#10A37F] hover:underline">Benzaiten LMS</a> deliver value—they enable systematic, scalable education that ensures everyone involved in AI deployment has the foundational knowledge necessary to contribute meaningfully.
+            Before deploying AI systems, build organizational capability to understand and use them effectively. This means investing in AI education and literacy across the organization, not just for technical teams. Business stakeholders need to understand what AI can and can't do, what "AI-powered" actually means versus marketing hype, and how to evaluate AI solutions critically. Technical teams need deep training on ML fundamentals, model evaluation, and responsible AI practices. This is where <a href="https://www.ailearnhub.io" className="text-[#10A37F] hover:underline">AI Learn Hub</a> and <a href="https://benzaitenlms.com" className="text-[#10A37F] hover:underline">Benzaiten LMS</a> deliver value—they enable systematic, scalable education that ensures everyone involved in AI deployment has the foundational knowledge necessary to contribute meaningfully.
           </p>
 
           <p className="text-gray-600 leading-relaxed mb-6">
@@ -108,17 +108,17 @@ export default function EnterpriseAIImplementationPage() {
         <h3 className="text-xl font-bold text-gray-900 mb-6">Explore Our Solutions</h3>
         <div className="space-y-3">
           <div>
-            <a href="/services/ai-consulting" className="text-[#10A37F] hover:underline font-medium">
+            <a href="/services" className="text-[#10A37F] hover:underline font-medium">
               → AI Consulting: Enterprise Implementation Strategy
             </a>
           </div>
           <div>
-            <a href="/products/ai-learn-hub" className="text-[#10A37F] hover:underline font-medium">
+            <a href="https://www.ailearnhub.io" className="text-[#10A37F] hover:underline font-medium">
               → AI Learn Hub: Build Organization-Wide AI Capability
             </a>
           </div>
           <div>
-            <a href="/products/benzaiten-lms" className="text-[#10A37F] hover:underline font-medium">
+            <a href="https://benzaitenlms.com" className="text-[#10A37F] hover:underline font-medium">
               → Benzaiten LMS: Systematic Workforce Upskilling
             </a>
           </div>

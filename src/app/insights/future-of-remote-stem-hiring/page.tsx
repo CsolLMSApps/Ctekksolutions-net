@@ -82,7 +82,7 @@ export default function RemoteSTEMHiringPage() {
         <h3 className="text-xl font-bold text-gray-900 mb-6">Explore Our Solutions</h3>
         <div className="space-y-3">
           <div>
-            <a href="/services/staffing" className="text-[#10A37F] hover:underline font-medium">
+            <a href="/services" className="text-[#10A37F] hover:underline font-medium">
               → CTekk Staffing: Global STEM Talent Solutions
             </a>
           </div>

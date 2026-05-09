@@ -59,7 +59,7 @@ export default function AIWorkforceTrendsPage() {
           <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Why Upskilling Isn't Optional Anymore</h2>
 
           <p className="text-gray-600 leading-relaxed mb-6">
-            The half-life of technical skills has compressed dramatically. Where developers could rely on expertise in a single programming language for years, today's technology professionals must continuously adapt to AI-augmented development workflows. Organizations that invest in upskilling their existing workforce gain a critical competitive advantage—they retain institutional knowledge while evolving capabilities. This is where platforms like <a href="/products/ai-learn-hub" className="text-[#10A37F] hover:underline">AI Learn Hub</a> and <a href="/products/benzaiten-lms" className="text-[#10A37F] hover:underline">Benzaiten LMS</a> become essential infrastructure. They enable enterprises to systematically upskill teams at scale, turning potential disruption into organizational strength.
+            The half-life of technical skills has compressed dramatically. Where developers could rely on expertise in a single programming language for years, today's technology professionals must continuously adapt to AI-augmented development workflows. Organizations that invest in upskilling their existing workforce gain a critical competitive advantage—they retain institutional knowledge while evolving capabilities. This is where platforms like <a href="https://www.ailearnhub.io" className="text-[#10A37F] hover:underline">AI Learn Hub</a> and <a href="https://benzaitenlms.com" className="text-[#10A37F] hover:underline">Benzaiten LMS</a> become essential infrastructure. They enable enterprises to systematically upskill teams at scale, turning potential disruption into organizational strength.
           </p>
 
           <p className="text-gray-600 leading-relaxed mb-6">
@@ -82,17 +82,17 @@ export default function AIWorkforceTrendsPage() {
         <h3 className="text-xl font-bold text-gray-900 mb-6">Explore Our Solutions</h3>
         <div className="space-y-3">
           <div>
-            <a href="/products/ai-learn-hub" className="text-[#10A37F] hover:underline font-medium">
+            <a href="https://www.ailearnhub.io" className="text-[#10A37F] hover:underline font-medium">
               → AI Learn Hub: Structured AI Education for Enterprises
             </a>
           </div>
           <div>
-            <a href="/products/benzaiten-lms" className="text-[#10A37F] hover:underline font-medium">
+            <a href="https://benzaitenlms.com" className="text-[#10A37F] hover:underline font-medium">
               → Benzaiten LMS: Scale Your Team's AI Capabilities
             </a>
           </div>
           <div>
-            <a href="/services/ai-consulting" className="text-[#10A37F] hover:underline font-medium">
+            <a href="/services" className="text-[#10A37F] hover:underline font-medium">
               → AI Consulting: Custom Workforce Transformation Strategy
             </a>
           </div>

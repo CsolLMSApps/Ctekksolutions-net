@@ -4,7 +4,7 @@ Disallow: /api/
 Disallow: /_next/
 
 # Sitemaps
-Sitemap: https://ctekksolutions.net/sitemap.xml
+Sitemap: https://www.ctekksolutions.net/sitemap.xml
 
 # Block AI scrapers
 User-agent: CCBot

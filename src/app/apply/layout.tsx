@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Apply for AI & Technology Positions',
+  alternates: { canonical: '/apply' },
   description: 'Submit your application to CTekk Solutions. Open roles in AI/ML, Data Science, Cloud, DevOps, and more. Dallas, TX and Remote positions available.',
 };
 

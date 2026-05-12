@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact CTekk Solutions | AI Talent, Training & Consulting',
+  alternates: { canonical: '/contact' },
   description: 'Get in touch with CTekk Solutions. Hire AI talent, request corporate training, book a consultation. Dallas, TX headquarters. 408-471-7753.',
 };
 

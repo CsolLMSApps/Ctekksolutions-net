@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'AI Industry Insights, Reports & Best Practices',
+  alternates: { canonical: '/insights' },
   description: 'Expert articles on AI workforce trends, cloud infrastructure, remote STEM hiring, enterprise AI implementation, and corporate training ROI.',
 };
 

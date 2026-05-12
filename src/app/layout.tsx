@@ -4,7 +4,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ctekksolutions.net"),
+  metadataBase: new URL("https://www.ctekksolutions.net"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "CTekk Solutions | AI Consulting & Technology Services | Dallas, TX",
     template: "%s | CTekk Solutions",
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ctekksolutions.net",
+    url: "https://www.ctekksolutions.net",
     siteName: "CTekk Solutions",
     title: "CTekk Solutions | AI Consulting & Technology Services",
     description:
@@ -68,8 +71,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "CTekk Solutions",
-  url: "https://ctekksolutions.net",
-  logo: "https://ctekksolutions.net/logo.png",
+  url: "https://www.ctekksolutions.net",
+  logo: "https://www.ctekksolutions.net/logo.png",
   foundingDate: "2010",
   description:
     "Dallas-based technology consulting firm specializing in AI talent, cloud consulting, staffing, offshore teams, and AI education platforms.",

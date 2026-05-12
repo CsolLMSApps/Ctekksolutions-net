@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ctekksolutions.net'
+  const baseUrl = 'https://www.ctekksolutions.net'
   const now = new Date().toISOString()
 
   // Core pages

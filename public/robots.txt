@@ -2,6 +2,9 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
+Disallow: /favicon.ico
+Disallow: /favicon.svg
+Disallow: /*.ico$
 
 # Sitemaps
 Sitemap: https://www.ctekksolutions.net/sitemap.xml
